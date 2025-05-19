@@ -14,6 +14,7 @@ func _ready() -> void:
 	set_process(false)
 	plant_area.plant = self
 	plant_stem.length = 0
+	modulate.a = 0
 
 
 func start_growing():
@@ -25,6 +26,7 @@ func stop_growing():
 	
 	
 func _process(delta: float) -> void:
+	modulate.a = lerp(modulate.a, 1.0, 0.05)
 	plant_stem.length += delta * growth_rate
 	if floori(plant_stem.length / block_vertical_spacing) > block_popped:
 		pop_plant_block()

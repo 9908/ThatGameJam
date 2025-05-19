@@ -1,14 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvxhh2k1plv2h"]
+[gd_scene load_steps=6 format=3 uid="uid://cvxhh2k1plv2h"]
 
 [ext_resource type="Script" uid="uid://di228dcrcrlq4" path="res://parts/collectible/collectible.gd" id="1_4bk0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e030t"]
 radius = 50.01
 
+[sub_resource type="Animation" id="Animation_4bk0q"]
+resource_name = "Hover"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vqsir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqsir"]
+_data = {
+&"Hover": SubResource("Animation_4bk0q"),
+&"RESET": SubResource("Animation_vqsir")
+}
+
 [node name="Collectible" type="Node2D"]
 script = ExtResource("1_4bk0q")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Visual" type="Node2D" parent="."]
+position = Vector2(0, -3.84054)
+
+[node name="ColorRect" type="ColorRect" parent="Visual"]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -22,3 +63,10 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_e030t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_vqsir")
+}
+autoplay = "Hover"
