@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvegjstwenvl"]
 
-[ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player.gd" id="1_xlo1q"]
-[ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/movement.gd" id="2_aaff8"]
-[ext_resource type="Script" uid="uid://hv3b5y0ql4rs" path="res://parts/grow_plant.gd" id="3_40wer"]
-[ext_resource type="Script" uid="uid://xre3judc673b" path="res://parts/player_animation_director.gd" id="3_nh1j4"]
+[ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player/player.gd" id="1_xlo1q"]
+[ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/player/movement.gd" id="2_aaff8"]
+[ext_resource type="Script" uid="uid://hv3b5y0ql4rs" path="res://parts/player/grow_plant.gd" id="3_40wer"]
+[ext_resource type="Script" uid="uid://xre3judc673b" path="res://parts/player/player_animation_director.gd" id="3_nh1j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(63, 106)

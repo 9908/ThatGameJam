@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdopy2wwy12a6"]
 
-[ext_resource type="Script" uid="uid://sk1vadxoyk4w" path="res://parts/plant_stem.gd" id="1_4isf5"]
+[ext_resource type="Script" uid="uid://sk1vadxoyk4w" path="res://parts/plant/plant_stem.gd" id="1_4isf5"]
 
 [node name="PlantStem" type="Node2D"]
 script = ExtResource("1_4isf5")

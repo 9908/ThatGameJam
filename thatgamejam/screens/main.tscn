@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=10 format=4 uid="uid://sdtk7anffxo2"]
 
-[ext_resource type="PackedScene" uid="uid://dvegjstwenvl" path="res://parts/player.tscn" id="1_la406"]
+[ext_resource type="PackedScene" uid="uid://dvegjstwenvl" path="res://parts/player/player.tscn" id="1_la406"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ee7ou"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_cbuj4"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_tci2t"]
 [ext_resource type="TileSet" uid="uid://bnpw4n583v4aa" path="res://assets/tilemap.tres" id="5_ycjph"]
-[ext_resource type="PackedScene" uid="uid://cdopy2wwy12a6" path="res://parts/plant_stem.tscn" id="6_cbuj4"]
-[ext_resource type="PackedScene" uid="uid://dwetwhh8pl3au" path="res://parts/plant_block.tscn" id="7_tci2t"]
+[ext_resource type="PackedScene" uid="uid://cdopy2wwy12a6" path="res://parts/plant/plant_stem.tscn" id="6_cbuj4"]
+[ext_resource type="Script" uid="uid://djs6fudyg2o14" path="res://parts/plant/plants.gd" id="6_tci2t"]
+[ext_resource type="PackedScene" uid="uid://dwetwhh8pl3au" path="res://parts/plant/plant_block.tscn" id="7_tci2t"]
 
 [sub_resource type="Resource" id="Resource_lquwl"]
 script = ExtResource("4_tci2t")
@@ -29,37 +30,6 @@ color = Color(0.223529, 0.215686, 0.223529, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_la406")]
 position = Vector2(425, 411)
-
-[node name="TempText" type="Node2D" parent="."]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TempText"]
-offset_left = 160.0
-offset_top = 476.0
-offset_right = 301.0
-offset_bottom = 526.0
-text = "48x48 tilemap"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="TempText"]
-offset_left = -21.0
-offset_top = 387.0
-offset_right = 120.0
-offset_bottom = 437.0
-text = "smallest jump: 2 blocks"
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="TempText"]
-offset_left = -394.0
-offset_top = 300.0
-offset_right = -253.0
-offset_bottom = 350.0
-text = "highest jump: 4 blocks"
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="TempText"]
-offset_left = -848.0
-offset_top = 324.0
-offset_right = -635.0
-offset_bottom = 381.0
-text = "Player fits in minimum 
-1 tile width - 2 tiles height"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
@@ -88,9 +58,11 @@ tile_set = ExtResource("5_ycjph")
 
 [node name="Plants" type="Node2D" parent="."]
 modulate = Color(0.0679779, 0.644531, 0.131038, 1)
+y_sort_enabled = true
+script = ExtResource("6_tci2t")
 
 [node name="PlantStem" parent="Plants" instance=ExtResource("6_cbuj4")]
-position = Vector2(680, 355)
+position = Vector2(680, 379)
 
 [node name="PlantBlock" parent="Plants" instance=ExtResource("7_tci2t")]
 position = Vector2(606, 241)
@@ -103,3 +75,34 @@ position = Vector2(603, 70)
 
 [node name="PlantBlock4" parent="Plants" instance=ExtResource("7_tci2t")]
 position = Vector2(746, -19)
+
+[node name="TempText" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TempText"]
+offset_left = 160.0
+offset_top = 476.0
+offset_right = 301.0
+offset_bottom = 526.0
+text = "48x48 tilemap"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TempText"]
+offset_left = -213.0
+offset_top = 365.0
+offset_right = -72.0
+offset_bottom = 415.0
+text = "smallest jump: 3 blocks"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="TempText"]
+offset_left = -394.0
+offset_top = 300.0
+offset_right = -253.0
+offset_bottom = 350.0
+text = "highest jump: 4 blocks"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="TempText"]
+offset_left = -848.0
+offset_top = 324.0
+offset_right = -635.0
+offset_bottom = 381.0
+text = "Player fits in minimum 
+1 tile width - 2 tiles height"

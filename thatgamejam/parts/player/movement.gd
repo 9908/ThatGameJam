@@ -7,10 +7,10 @@ const ACCEL = 3000.0
 const DEACCEL = 1400.0
 
 # Jump settings
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -1150.0
 const EXTRA_JUMPS = 1
-const GRAVITY = 1600.0
-const VARIABLE_JUMP_MULT = 0.9
+const GRAVITY = 3100.0
+const VARIABLE_JUMP_MULT = 0.95
 
 # Wall jump
 const WALL_JUMP_FORCE = Vector2(300, -400)
@@ -31,7 +31,6 @@ func _physics_process(delta):
 	
 	var move_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var on_floor = owner.is_on_floor()
-	var on_wall = owner.is_on_wall()
 
 	# Horizontal movement
 	if move_input != 0:
