@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvegjstwenvl"]
+
+[ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player.gd" id="1_xlo1q"]
+[ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/movement.gd" id="2_aaff8"]
+[ext_resource type="Script" uid="uid://hv3b5y0ql4rs" path="res://parts/grow_plant.gd" id="3_40wer"]
+[ext_resource type="Script" uid="uid://xre3judc673b" path="res://parts/player_animation_director.gd" id="3_nh1j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(63, 106)
+
+[node name="Player" type="CharacterBody2D"]
+floor_max_angle = 0.523599
+script = ExtResource("1_xlo1q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -106.0
+offset_right = 32.0
+pivot_offset = Vector2(34, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -54)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Abilities" type="Node2D" parent="."]
+
+[node name="Movement" type="Node2D" parent="Abilities"]
+script = ExtResource("2_aaff8")
+
+[node name="GrowPlant" type="Node2D" parent="Abilities"]
+script = ExtResource("3_40wer")
+
+[node name="AnimationDirector" type="Node2D" parent="."]
+script = ExtResource("3_nh1j4")

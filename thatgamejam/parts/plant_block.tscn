@@ -1,16 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwetwhh8pl3au"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(200.5, 76)
+size = Vector2(79.625, 16.5)
 
-[node name="Block" type="StaticBody2D"]
+[node name="PlantBlock" type="StaticBody2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -100.0
-offset_top = -37.0
-offset_right = 98.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+offset_left = -40.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.1875, -2.25)
 shape = SubResource("RectangleShape2D_h2yge")
+one_way_collision = true

@@ -1,5 +1,5 @@
-extends CharacterBody2D
-@onready var sprite: ColorRect = $ColorRect
+extends Node2D
+
 
 # Movement settings
 const MOVE_SPEED = 400.0
@@ -23,20 +23,21 @@ const JUMP_BUFFER_TIME = 0.1
 var jump_count = 0
 var coyote_timer = 0.0
 var jump_buffer_timer = 0.0
+var was_on_floor = false
 
 
 func _physics_process(delta):
 	# Get input
 	
 	var move_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	var on_floor = is_on_floor()
-	var on_wall = is_on_wall()
+	var on_floor = owner.is_on_floor()
+	var on_wall = owner.is_on_wall()
 
 	# Horizontal movement
 	if move_input != 0:
-		velocity.x = move_toward(velocity.x, move_input * MOVE_SPEED, ACCEL * delta)
+		owner.velocity.x = move_toward(owner.velocity.x, move_input * MOVE_SPEED, ACCEL * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, DEACCEL * delta)
+		owner.velocity.x = move_toward(owner.velocity.x, 0, DEACCEL * delta)
 
 	# Coyote time logic
 	if on_floor:
@@ -53,20 +54,23 @@ func _physics_process(delta):
 
 	# Jumping
 	if jump_buffer_timer > 0:
-		if coyote_timer > 0: # or jump_count < EXTRA_JUMPS:
-			velocity.y = JUMP_VELOCITY
+		if coyote_timer > 0: 
+			owner.velocity.y = JUMP_VELOCITY
 			jump_buffer_timer = 0.0
 			if not on_floor:
 				jump_count += 1
 
 	# Variable jump height
-	if not Input.is_action_pressed("jump") and velocity.y < 0:
-		velocity.y *= VARIABLE_JUMP_MULT
+	if not Input.is_action_pressed("jump") and owner.velocity.y < 0:
+		owner.velocity.y *= VARIABLE_JUMP_MULT
 
 	# Apply gravity
 	if not on_floor:
-		velocity.y += GRAVITY * delta
+		owner.velocity.y += GRAVITY * delta
 
 	# Move the character
-	move_and_slide()
+	owner.move_and_slide()
+	
+	was_on_floor = on_floor
+	
 	
