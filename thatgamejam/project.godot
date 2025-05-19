@@ -45,6 +45,10 @@ grow={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_5="plant"
+
 [physics]
 
 common/physics_interpolation=true

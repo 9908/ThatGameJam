@@ -7,6 +7,8 @@ var squash_lerp = 30.0
 
 
 func _physics_process(delta):
+	if owner.grow_plant.growing:
+		sprite.scale = Vector2(1.35, 0.65)
 	if Input.is_action_just_pressed("jump"):
 		squash_lerp = 1.0
 		sprite.scale = Vector2(1.35, 0.65)  

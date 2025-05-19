@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbkj2genwlf60"]
-
-[ext_resource type="Script" uid="uid://dho0ti158piic" path="res://parts/plant/plant_sidestem.gd" id="1_wp04e"]
-
-[node name="PlantSidestem" type="Node2D"]
-script = ExtResource("1_wp04e")
-
-[node name="Line2D" type="Line2D" parent="."]

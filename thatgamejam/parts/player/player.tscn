@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvegjstwenvl"]
+[gd_scene load_steps=7 format=3 uid="uid://dvegjstwenvl"]
 
 [ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player/player.gd" id="1_xlo1q"]
 [ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/player/movement.gd" id="2_aaff8"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(63, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5la5r"]
+size = Vector2(88, 20)
 
 [node name="Player" type="CharacterBody2D"]
 floor_max_angle = 0.523599
@@ -32,3 +35,16 @@ script = ExtResource("3_40wer")
 
 [node name="AnimationDirector" type="Node2D" parent="."]
 script = ExtResource("3_nh1j4")
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="PlantDetector" type="Area2D" parent="Areas"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/PlantDetector"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_5la5r")
+
+[connection signal="area_entered" from="Areas/PlantDetector" to="Abilities/GrowPlant" method="_on_plant_detector_area_entered"]
+[connection signal="area_exited" from="Areas/PlantDetector" to="Abilities/GrowPlant" method="_on_plant_detector_area_exited"]

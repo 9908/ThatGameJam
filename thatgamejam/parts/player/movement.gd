@@ -8,6 +8,7 @@ const DEACCEL = 1400.0
 
 # Jump settings
 const JUMP_VELOCITY = -1150.0
+const MAX_FALL_VELOCITY = 3500.0
 const EXTRA_JUMPS = 1
 const GRAVITY = 3100.0
 const VARIABLE_JUMP_MULT = 0.95
@@ -66,7 +67,11 @@ func _physics_process(delta):
 	# Apply gravity
 	if not on_floor:
 		owner.velocity.y += GRAVITY * delta
-
+		
+	# Cap velocity
+	if owner.velocity.y > MAX_FALL_VELOCITY:
+		owner.velocity.y = MAX_FALL_VELOCITY
+		
 	# Move the character
 	owner.move_and_slide()
 	
