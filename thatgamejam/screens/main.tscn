@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=11 format=4 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="PackedScene" uid="uid://dvegjstwenvl" path="res://parts/player/player.tscn" id="1_la406"]
+[ext_resource type="Script" uid="uid://c3wwq0ci0qeg8" path="res://screens/ui.gd" id="1_ycjph"]
 [ext_resource type="Script" uid="uid://biy0junvxa2cs" path="res://parts/game_camera.gd" id="2_cbuj4"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ee7ou"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_cbuj4"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_tci2t"]
 [ext_resource type="TileSet" uid="uid://bnpw4n583v4aa" path="res://assets/tilemap.tres" id="5_ycjph"]
 [ext_resource type="Script" uid="uid://djs6fudyg2o14" path="res://parts/plant/plants.gd" id="6_tci2t"]
+[ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="8_tci2t"]
 
 [sub_resource type="Resource" id="Resource_lquwl"]
 script = ExtResource("4_tci2t")
@@ -26,6 +28,17 @@ offset_top = -10.0
 offset_right = 1948.0
 offset_bottom = 1102.0
 color = Color(0.223529, 0.215686, 0.223529, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource("1_ycjph")
+
+[node name="FPS" type="RichTextLabel" parent="UI"]
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 40.0
+text = "60"
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_la406")]
 position = Vector2(425, 411)
@@ -93,3 +106,8 @@ offset_right = -635.0
 offset_bottom = 381.0
 text = "Player fits in minimum 
 1 tile width - 2 tiles height"
+
+[node name="Collectible" type="Node2D" parent="."]
+
+[node name="Collectible2" parent="." instance=ExtResource("8_tci2t")]
+position = Vector2(673, 309)

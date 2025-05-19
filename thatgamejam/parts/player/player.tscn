@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvegjstwenvl"]
+[gd_scene load_steps=10 format=3 uid="uid://dvegjstwenvl"]
 
 [ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player/player.gd" id="1_xlo1q"]
 [ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/player/movement.gd" id="2_aaff8"]
+[ext_resource type="PackedScene" uid="uid://c5m5maqnuqs4a" path="res://parts/collectible/backpack_ressource_visualisation.tscn" id="2_cixe0"]
+[ext_resource type="Script" uid="uid://dxplvwdfx176s" path="res://parts/collectible/backpack.gd" id="2_s4b6d"]
 [ext_resource type="Script" uid="uid://hv3b5y0ql4rs" path="res://parts/player/grow_plant.gd" id="3_40wer"]
 [ext_resource type="Script" uid="uid://xre3judc673b" path="res://parts/player/player_animation_director.gd" id="3_nh1j4"]
 
@@ -11,19 +13,129 @@ size = Vector2(63, 106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5la5r"]
 size = Vector2(88, 20)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5la5r"]
+radius = 61.0
+height = 160.0
+
 [node name="Player" type="CharacterBody2D"]
 floor_max_angle = 0.523599
 script = ExtResource("1_xlo1q")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -54)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Visual"]
 offset_left = -32.0
 offset_top = -106.0
 offset_right = 32.0
 pivot_offset = Vector2(34, 102)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -54)
-shape = SubResource("RectangleShape2D_ig7tw")
+[node name="Backpack" type="Node2D" parent="Visual"]
+position = Vector2(-66, -65)
+script = ExtResource("2_s4b6d")
+
+[node name="Backpack" type="ColorRect" parent="Visual/Backpack"]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 37.0
+offset_bottom = 31.0
+pivot_offset = Vector2(18, 16)
+metadata/_edit_use_anchors_ = true
+
+[node name="RessourceVisualisation" type="Node2D" parent="Visual/Backpack"]
+
+[node name="BackpackRessourceVisualisation" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(3, 27)
+
+[node name="BackpackRessourceVisualisation2" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(9, 27)
+
+[node name="BackpackRessourceVisualisation3" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(15, 27)
+
+[node name="BackpackRessourceVisualisation4" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(21, 27)
+
+[node name="BackpackRessourceVisualisation5" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(27, 27)
+
+[node name="BackpackRessourceVisualisation6" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(33, 27)
+
+[node name="BackpackRessourceVisualisation7" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(3, 21)
+
+[node name="BackpackRessourceVisualisation8" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(9, 21)
+
+[node name="BackpackRessourceVisualisation9" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(15, 21)
+
+[node name="BackpackRessourceVisualisation10" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(21, 21)
+
+[node name="BackpackRessourceVisualisation11" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(27, 21)
+
+[node name="BackpackRessourceVisualisation12" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(33, 21)
+
+[node name="BackpackRessourceVisualisation13" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(3, 15)
+
+[node name="BackpackRessourceVisualisation14" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(9, 15)
+
+[node name="BackpackRessourceVisualisation15" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(15, 15)
+
+[node name="BackpackRessourceVisualisation16" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(21, 15)
+
+[node name="BackpackRessourceVisualisation17" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(27, 15)
+
+[node name="BackpackRessourceVisualisation18" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(33, 15)
+
+[node name="BackpackRessourceVisualisation19" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(3, 9)
+
+[node name="BackpackRessourceVisualisation20" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(9, 9)
+
+[node name="BackpackRessourceVisualisation21" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(15, 9)
+
+[node name="BackpackRessourceVisualisation22" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(21, 9)
+
+[node name="BackpackRessourceVisualisation23" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(27, 9)
+
+[node name="BackpackRessourceVisualisation24" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(33, 9)
+
+[node name="BackpackRessourceVisualisation25" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(3, 3)
+
+[node name="BackpackRessourceVisualisation26" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(9, 3)
+
+[node name="BackpackRessourceVisualisation27" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(15, 3)
+
+[node name="BackpackRessourceVisualisation28" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(21, 3)
+
+[node name="BackpackRessourceVisualisation29" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(27, 3)
+
+[node name="BackpackRessourceVisualisation30" parent="Visual/Backpack/RessourceVisualisation" instance=ExtResource("2_cixe0")]
+position = Vector2(33, 3)
 
 [node name="Abilities" type="Node2D" parent="."]
 
@@ -46,5 +158,14 @@ collision_mask = 16
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_5la5r")
 
+[node name="CollectibleDetector" type="Area2D" parent="Areas"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/CollectibleDetector"]
+position = Vector2(0, -57)
+shape = SubResource("CapsuleShape2D_5la5r")
+
 [connection signal="area_entered" from="Areas/PlantDetector" to="Abilities/GrowPlant" method="_on_plant_detector_area_entered"]
 [connection signal="area_exited" from="Areas/PlantDetector" to="Abilities/GrowPlant" method="_on_plant_detector_area_exited"]
+[connection signal="area_entered" from="Areas/CollectibleDetector" to="Abilities/GrowPlant" method="_on_collectible_detector_area_entered"]

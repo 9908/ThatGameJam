@@ -37,3 +37,7 @@ func pop_plant_block():
 	var new_plant_block = plant_block_scn.instantiate()
 	plant_blocks.add_child(new_plant_block)
 	new_plant_block.initiate(global_position + Vector2(block_pop_direction * 48 * 1.5, -plant_stem.length), self)
+
+	Globals.player.grow_plant.remove_ressource(1)
+	if Globals.player.grow_plant.ressource <= 0:
+		stop_growing()

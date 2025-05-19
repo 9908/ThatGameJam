@@ -48,6 +48,7 @@ grow={
 [layer_names]
 
 2d_physics/layer_5="plant"
+2d_physics/layer_6="collectible"
 
 [physics]
 
