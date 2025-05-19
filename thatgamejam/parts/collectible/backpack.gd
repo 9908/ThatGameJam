@@ -10,4 +10,4 @@ func set_value(value: int):
 	var counter: int = 0
 	for visualisation in ressource_visualisations:
 		counter += 1
-		visualisation.visible = counter < value
+		visualisation.visible = counter <= value

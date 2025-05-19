@@ -5,6 +5,7 @@ var ressource: int = 0
 var plant_scn = preload("res://parts/plant/plant.tscn")
 var nearby_plant = null
 var nearby_plant_count: int = 0
+var plant_block_id: int = 0
 var growing: bool = false
 
 
@@ -13,7 +14,9 @@ func _physics_process(_delta):
 		start_growing()
 	elif Input.is_action_just_released("grow"):
 		stop_growing()
-		
+	elif Input.is_action_just_pressed("cut"):
+		cut_plant()
+
 
 func start_growing():
 	if growing or not owner.is_on_floor() or ressource <= 0: 
@@ -39,10 +42,20 @@ func stop_growing():
 	Globals.camera.set_target(Globals.player)
 
 
+func cut_plant():
+	if nearby_plant == null:
+		return
+	if plant_block_id >= nearby_plant.block_popped:
+		return
+	get_ressource(nearby_plant.block_popped - plant_block_id)
+	nearby_plant.cut_off(plant_block_id)
+	
+
 func _on_plant_detector_area_entered(area: Area2D) -> void:
 	nearby_plant_count += 1
 	nearby_plant = area.plant
-
+	plant_block_id = area.block_position
+	
 
 func _on_plant_detector_area_exited(_area: Area2D) -> void:
 	nearby_plant_count -= 1
