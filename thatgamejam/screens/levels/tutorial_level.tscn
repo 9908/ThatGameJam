@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bt24ulqolt4ng"]
+[gd_scene load_steps=10 format=4 uid="uid://bt24ulqolt4ng"]
 
 [ext_resource type="Script" uid="uid://cbmh45dbcd48s" path="res://screens/levels/base_level.gd" id="1_kwy4s"]
 [ext_resource type="TileSet" uid="uid://bnpw4n583v4aa" path="res://assets/tilemap.tres" id="2_k861e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="7_1m88j"]
 [ext_resource type="Script" uid="uid://dt60varr3x17b" path="res://screens/agents.gd" id="8_kb38q"]
 [ext_resource type="PackedScene" uid="uid://boxhuyg61cdbk" path="res://parts/letter_box/letter_box.tscn" id="8_kwy4s"]
+[ext_resource type="PackedScene" uid="uid://bxrs7jq0ve1qn" path="res://parts/hazard/spike.tscn" id="9_6ud0y"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="9_k861e"]
 
 [node name="TestLevel" type="Node2D"]
@@ -293,7 +294,18 @@ position = Vector2(4095, -4510)
 script = ExtResource("8_kb38q")
 
 [node name="PlayerStartPos" type="Marker2D" parent="."]
-position = Vector2(3191, -5029)
+position = Vector2(1336, 276)
 
 [node name="LetterBox" parent="." instance=ExtResource("8_kwy4s")]
 position = Vector2(3077, -1965)
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="Spike" parent="Hazards" instance=ExtResource("9_6ud0y")]
+position = Vector2(1944, 193)
+
+[node name="Spike2" parent="Hazards" instance=ExtResource("9_6ud0y")]
+position = Vector2(2436, 96)
+
+[node name="Spike3" parent="Hazards" instance=ExtResource("9_6ud0y")]
+position = Vector2(1788, 576)

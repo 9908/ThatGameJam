@@ -43,6 +43,8 @@ func _physics_process(delta):
 	if on_floor:
 		coyote_timer = COYOTE_TIME
 		jump_count = 0
+		owner.last_save_point.insert(0,owner.global_position)
+		owner.last_save_point.resize(60)
 	else:
 		coyote_timer -= delta
 

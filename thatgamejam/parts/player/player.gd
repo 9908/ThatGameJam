@@ -5,9 +5,20 @@ extends CharacterBody2D
 @onready var animation_director: Node2D = $AnimationDirector
 
 var active: bool = true  : set = set_active
+var last_save_point: PackedVector2Array
 
 func _ready() -> void:
 	Globals.player = self
+
+
+func dies(hazard):
+	var respawn_pos = last_save_point.get(last_save_point.size()-1)
+	Globals.player.hide()
+	Globals.player.set_active(false)
+	await get_tree().create_timer(1.0).timeout
+	Globals.player.set_active(true)
+	Globals.player.show()
+	Globals.player.global_position = respawn_pos
 	
 	
 func set_active(new_val: bool):

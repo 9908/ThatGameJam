@@ -21,6 +21,8 @@ script = ExtResource("2_pte4h")
 
 [node name="Items" type="Node2D" parent="."]
 
+[node name="Hazards" type="Node2D" parent="."]
+
 [node name="Collectible" type="Node2D" parent="."]
 
 [node name="Agents" type="Node2D" parent="."]

@@ -58,6 +58,7 @@ script = ExtResource("4_ycjph")
 
 [node name="ColorRect" type="ColorRect" parent="UI/PopUpQuestion"]
 custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
 offset_left = -269.0
 offset_top = -79.0
 offset_right = 259.0
