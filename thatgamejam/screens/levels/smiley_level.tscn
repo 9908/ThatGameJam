@@ -59,9 +59,9 @@ position = Vector2(-123, 189)
 [node name="Collectible16" parent="Collectible" index="14" instance=ExtResource("2_02tdu")]
 position = Vector2(-123, 189)
 
-[node name="PlayerStartPos" parent="." index="5"]
-position = Vector2(347, 516)
-
 [node name="Teleporter" parent="." index="6" instance=ExtResource("3_504s1")]
 position = Vector2(948, 575)
 next_level_scn = ExtResource("4_6nsf7")
+
+[node name="PlayerStartPos" parent="." index="7"]
+position = Vector2(347, 516)

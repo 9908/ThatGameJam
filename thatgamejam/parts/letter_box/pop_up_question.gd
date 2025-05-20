@@ -41,6 +41,7 @@ func set_active(new_val: bool):
 		if Globals.player.grow_plant.ressource == 0:
 			hide_all_containers()
 			receive_container.show()
+			line_edit_receive.text = ""
 			rich_text_label.text = "Enter gifted code"
 		else:
 			hide_all_containers()
@@ -58,26 +59,39 @@ func _on_yes_button_pressed() -> void:
 
 func update_share_window():
 	rich_text_label.text = "Give this code to a fellow player to offer your " + str(Globals.player.grow_plant.ressource) + str(" RESSOURCE")
-	var code = encode_ressource(Globals.player.grow_plant.ressource)
+	var code = encode_donation(Globals.player.grow_plant.ressource)
 	Globals.player.grow_plant.remove_ressource(Globals.player.grow_plant.ressource)
 	line_edit_give.text = code
 	
 
-func encode_ressource(amount: int) -> String:
-	var buffer = PackedByteArray()
-	buffer.append(amount & 0xFF)
-	buffer.append((amount >> 8) & 0xFF)
-	return Marshalls.raw_to_base64(buffer)
+func encode_donation(light: int) -> String:
+	var username = "Player"
+	if OS.has_environment("USERNAME"):
+		username = OS.get_environment("USERNAME")
+
+	var data := {
+		"user": username,
+		"time": Time.get_datetime_string_from_system(),  
+		"light": light
+	}
+
+	var json_string = JSON.stringify(data)
+	var byte_array = json_string.to_utf8_buffer()
+	return Marshalls.raw_to_base64(byte_array)
 
 
-func decode_ressource(code: String) -> int:
-	var buffer = Marshalls.base64_to_raw(code)
+func decode_donation(code: String) -> Dictionary:
+	var byte_array = Marshalls.base64_to_raw(code)
+	if byte_array.is_empty():
+		return {}
+
+	var json_string = byte_array.get_string_from_utf8()
+	var result= JSON.parse_string(json_string)
 	
-	if buffer.is_empty() or buffer.size() < 2:
-		return 0
-	var low_byte = buffer[0]
-	var high_byte = buffer[1]
-	return low_byte | (high_byte << 8)
+	if result == null or not result is Dictionary:
+		return {}
+
+	return result
 
 
 func _on_no_button_pressed() -> void:
@@ -118,10 +132,11 @@ func _on_activate_code_button_pressed() -> void:
 	if activated_codes.has(line_edit_receive.text):
 		rich_text_label.text = "Enter a gifted code not already used"
 		return
-	var decoded_value = decode_ressource(line_edit_receive.text)
-	if not decoded_value == 0:
+	var decoded_value = decode_donation(line_edit_receive.text)
+	print(decoded_value)
+	if not decoded_value.light == 0:
 		activated_codes.append(line_edit_receive.text)
-		Globals.player.grow_plant.get_ressource(decoded_value)
-		rich_text_label.text = "Successfully received " + str(decoded_value) + " --- Amazing !"
+		Globals.player.grow_plant.get_ressource(decoded_value.light)
+		rich_text_label.text = "Successfully received " + str(decoded_value.light) + " --- Amazing !"
 		hide_all_containers()
 		success_container.show()
