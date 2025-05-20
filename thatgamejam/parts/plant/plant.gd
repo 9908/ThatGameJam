@@ -8,6 +8,7 @@ extends Node2D
 @onready var plant_blocks: Node2D = $PlantBlocks
 @onready var plant_area: Area2D = $PlantArea
 
+var can_grow: bool = true
 var growth_rate: float = 150.0
 var plant_block_scn = preload("res://parts/plant/plant_block.tscn")
 var block_popped: int = 0
@@ -36,7 +37,8 @@ func set_init_length(new_length):
 	
 
 func start_growing():
-	set_process(true)
+	if can_grow:
+		set_process(true)
 
 
 func stop_growing():
@@ -73,3 +75,8 @@ func cut_off(cutoff_position: int):
 		for block in plant_blocks.get_children():
 			if block.plant_area.block_position > cutoff_position:
 				block.queue_free()
+
+
+func _on_plant_stem_plant_collided() -> void:
+	can_grow = false
+	stop_growing()

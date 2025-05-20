@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdopy2wwy12a6"]
+[gd_scene load_steps=3 format=3 uid="uid://cdopy2wwy12a6"]
 
 [ext_resource type="Script" uid="uid://sk1vadxoyk4w" path="res://parts/plant/plant_stem.gd" id="1_4isf5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gs0cg"]
+radius = 33.2415
 
 [node name="PlantStem" type="Node2D"]
 script = ExtResource("1_4isf5")
@@ -17,3 +20,12 @@ offset_left = -12.0
 offset_top = -12.0
 offset_right = 12.0
 offset_bottom = 12.0
+
+[node name="CollisionDetector" type="Area2D" parent="EndPoint"]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPoint/CollisionDetector"]
+shape = SubResource("CircleShape2D_gs0cg")
+
+[connection signal="body_shape_entered" from="EndPoint/CollisionDetector" to="." method="_on_collision_detector_body_shape_entered"]

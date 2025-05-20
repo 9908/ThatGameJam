@@ -57,6 +57,7 @@ cut={
 
 2d_physics/layer_5="plant"
 2d_physics/layer_6="collectible"
+2d_physics/layer_7="wall"
 
 [physics]
 

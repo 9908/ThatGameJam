@@ -22,3 +22,5 @@ script = ExtResource("3_uspy1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlantArea"]
 shape = SubResource("RectangleShape2D_7lcdi")
+
+[connection signal="plant_collided" from="PlantStem" to="." method="_on_plant_stem_plant_collided"]
