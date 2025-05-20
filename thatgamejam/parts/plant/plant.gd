@@ -1,4 +1,8 @@
+@tool
 extends Node2D
+
+@export var init_length: float = 100.0 : set = set_init_length
+
 
 @onready var plant_stem: Node2D = $PlantStem
 @onready var plant_blocks: Node2D = $PlantBlocks
@@ -10,16 +14,26 @@ var block_popped: int = 0
 var block_pop_direction: int = 1
 var block_vertical_spacing: float = 48.0 * 3.0
 
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
-@onready var rich_text_label_2: RichTextLabel = $RichTextLabel2
-
 
 func _ready() -> void:
 	set_process(false)
 	plant_area.plant = self
 	plant_stem.length = 0
-	modulate.a = 0
+	if init_length == 0:
+		modulate.a = 0
+	else:
+		for i in range(0, floori(init_length / block_vertical_spacing)):
+			plant_stem.length += block_vertical_spacing
+			pop_plant_block(0)
+		plant_stem.length = init_length
+	set_init_length(init_length)
 
+
+func set_init_length(new_length):
+	init_length = new_length
+	if is_instance_valid(plant_stem):
+		plant_stem.length = init_length
+	
 
 func start_growing():
 	set_process(true)
@@ -36,7 +50,7 @@ func _process(delta: float) -> void:
 		pop_plant_block()
 		
 
-func pop_plant_block():
+func pop_plant_block(cost: int = 1):
 	block_popped += 1
 	block_pop_direction *= -1
 	
@@ -44,9 +58,10 @@ func pop_plant_block():
 	plant_blocks.add_child(new_plant_block)
 	new_plant_block.initiate(global_position + Vector2(block_pop_direction * 48 * 1.5, -plant_stem.length), self, block_popped)
 
-	Globals.player.grow_plant.remove_ressource(1)
-	if Globals.player.grow_plant.ressource <= 0:
-		stop_growing()
+	if not cost == 0:
+		Globals.player.grow_plant.remove_ressource(cost)
+		if Globals.player.grow_plant.ressource <= 0:
+			stop_growing()
 
 
 func cut_off(cutoff_position: int):

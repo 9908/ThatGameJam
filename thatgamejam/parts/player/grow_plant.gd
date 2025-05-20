@@ -25,6 +25,7 @@ func start_growing():
 	owner.movement.set_physics_process(false)
 	if nearby_plant == null:
 		nearby_plant = plant_scn.instantiate()
+		nearby_plant.init_length = 0.0
 		Globals.plants.add_child(nearby_plant)
 		nearby_plant.global_position = owner.global_position + Vector2(0, 1)
 		nearby_plant.start_growing()

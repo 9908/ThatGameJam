@@ -11,6 +11,7 @@ size = Vector2(236.5, 134.813)
 script = ExtResource("1_7lcdi")
 
 [node name="PlantStem" parent="." instance=ExtResource("1_66jxd")]
+length = 100.0
 
 [node name="PlantBlocks" type="Node2D" parent="."]
 
