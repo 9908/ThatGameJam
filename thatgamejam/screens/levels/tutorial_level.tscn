@@ -292,4 +292,4 @@ position = Vector2(4095, -4510)
 script = ExtResource("8_kb38q")
 
 [node name="PlayerStartPos" type="Marker2D" parent="."]
-position = Vector2(406, 469)
+position = Vector2(3191, -5029)

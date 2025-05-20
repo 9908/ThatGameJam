@@ -8,10 +8,12 @@ func _ready() -> void:
 
 
 func _enter_tree() -> void:
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().process_frame
 	if Globals.player == null:
 		var player = player_scn.instantiate()
-		Globals.agents.add_child(player)
+		Globals.main.add_child(player)
 	Globals.player.global_position = player_start_pos.global_position
 	Globals.camera.set_process(true)
 	Globals.camera.set_target(Globals.player)
+	await get_tree().process_frame
+	Globals.camera.teleport_position()

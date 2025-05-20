@@ -9,8 +9,13 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	phantom_camera_2d.follow_damping_value = Vector2.ONE * 0.5 * (1 - (Globals.player.velocity.y / Globals.player.movement.MAX_FALL_VELOCITY))
+	return
+	#phantom_camera_2d.follow_damping_value = Vector2.ONE * 0.5 * (1 - (Globals.player.velocity.y / Globals.player.movement.MAX_FALL_VELOCITY))
 	
 	
 func set_target(new_target):
 	phantom_camera_2d.follow_target = new_target
+
+
+func teleport_position():
+	phantom_camera_2d.teleport_position()
