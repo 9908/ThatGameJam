@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bt24ulqolt4ng"]
+[gd_scene load_steps=9 format=4 uid="uid://bt24ulqolt4ng"]
 
 [ext_resource type="Script" uid="uid://cbmh45dbcd48s" path="res://screens/levels/base_level.gd" id="1_kwy4s"]
 [ext_resource type="TileSet" uid="uid://bnpw4n583v4aa" path="res://assets/tilemap.tres" id="2_k861e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxrgj142l4ifr" path="res://assets/temp/menu_cloud_05.png" id="6_qof22"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="7_1m88j"]
 [ext_resource type="Script" uid="uid://dt60varr3x17b" path="res://screens/agents.gd" id="8_kb38q"]
+[ext_resource type="PackedScene" uid="uid://boxhuyg61cdbk" path="res://parts/letter_box/letter_box.tscn" id="8_kwy4s"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="9_k861e"]
 
 [node name="TestLevel" type="Node2D"]
@@ -293,3 +294,6 @@ script = ExtResource("8_kb38q")
 
 [node name="PlayerStartPos" type="Marker2D" parent="."]
 position = Vector2(3191, -5029)
+
+[node name="LetterBox" parent="." instance=ExtResource("8_kwy4s")]
+position = Vector2(3077, -1965)

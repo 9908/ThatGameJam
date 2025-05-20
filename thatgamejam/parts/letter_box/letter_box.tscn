@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://boxhuyg61cdbk"]
+
+[ext_resource type="Script" uid="uid://bm7228xvudlov" path="res://parts/letter_box/letter_box.gd" id="1_hb46q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkvy"]
+size = Vector2(143, 163)
+
+[node name="LetterBox" type="Node2D"]
+script = ExtResource("1_hb46q")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Visual"]
+offset_left = -6.0
+offset_top = -73.0
+offset_right = 6.0
+
+[node name="ColorRect2" type="ColorRect" parent="Visual"]
+offset_left = -44.0
+offset_top = -113.0
+offset_right = 43.0
+offset_bottom = -59.0
+
+[node name="ColorRect5" type="ColorRect" parent="Visual"]
+offset_left = -44.0
+offset_top = -113.0
+offset_right = 18.0
+offset_bottom = -52.0
+rotation = -0.776575
+
+[node name="ColorRect3" type="ColorRect" parent="Visual"]
+offset_left = -31.0
+offset_top = -106.0
+offset_right = 29.0
+offset_bottom = -92.0
+color = Color(0.628906, 0.628906, 0.628906, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Visual"]
+offset_left = -27.0
+offset_top = -101.0
+offset_right = 24.0
+offset_bottom = -97.0
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -79)
+shape = SubResource("RectangleShape2D_dpkvy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

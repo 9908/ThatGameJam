@@ -6,3 +6,4 @@ var plants
 var camera
 var agents 
 var level
+var pop_up_question

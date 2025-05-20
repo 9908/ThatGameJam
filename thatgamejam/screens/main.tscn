@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=10 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ee7ou"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_cbuj4"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_tci2t"]
+[ext_resource type="Script" uid="uid://c40r4iw83noy" path="res://parts/letter_box/pop_up_question.gd" id="4_ycjph"]
 
 [sub_resource type="Resource" id="Resource_lquwl"]
 script = ExtResource("4_tci2t")
@@ -31,7 +32,6 @@ offset_bottom = 1102.0
 color = Color(0.223529, 0.215686, 0.223529, 1)
 
 [node name="UI" type="CanvasLayer" parent="."]
-layer = -1
 script = ExtResource("1_ycjph")
 
 [node name="FPS" type="RichTextLabel" parent="UI"]
@@ -40,6 +40,135 @@ offset_right = 46.0
 offset_bottom = 40.0
 text = "60"
 metadata/_edit_use_anchors_ = true
+
+[node name="PopUpQuestion" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ycjph")
+
+[node name="ColorRect" type="ColorRect" parent="UI/PopUpQuestion"]
+custom_minimum_size = Vector2(0, 50)
+offset_left = -269.0
+offset_top = -79.0
+offset_right = 259.0
+offset_bottom = 90.0
+color = Color(0.523438, 0.523438, 0.523438, 1)
+
+[node name="PopUpQuestion" type="VBoxContainer" parent="UI/PopUpQuestion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -59.0
+offset_right = 228.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PopUpQuestion/PopUpQuestion/TextContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+text = "Do you want to give all your remaining light to another player ?"
+horizontal_alignment = 1
+
+[node name="QuestionContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="YesButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/QuestionContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "YES"
+
+[node name="NoButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/QuestionContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "No"
+
+[node name="LineEditContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="UI/PopUpQuestion/PopUpQuestion/LineEditContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="ShareButtonButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/LineEditContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Share code in Itch Comment"
+
+[node name="Close" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/LineEditContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Close
+"
+
+[node name="ReceiveContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="ActivateCodeButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Activate Code"
+
+[node name="CloseReceive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Close
+"
+
+[node name="GiveOrReceiveContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Give" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Give"
+
+[node name="Receive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Receive"
+
+[node name="SuccessContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="CloseReceive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/SuccessContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Close
+"
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(425, 411)
@@ -60,3 +189,13 @@ tween_resource = SubResource("Resource_lquwl")
 follow_damping = true
 follow_damping_value = Vector2(0.5, 0.5)
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/QuestionContainer/YesButton" to="UI/PopUpQuestion" method="_on_yes_button_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/QuestionContainer/NoButton" to="UI/PopUpQuestion" method="_on_no_button_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/LineEditContainer/ShareButtonButton" to="UI/PopUpQuestion" method="_on_share_button_button_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/LineEditContainer/Close" to="UI/PopUpQuestion" method="_on_close_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer/ActivateCodeButton" to="UI/PopUpQuestion" method="_on_activate_code_button_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer/CloseReceive" to="UI/PopUpQuestion" method="_on_close_receive_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer/Give" to="UI/PopUpQuestion" method="_on_give_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer/Receive" to="UI/PopUpQuestion" method="_on_receive_pressed"]
+[connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/SuccessContainer/CloseReceive" to="UI/PopUpQuestion" method="_on_close_receive_pressed"]
