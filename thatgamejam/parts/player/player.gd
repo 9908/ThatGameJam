@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var movement: Node2D = $Abilities/Movement
 @onready var grow_plant: Node2D = $Abilities/GrowPlant
 @onready var animation_director: Node2D = $AnimationDirector
+@onready var camera_target: Marker2D = $CameraTarget/EndPoint
 
 var active: bool = true  : set = set_active
 var last_save_point: PackedVector2Array

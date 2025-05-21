@@ -40,7 +40,7 @@ func stop_growing():
 	growing = false
 	owner.movement.set_physics_process(true)
 	nearby_plant.stop_growing()
-	Globals.camera.set_target(Globals.player)
+	Globals.camera.set_target(Globals.player.camera_target)
 
 
 func cut_plant():

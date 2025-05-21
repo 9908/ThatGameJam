@@ -1,5 +1,6 @@
 extends Node2D
 
+var listen_to_input: bool= true
 
 # Movement settings
 const MOVE_SPEED = 400.0
@@ -32,12 +33,13 @@ func _physics_process(delta):
 	
 	var move_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var on_floor = owner.is_on_floor()
-
-	# Horizontal movement
-	if move_input != 0:
-		owner.velocity.x = move_toward(owner.velocity.x, move_input * MOVE_SPEED, ACCEL * delta)
-	else:
-		owner.velocity.x = move_toward(owner.velocity.x, 0, DEACCEL * delta)
+	
+	if listen_to_input:
+		# Horizontal movement
+		if move_input != 0:
+			owner.velocity.x = move_toward(owner.velocity.x, move_input * MOVE_SPEED, ACCEL * delta)
+		else:
+			owner.velocity.x = move_toward(owner.velocity.x, 0, DEACCEL * delta)
 
 	# Coyote time logic
 	if on_floor:
@@ -49,7 +51,7 @@ func _physics_process(delta):
 		coyote_timer -= delta
 
 	# Jump buffering
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and listen_to_input:
 		jump_buffer_timer = JUMP_BUFFER_TIME
 	else:
 		jump_buffer_timer -= delta
@@ -63,7 +65,7 @@ func _physics_process(delta):
 				jump_count += 1
 
 	# Variable jump height
-	if not Input.is_action_pressed("jump") and owner.velocity.y < 0:
+	if not Input.is_action_pressed("jump") and owner.velocity.y < 0 and listen_to_input:
 		owner.velocity.y *= VARIABLE_JUMP_MULT
 
 	# Apply gravity
@@ -77,6 +79,13 @@ func _physics_process(delta):
 	# Move the character
 	owner.move_and_slide()
 	
+	var target_camera_pos = 250.0*owner.velocity.normalized()
+	if Input.get_action_strength("ui_up"):
+		target_camera_pos += Vector2(0, -125)
+	elif Input.get_action_strength("ui_down"):
+		target_camera_pos += Vector2(0, 125)
+	owner.camera_target.position = lerp(owner.camera_target.position, target_camera_pos, 0.1) 
+		
 	was_on_floor = on_floor
 	
 	

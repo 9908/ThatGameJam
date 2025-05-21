@@ -9,12 +9,14 @@ size = Vector2(213, 76)
 script = ExtResource("1_x4hne")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -106.0
 offset_top = -10.0
 offset_right = 107.0
 pivot_offset = Vector2(106, 20)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 offset_left = -61.0
 offset_top = -34.0
 offset_right = 68.0
