@@ -11,5 +11,5 @@ tile_map_data = PackedByteArray("AAAVAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAATAAwAAAAAAAA
 [node name="Plant" parent="Plants" index="0" instance=ExtResource("2_eh2ba")]
 position = Vector2(-284, 577)
 
-[node name="PlayerStartPos" parent="." index="5"]
+[node name="PlayerStartPos" parent="." index="6"]
 position = Vector2(14, 271)

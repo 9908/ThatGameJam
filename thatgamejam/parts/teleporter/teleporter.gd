@@ -5,16 +5,19 @@ extends Node2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == Globals.player:
+		Globals.camera.set_process(false)
 		if walk_to_the_right_fade:
 			Globals.player.movement.listen_to_input = false
 			Globals.player.velocity.x = Globals.player.movement.MOVE_SPEED
-			await get_tree().create_timer(2.0).timeout
+			await get_tree().create_timer(1.0).timeout
+			Globals.fade.fade(1.0)
+			await get_tree().create_timer(1.0).timeout
 			
-		Globals.camera.set_process(false)
 		Globals.level.queue_free()
 		var next_level = next_level_scn.instantiate()
 		Globals.main.add_child(next_level)
 		Globals.player.movement.listen_to_input = true
 		Globals.player.velocity.x = 0
+		Globals.fade.fade(0.0)
 		
 		

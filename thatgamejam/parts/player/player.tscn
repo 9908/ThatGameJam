@@ -172,6 +172,7 @@ position = Vector2(0, -100)
 [node name="EndPoint" type="Marker2D" parent="CameraTarget"]
 
 [node name="ColorRect" type="ColorRect" parent="CameraTarget/EndPoint"]
+visible = false
 offset_left = -4.0
 offset_top = -4.0
 offset_right = 5.0
