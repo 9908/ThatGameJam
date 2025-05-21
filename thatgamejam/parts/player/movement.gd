@@ -80,7 +80,7 @@ func _physics_process(delta):
 	# Move the character
 	owner.move_and_slide()
 	
-	var target_camera_pos = 250.0*owner.velocity.normalized()
+	var target_camera_pos = 125.0*owner.velocity.normalized()
 	if Input.get_action_strength("ui_up"):
 		target_camera_pos += Vector2(0, -125)
 	elif Input.get_action_strength("ui_down"):
