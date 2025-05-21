@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dt60varr3x17b" path="res://screens/agents.gd" id="7_xj1xy"]
 
 [node name="BaseLevel" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_lv6o2")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
