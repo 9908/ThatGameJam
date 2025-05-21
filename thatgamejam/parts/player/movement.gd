@@ -58,8 +58,9 @@ func _physics_process(delta):
 
 	# Jumping
 	if jump_buffer_timer > 0:
-		if coyote_timer > 0: 
+		if coyote_timer > 0 and owner.velocity.y >= 0: 
 			owner.velocity.y = JUMP_VELOCITY
+			owner.animation_director.sprite.scale = Vector2(1.35, 0.65)
 			jump_buffer_timer = 0.0
 			if not on_floor:
 				jump_count += 1

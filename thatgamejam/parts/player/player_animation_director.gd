@@ -12,8 +12,7 @@ func _physics_process(delta):
 		sprite.scale = Vector2(1.35, 0.65)
 		
 	if Input.is_action_just_pressed("jump"):
-		squash_lerp = 1.0
-		sprite.scale = Vector2(1.35, 0.65)  
+		squash_lerp = 1.0  
 		
 	apply_squash_and_stretch(delta)
 	if not owner.velocity.x == 0:
