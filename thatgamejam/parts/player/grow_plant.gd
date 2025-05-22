@@ -7,6 +7,7 @@ var nearby_plant = null
 var nearby_plant_count: int = 0
 var plant_block_id: int = 0
 var growing: bool = false
+@onready var plant_detector: Area2D = $"../../Areas/PlantDetector"
 
 
 func _physics_process(_delta):
@@ -16,7 +17,7 @@ func _physics_process(_delta):
 		stop_growing()
 	elif Input.is_action_just_pressed("cut"):
 		cut_plant()
-
+		
 
 func start_growing():
 	if growing or not owner.is_on_floor() or ressource <= 0: 
@@ -44,6 +45,9 @@ func stop_growing():
 
 
 func cut_plant():
+	for plant_area in plant_detector.get_overlapping_areas():
+		if plant_area.plant.block_popped > 0:
+			nearby_plant = plant_area.plant
 	if nearby_plant == null:
 		return
 	if plant_block_id >= nearby_plant.block_popped:
