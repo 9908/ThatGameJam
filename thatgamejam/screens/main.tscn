@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=18 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -6,10 +6,30 @@
 [ext_resource type="Script" uid="uid://biy0junvxa2cs" path="res://parts/game_camera.gd" id="2_cbuj4"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ee7ou"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_cbuj4"]
+[ext_resource type="Script" uid="uid://vumutmqq4ig6" path="res://screens/dynamic_background.gd" id="3_nrb37"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_tci2t"]
 [ext_resource type="Script" uid="uid://c40r4iw83noy" path="res://parts/letter_box/pop_up_question.gd" id="4_ycjph"]
 [ext_resource type="Script" uid="uid://c17v2e17lebqk" path="res://screens/pause_menu.gd" id="5_ramac"]
 [ext_resource type="Script" uid="uid://dnebbhspdocje" path="res://screens/fade.gd" id="5_ycjph"]
+
+[sub_resource type="Gradient" id="Gradient_nrb37"]
+offsets = PackedFloat32Array(0, 0.5, 0.840102, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.102997, 0.118047, 0.488281, 1, 0.896974, 0.902344, 0.215012, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_owlgm"]
+offsets = PackedFloat32Array(0, 0.408629, 0.794416, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.28038, 0.32261, 0.488281, 1, 0.267761, 0.383172, 0.835938, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_xd12c"]
+offsets = PackedFloat32Array(0, 0.312183, 0.786802, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.464844, 0.875, 0.855774, 1, 0.902344, 0.49782, 0.444122, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_era8c"]
+offsets = PackedFloat32Array(0, 0.457969, 0.819086, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.184593, 0.212146, 0.488281, 1, 0.607536, 0.663525, 0.500638, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1s7cm"]
+gradient = SubResource("Gradient_era8c")
 
 [sub_resource type="Resource" id="Resource_lquwl"]
 script = ExtResource("4_tci2t")
@@ -26,12 +46,19 @@ script = ExtResource("1_cbuj4")
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="DynamicBackground" type="Node" parent="Background"]
+script = ExtResource("3_nrb37")
+gradients = Array[Gradient]([SubResource("Gradient_nrb37"), SubResource("Gradient_owlgm"), SubResource("Gradient_xd12c")])
+day_progress = 0.46
+color_rect_path = NodePath("ColorRect")
+
+[node name="ColorRect" type="TextureRect" parent="Background/DynamicBackground"]
 offset_left = -16.0
-offset_top = -10.0
-offset_right = 1948.0
-offset_bottom = 1102.0
-color = Color(0.223529, 0.215686, 0.223529, 1)
+offset_top = 1093.0
+offset_right = 1093.0
+offset_bottom = 3059.0
+rotation = 4.71238
+texture = SubResource("GradientTexture1D_1s7cm")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("1_ycjph")
