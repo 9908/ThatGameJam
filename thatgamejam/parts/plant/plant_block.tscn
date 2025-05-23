@@ -72,14 +72,17 @@ size = Vector2(85, 29.5)
 
 [node name="PlantBlock" type="StaticBody2D"]
 modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 script = ExtResource("1_hg20w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+use_parent_material = true
 offset_left = -40.0
 offset_top = -10.0
 offset_right = 40.0
 offset_bottom = 6.0
 pivot_offset = Vector2(40, 10)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

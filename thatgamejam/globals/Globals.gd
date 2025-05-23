@@ -1,5 +1,7 @@
 extends Node
 
+var ressource: int = 0
+
 var main
 var player
 var plants

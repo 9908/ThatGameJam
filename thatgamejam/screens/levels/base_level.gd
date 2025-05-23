@@ -13,7 +13,8 @@ func _enter_tree() -> void:
 	Globals.dynamic_background.set_day_progress(time_of_day)
 	if Globals.player == null:
 		var player = player_scn.instantiate()
-		Globals.main.add_child(player)
+		Globals.agents.add_child(player)
+		Globals.player.grow_plant.get_ressource(Globals.ressource)
 	Globals.player.global_position = player_start_pos.global_position
 	Globals.camera.set_process(true)
 	Globals.camera.set_target(Globals.player.camera_target)

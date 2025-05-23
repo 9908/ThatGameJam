@@ -76,8 +76,10 @@ func _on_collectible_detector_area_entered(area: Area2D) -> void:
 func get_ressource(amount: int = 6):
 	ressource += amount
 	owner.animation_director.backpack.set_value(ressource)
-
+	Globals.ressource = ressource
+	
 
 func remove_ressource(amount: int = 1):
 	ressource -= amount
 	owner.animation_director.backpack.set_value(ressource)
+	Globals.ressource = ressource
