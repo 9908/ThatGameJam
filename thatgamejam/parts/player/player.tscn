@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://xre3judc673b" path="res://parts/player/player_animation_director.gd" id="3_nh1j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(63, 106)
+size = Vector2(60.5, 106)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5la5r"]
 size = Vector2(88, 20)

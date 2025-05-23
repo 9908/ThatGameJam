@@ -1,13 +1,30 @@
-[gd_scene load_steps=6 format=4 uid="uid://bnmu1nqjrvbk3"]
+[gd_scene load_steps=10 format=4 uid="uid://bnmu1nqjrvbk3"]
 
 [ext_resource type="TileSet" uid="uid://bnpw4n583v4aa" path="res://assets/tilemap.tres" id="1_11rbh"]
 [ext_resource type="Script" uid="uid://cbmh45dbcd48s" path="res://screens/levels/base_level.gd" id="1_lv6o2"]
+[ext_resource type="Shader" uid="uid://dihirnecvcxfs" path="res://screens/levels/base_level.gdshader" id="1_pte4h"]
 [ext_resource type="Script" uid="uid://djs6fudyg2o14" path="res://parts/plant/plants.gd" id="2_pte4h"]
 [ext_resource type="Script" uid="uid://rh0wdmrn443e" path="res://screens/levels/level_edge_setters.gd" id="5_6dia2"]
 [ext_resource type="Script" uid="uid://dt60varr3x17b" path="res://screens/agents.gd" id="7_xj1xy"]
 
+[sub_resource type="Gradient" id="Gradient_wy38e"]
+offsets = PackedFloat32Array(0, 0.534125, 1)
+colors = PackedColorArray(0.482353, 0.294118, 0.380392, 1, 0.129412, 0.203922, 0.270588, 1, 0.0509804, 0.121569, 0.121569, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5y22k"]
+gradient = SubResource("Gradient_wy38e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wy38e"]
+shader = ExtResource("1_pte4h")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_5y22k")
+shader_parameter/viewport_height = 1080.0
+shader_parameter/visible_range = 1.0
+shader_parameter/camera_y = 0.0
+shader_parameter/offset_y = -1000.0
+
 [node name="BaseLevel" type="Node2D"]
 process_mode = 3
+material = SubResource("ShaderMaterial_wy38e")
 script = ExtResource("1_lv6o2")
 
 [node name="TileMap" type="TileMapLayer" parent="."]

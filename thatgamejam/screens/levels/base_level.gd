@@ -24,3 +24,12 @@ func _enter_tree() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		Globals.pause_menu.toggle()
+
+
+func _process(_delta):
+	var cam := get_viewport().get_camera_2d()
+	if cam == null:
+		return
+
+	var mat = material
+	mat.set_shader_parameter("camera_y", -cam.global_position.y)
