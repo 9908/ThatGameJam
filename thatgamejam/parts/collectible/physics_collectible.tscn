@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfq064dvpkg3f"]
+
+[ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="1_f3hiw"]
+[ext_resource type="Script" uid="uid://byw0bisef7wld" path="res://parts/collectible/physics_collectible.gd" id="1_iigvb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3hiw"]
+radius = 44.3847
+
+[node name="PhysicsCollectible" type="RigidBody2D"]
+script = ExtResource("1_iigvb")
+
+[node name="Collectible" parent="." instance=ExtResource("1_f3hiw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f3hiw")
+
+[connection signal="collectid" from="Collectible" to="." method="_on_collectible_collectid"]

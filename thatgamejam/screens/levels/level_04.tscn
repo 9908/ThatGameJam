@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://loftp3uhl0k0"]
+[gd_scene load_steps=7 format=4 uid="uid://loftp3uhl0k0"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_fs847"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="2_3i1nn"]
 [ext_resource type="PackedScene" uid="uid://bxrs7jq0ve1qn" path="res://parts/hazard/spike.tscn" id="2_lo2qc"]
+[ext_resource type="PackedScene" uid="uid://dhyc6f1avv8b4" path="res://parts/blob/blob.tscn" id="3_audk4"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="4_kb8na"]
 [ext_resource type="PackedScene" uid="uid://doe4f7p1dsuo2" path="res://screens/levels/level_05.tscn" id="5_v4yuj"]
 
@@ -35,6 +36,18 @@ init_length = 75.0
 [node name="Plant3" parent="Plants" index="5" instance=ExtResource("2_3i1nn")]
 position = Vector2(2054, 99)
 init_length = 50.0
+
+[node name="Blob" parent="Props" index="0" instance=ExtResource("3_audk4")]
+position = Vector2(2462, 1682)
+
+[node name="Blob2" parent="Props" index="1" instance=ExtResource("3_audk4")]
+position = Vector2(5129, 2164)
+
+[node name="Blob3" parent="Props" index="2" instance=ExtResource("3_audk4")]
+position = Vector2(3822, -95)
+
+[node name="Blob4" parent="Props" index="3" instance=ExtResource("3_audk4")]
+position = Vector2(4042, -95)
 
 [node name="Spike" parent="Hazards" index="0" instance=ExtResource("2_lo2qc")]
 position = Vector2(1789, 242)

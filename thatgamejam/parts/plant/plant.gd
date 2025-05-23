@@ -2,7 +2,7 @@
 extends Node2D
 
 @export var init_length: float = 100.0 : set = set_init_length
-
+signal pushing_wall
 
 @onready var plant_stem: Node2D = $PlantStem
 @onready var plant_blocks: Node2D = $PlantBlocks
@@ -14,7 +14,7 @@ var plant_block_scn = preload("res://parts/plant/plant_block.tscn")
 var block_popped: int = 0
 var block_pop_direction: int = 1
 var block_vertical_spacing: float = 48.0 * 3.0
-
+var touching_ceiling: bool = false
 
 func _ready() -> void:
 	set_process(false)
@@ -47,9 +47,12 @@ func stop_growing():
 
 func _process(delta: float) -> void:
 	modulate.a = lerp(modulate.a, 1.0, 0.05)
-	plant_stem.length += delta * growth_rate
-	if floori(plant_stem.length / block_vertical_spacing) > block_popped:
-		pop_plant_block()
+	if not touching_ceiling:
+		plant_stem.length += delta * growth_rate
+		if floori(plant_stem.length / block_vertical_spacing) > block_popped:
+			pop_plant_block()
+	else:
+		pushing_wall.emit()
 		
 
 func pop_plant_block(cost: int = 1):
@@ -78,5 +81,6 @@ func cut_off(cutoff_position: int):
 
 
 func _on_plant_stem_plant_collided() -> void:
-	can_grow = false
-	stop_growing()
+	#can_grow = false
+	touching_ceiling = true
+	#stop_growing()

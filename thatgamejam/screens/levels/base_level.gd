@@ -6,6 +6,7 @@ var player_scn = preload("res://parts/player/player.tscn")
 
 func _ready() -> void:
 	Globals.level = self
+	Globals.props = $Props
 
 
 func _enter_tree() -> void:

@@ -1,11 +1,29 @@
-[gd_scene load_steps=5 format=4 uid="uid://cichohdr60q2"]
+[gd_scene load_steps=10 format=4 uid="uid://cichohdr60q2"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_2qnqe"]
+[ext_resource type="Shader" uid="uid://dihirnecvcxfs" path="res://screens/levels/base_level.gdshader" id="2_due4l"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="2_e1uog"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="3_due4l"]
 [ext_resource type="PackedScene" uid="uid://loftp3uhl0k0" path="res://screens/levels/level_04.tscn" id="4_e1uog"]
+[ext_resource type="PackedScene" uid="uid://dhyc6f1avv8b4" path="res://parts/blob/blob.tscn" id="6_w8ikc"]
+
+[sub_resource type="Gradient" id="Gradient_wy38e"]
+offsets = PackedFloat32Array(0, 0.534125, 1)
+colors = PackedColorArray(0.482353, 0.294118, 0.380392, 1, 0.129412, 0.203922, 0.270588, 1, 0.0509804, 0.121569, 0.121569, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5y22k"]
+gradient = SubResource("Gradient_wy38e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8ikc"]
+shader = ExtResource("2_due4l")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_5y22k")
+shader_parameter/viewport_height = 1080.0
+shader_parameter/visible_range = 0.2
+shader_parameter/camera_y = 0.0
+shader_parameter/offset_y = 1000.0
 
 [node name="Level_03" instance=ExtResource("1_2qnqe")]
+material = SubResource("ShaderMaterial_w8ikc")
 time_of_day = 1.0
 
 [node name="TileMap" parent="." index="0"]
@@ -46,6 +64,9 @@ init_length = 150.0
 [node name="Plant6" parent="Plants" index="8" instance=ExtResource("2_e1uog")]
 position = Vector2(-1315, 191)
 init_length = 150.0
+
+[node name="Blob" parent="Props" index="0" instance=ExtResource("6_w8ikc")]
+position = Vector2(-72, -143)
 
 [node name="PlayerStartPos" parent="." index="6"]
 position = Vector2(-1390, 479)
