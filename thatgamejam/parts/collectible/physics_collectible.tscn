@@ -7,6 +7,8 @@
 radius = 44.3847
 
 [node name="PhysicsCollectible" type="RigidBody2D"]
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_iigvb")
 
 [node name="Collectible" parent="." instance=ExtResource("1_f3hiw")]
