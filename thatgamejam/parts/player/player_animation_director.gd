@@ -3,6 +3,7 @@ extends Node2D
 @onready var backpack: Node2D = $"../Visual/Backpack"
 @onready var sprite: ColorRect = $"../Visual/ColorRect"
 @onready var visual: Node2D = $"../Visual"
+@onready var body: AnimatedSprite2D = $"../Visual/Anims/Body"
 
 var squash_lerp = 30.0
 
@@ -17,6 +18,9 @@ func _physics_process(delta):
 	apply_squash_and_stretch(delta)
 	if not owner.velocity.x == 0:
 		visual.scale.x = sign(owner.velocity.x)
+		body.play("Walk")
+	else:
+		body.pause()
 	
 	
 func apply_squash_and_stretch(delta):
