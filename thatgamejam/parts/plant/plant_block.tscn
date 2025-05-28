@@ -1,65 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwetwhh8pl3au"]
+[gd_scene load_steps=40 format=3 uid="uid://dwetwhh8pl3au"]
 
 [ext_resource type="Script" uid="uid://cw015d200uus3" path="res://parts/plant/plant_block.gd" id="1_hg20w"]
 [ext_resource type="Script" uid="uid://tovlxwtlqbu8" path="res://parts/plant/plant_area.gd" id="2_ta5s4"]
+[ext_resource type="Texture2D" uid="uid://bm4wihkfp445x" path="res://assets/anim/PlatformAnim/PlatformAnim_0002.png" id="4_mpu8e"]
+[ext_resource type="Texture2D" uid="uid://cn8g807del7uy" path="res://assets/anim/PlatformAnim/PlatformAnim_0003.png" id="5_unspc"]
+[ext_resource type="Texture2D" uid="uid://bohai7s8d1x4y" path="res://assets/anim/PlatformAnim/PlatformAnim_0004.png" id="6_rw5i3"]
+[ext_resource type="Texture2D" uid="uid://ts774hiqkrlh" path="res://assets/anim/PlatformAnim/PlatformAnim_0005.png" id="7_8ut6p"]
+[ext_resource type="Texture2D" uid="uid://dsffac3pvb503" path="res://assets/anim/PlatformAnim/PlatformAnim_0006.png" id="8_pxlao"]
+[ext_resource type="Texture2D" uid="uid://c67tspbm1etx0" path="res://assets/anim/PlatformAnim/PlatformAnim_0007.png" id="9_hxgac"]
+[ext_resource type="Texture2D" uid="uid://bgnqgpk7e4lu0" path="res://assets/anim/PlatformAnim/PlatformAnim_0008.png" id="10_rvt0m"]
+[ext_resource type="Texture2D" uid="uid://dymttpuievw1t" path="res://assets/anim/PlatformAnim/PlatformAnim_0009.png" id="11_k650p"]
+[ext_resource type="Texture2D" uid="uid://bbtg6v8735775" path="res://assets/anim/PlatformAnim/PlatformAnim_0010.png" id="12_2mw43"]
+[ext_resource type="Texture2D" uid="uid://ttwxk3ds27cq" path="res://assets/anim/PlatformAnim/PlatformAnim_0011.png" id="13_2abim"]
+[ext_resource type="Texture2D" uid="uid://cdvxaj4iy6hnd" path="res://assets/anim/PlatformAnim/PlatformAnim_0012.png" id="14_28jma"]
+[ext_resource type="Texture2D" uid="uid://bbaugavk3t1x3" path="res://assets/anim/PlatformAnim/PlatformAnim_0013.png" id="15_up8bf"]
+[ext_resource type="Texture2D" uid="uid://usdhc6fxojdm" path="res://assets/anim/PlatformAnim/PlatformAnim_0014.png" id="16_jbbfn"]
+[ext_resource type="Texture2D" uid="uid://cysxhfuqkdbeo" path="res://assets/anim/PlatformAnim/PlatformAnim_0015.png" id="17_tk4f8"]
+[ext_resource type="Texture2D" uid="uid://chgw8pj2knx1w" path="res://assets/anim/PlatformAnim/PlatformAnim_0016.png" id="18_lc6ok"]
+[ext_resource type="Texture2D" uid="uid://bgnjbuwol0q07" path="res://assets/anim/PlatformAnim/PlatformAnim_0017.png" id="19_cckdl"]
+[ext_resource type="Texture2D" uid="uid://bejftqjaxgwhh" path="res://assets/anim/PlatformAnim/PlatformAnim_0018.png" id="20_jywey"]
+[ext_resource type="Texture2D" uid="uid://dcwpthnkixpy3" path="res://assets/anim/PlatformAnim/PlatformAnim_0019.png" id="21_fm8lh"]
+[ext_resource type="Texture2D" uid="uid://h73lr8bmfiih" path="res://assets/anim/PlatformAnim/PlatformAnim_0020.png" id="22_71vj4"]
+[ext_resource type="Texture2D" uid="uid://cvd67shuwdr4r" path="res://assets/anim/PlatformAnim/PlatformAnim_0021.png" id="23_sxvlg"]
+[ext_resource type="Texture2D" uid="uid://bbgpij5kappas" path="res://assets/anim/PlatformAnim/PlatformAnim_0022.png" id="24_hu2g7"]
+[ext_resource type="Texture2D" uid="uid://dta1rwi85loy4" path="res://assets/anim/PlatformAnim/PlatformAnim_0023.png" id="25_fiy4x"]
+[ext_resource type="Texture2D" uid="uid://cd2jdx265153o" path="res://assets/anim/PlatformAnim/PlatformAnim_0024.png" id="26_rlinq"]
+[ext_resource type="Texture2D" uid="uid://mtyrldbfi8nb" path="res://assets/anim/PlatformAnim/PlatformAnim_0025.png" id="27_frqa8"]
+[ext_resource type="Texture2D" uid="uid://b64v638h3jyul" path="res://assets/anim/PlatformAnim/PlatformAnim_0026.png" id="28_jw41i"]
+[ext_resource type="Texture2D" uid="uid://yq8vkqw0qmih" path="res://assets/anim/PlatformAnim/PlatformAnim_0027.png" id="29_djkkx"]
+[ext_resource type="Texture2D" uid="uid://cqpda8ovjfm8m" path="res://assets/anim/PlatformAnim/PlatformAnim_0028.png" id="30_8hqqr"]
+[ext_resource type="Texture2D" uid="uid://bxdi0t0l3yj7m" path="res://assets/anim/PlatformAnim/PlatformAnim_0029.png" id="31_3f8sg"]
+[ext_resource type="Texture2D" uid="uid://ctbm6h8h5m27b" path="res://assets/anim/PlatformAnim/PlatformAnim_0030.png" id="32_ihjsw"]
+[ext_resource type="Texture2D" uid="uid://blwsrnl5fxxco" path="res://assets/anim/PlatformAnim/PlatformAnim_0031.png" id="33_4x6fd"]
+[ext_resource type="Texture2D" uid="uid://nmkw2t83dweh" path="res://assets/anim/PlatformAnim/PlatformAnim_0032.png" id="34_5iotw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(79.625, 16.5)
+size = Vector2(116, 16.5)
 
 [sub_resource type="Animation" id="Animation_ta5s4"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_hg20w"]
 resource_name = "initiate"
 step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1.3, 1.3), Vector2(0.9, 0.9), Vector2(1.05, 1.05), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ta5s4"]
 _data = {
@@ -70,12 +53,114 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg20w"]
 size = Vector2(85, 29.5)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj714"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mpu8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_unspc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rw5i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8ut6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pxlao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hxgac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rvt0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_k650p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2mw43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2abim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_28jma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_up8bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jbbfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tk4f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lc6ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cckdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jywey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fm8lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_71vj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sxvlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hu2g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fiy4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rlinq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_frqa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jw41i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_djkkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8hqqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3f8sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ihjsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4x6fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5iotw")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 32.0
+}]
+
 [node name="PlantBlock" type="StaticBody2D"]
-modulate = Color(1, 1, 1, 0)
+visible = false
 use_parent_material = true
 script = ExtResource("1_hg20w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 use_parent_material = true
 offset_left = -40.0
 offset_top = -10.0
@@ -85,12 +170,12 @@ pivot_offset = Vector2(40, 10)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.1875, -2.25)
+position = Vector2(0, -2.25)
 shape = SubResource("RectangleShape2D_h2yge")
 one_way_collision = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 &"": SubResource("AnimationLibrary_ta5s4")
 }
@@ -104,3 +189,10 @@ script = ExtResource("2_ta5s4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlantArea"]
 position = Vector2(-0.5, -8)
 shape = SubResource("RectangleShape2D_hg20w")
+
+[node name="Asset" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-1.90735e-06, -21)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_oj714")
+animation = &"grow"
