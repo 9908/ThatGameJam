@@ -288,7 +288,7 @@ use_parent_material = true
 [node name="Body" type="AnimatedSprite2D" parent="Visual/Anims"]
 use_parent_material = true
 position = Vector2(0, -56)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_s4b6d")
 animation = &"Walk"
 
