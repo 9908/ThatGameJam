@@ -1,0 +1,22 @@
+# mode d'emploi soundmanager simple
+
+# placer sons dans dossier assets/sound/
+# placer music dans dossier assets/music/
+
+# Jouer un son une fois depuis n'import ou dans le code, example :
+SoundManager.play("explosion")
+
+# Jouer un son en boucle (et crèe la référence pour l'arrêter)
+var loop_sound = SoundManager.play_loop("ambient_forest")
+
+# Arrêter le son en boucle avec fadeout
+SoundManager.stop_sound_fadeout(loop_sound, 2.0)
+
+# Jouer de la musique
+SoundManager.play_music("theme_principale")
+
+# Arrêter la musique avec fadeout
+SoundManager.stop_music_fadeout(3.0)
+
+# Changer le volume de la musique
+SoundManager.set_music_volume(-10.0)  # en dB
