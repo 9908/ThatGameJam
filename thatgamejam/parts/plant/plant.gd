@@ -82,6 +82,7 @@ func pop_plant_stem_anim():
 	new_plant_stem_anim.play()
 	await get_tree().create_timer(0.025).timeout
 	new_plant_stem_anim.show()
+	SoundManager.play("flower_open")
 	
 
 func pop_plant_block(cost: int = 1):

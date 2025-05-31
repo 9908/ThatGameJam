@@ -6,15 +6,48 @@
 # Jouer un son une fois depuis n'import ou dans le code, example :
 SoundManager.play("explosion")
 
+# Jouer un son au hasard parmi une liste
+SoundManager.play_random(["explosion1", "explosion2", "explosion3"])
+
+# Jouer un son au hasard selon un préfixe (ex: tous les sons qui commencent par "step")
+SoundManager.play_random_from_category("step")  # joue step1, step2, step_grass, etc.
+
+# Jouer n'importe quel son au hasard
+SoundManager.play_random_from_category()  # sans préfixe = tous les sons
+
 # Jouer un son en boucle (et crèe la référence pour l'arrêter)
 var loop_sound = SoundManager.play_loop("ambient_forest")
 
 # Arrêter le son en boucle avec fadeout
 SoundManager.stop_sound_fadeout(loop_sound, 2.0)
 
+# Jouer avec un pitch spécifique
+SoundManager.play("explosion", 0.0, 1.5)  # 50% plus aigu
+
+# Jouer avec un pitch aléatoire dans une fourchette
+SoundManager.play_with_random_pitch("footstep", 0.8, 1.2)  # varie entre -20% et +20%
+
+# Pour des pas variés :
+SoundManager.play_with_random_pitch("footstep", 0.9, 1.1)
+
+# Pour des explosions variées :
+SoundManager.play_random(["boom1", "boom2", "boom3"], -2.0, randf_range(0.8, 1.2))
+
+# Musique d'ambiance avec entrée douce :
+SoundManager.play_music("ambient", -10.0, true, 4.0)  # fadein de 4 secondes
+
+
+# Aussi disponible pour les boucles
+var loop_sound = SoundManager.play_loop("engine", 0.0, 0.7)  # plus grave
+
 # Jouer de la musique
 SoundManager.play_music("theme_principale")
 
+# Musique avec fadein de 3 secondes
+SoundManager.play_music("theme_principale", 0.0, true, 3.0)
+
+# Fadein plus court
+SoundManager.play_music("combat", -5.0, true, 1.5)  # volume -5dB avec fadein 1.5s
 # Arrêter la musique avec fadeout
 SoundManager.stop_music_fadeout(3.0)
 

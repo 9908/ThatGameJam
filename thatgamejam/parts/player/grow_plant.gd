@@ -30,8 +30,10 @@ func start_growing():
 		Globals.plants.add_child(nearby_plant)
 		nearby_plant.global_position = owner.global_position + Vector2(0, 1)
 		nearby_plant.start_growing()
+		SoundManager.play("flower_open")
 	else:
 		nearby_plant.start_growing()
+		SoundManager.play("flower_open")
 	Globals.camera.set_target(nearby_plant.plant_stem.end_point)
 	
 
