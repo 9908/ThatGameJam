@@ -1,5 +1,9 @@
 extends Node2D
 
+signal cutted_plant
+signal started_grow
+signal finished_grow
+
 var ressource: int = 0
 
 var plant_scn = preload("res://parts/plant/plant.tscn")
@@ -24,6 +28,7 @@ func start_growing():
 		return
 	growing = true
 	owner.movement.set_physics_process(false)
+	started_grow.emit()
 	if nearby_plant == null:
 		nearby_plant = plant_scn.instantiate()
 		nearby_plant.init_length = 0.0
@@ -40,8 +45,8 @@ func start_growing():
 func stop_growing():
 	if nearby_plant == null or not growing:
 		return
+	finished_grow.emit()
 	growing = false
-	owner.movement.set_physics_process(true)
 	nearby_plant.stop_growing()
 	Globals.camera.set_target(Globals.player.camera_target)
 
@@ -54,8 +59,14 @@ func cut_plant():
 		return
 	if plant_block_id >= nearby_plant.block_popped:
 		return
-	get_ressource(nearby_plant.block_popped - plant_block_id)
+	cutted_plant.emit()
+	owner.movement.listen_to_input = false
+	owner.movement.set_physics_process(false)
+	await get_tree().create_timer(.5).timeout
 	nearby_plant.cut_off(plant_block_id)
+	get_ressource(nearby_plant.block_popped - plant_block_id)
+	owner.movement.listen_to_input = true
+	owner.movement.set_physics_process(true)
 	
 
 func _on_plant_detector_area_entered(area: Area2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=491 format=3 uid="uid://dvegjstwenvl"]
+[gd_scene load_steps=484 format=3 uid="uid://dvegjstwenvl"]
 
 [ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player/player.gd" id="1_xlo1q"]
 [ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/player/movement.gd" id="2_aaff8"]
@@ -326,13 +326,6 @@
 [ext_resource type="Texture2D" uid="uid://crot6a3j7tp1c" path="res://assets/anim/IdleB/IdleB_0062.png" id="289_y3ghd"]
 [ext_resource type="Texture2D" uid="uid://drsdlo2sceqm5" path="res://assets/anim/IdleB/IdleB_0063.png" id="290_etdbc"]
 [ext_resource type="Texture2D" uid="uid://daov011adl4wi" path="res://assets/anim/IdleB/IdleB_0064.png" id="291_woma0"]
-[ext_resource type="Texture2D" uid="uid://cedan5odshiml" path="res://assets/anim/JumpBeggin/JumpBeggin_0001.png" id="292_0wf8i"]
-[ext_resource type="Texture2D" uid="uid://cbs02hv3aabmb" path="res://assets/anim/JumpBeggin/JumpBeggin_0002.png" id="293_7mf13"]
-[ext_resource type="Texture2D" uid="uid://ofy5g34gxdr" path="res://assets/anim/JumpBeggin/JumpBeggin_0003.png" id="294_6wrvm"]
-[ext_resource type="Texture2D" uid="uid://1buw1gvwee4n" path="res://assets/anim/JumpBeggin/JumpBeggin_0004.png" id="295_bjaj2"]
-[ext_resource type="Texture2D" uid="uid://c6k8rqntism8q" path="res://assets/anim/JumpBeggin/JumpBeggin_0005.png" id="296_iqm1v"]
-[ext_resource type="Texture2D" uid="uid://bpry2yoc1gwtv" path="res://assets/anim/JumpBeggin/JumpBeggin_0006.png" id="297_w4r1a"]
-[ext_resource type="Texture2D" uid="uid://bs51ctvr4mpcd" path="res://assets/anim/JumpBeggin/JumpBeggin_0007.png" id="298_ycirs"]
 [ext_resource type="Texture2D" uid="uid://dycvl6443cbex" path="res://assets/anim/JumpBeggin/JumpBeggin_0008.png" id="299_6rymk"]
 [ext_resource type="Texture2D" uid="uid://dch1fd20vog14" path="res://assets/anim/JumpBeggin/JumpBeggin_0009.png" id="300_lbcp2"]
 [ext_resource type="Texture2D" uid="uid://bhqsogxbtkrps" path="res://assets/anim/JumpBeggin/JumpBeggin_0010.png" id="301_173a8"]
@@ -589,7 +582,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("35_gug5t")
 }],
-"loop": true,
+"loop": false,
 "name": &"CutBig",
 "speed": 32.0
 }, {
@@ -690,7 +683,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("67_pueld")
 }],
-"loop": true,
+"loop": false,
 "name": &"CutSmall",
 "speed": 32.0
 }, {
@@ -791,7 +784,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("99_4x8vb")
 }],
-"loop": true,
+"loop": false,
 "name": &"GrowBeggin",
 "speed": 32.0
 }, {
@@ -993,7 +986,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("163_sa0nj")
 }],
-"loop": true,
+"loop": false,
 "name": &"GrowStop",
 "speed": 32.0
 }, {
@@ -1393,27 +1386,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("292_0wf8i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("293_7mf13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("294_6wrvm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("295_bjaj2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("296_iqm1v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("297_w4r1a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("298_ycirs")
-}, {
-"duration": 1.0,
 "texture": ExtResource("299_6rymk")
 }, {
 "duration": 1.0,
@@ -1488,7 +1460,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("323_ro87i")
 }],
-"loop": true,
+"loop": false,
 "name": &"JumpBeggin",
 "speed": 32.0
 }, {
@@ -1589,7 +1561,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("355_qntxi")
 }],
-"loop": true,
+"loop": false,
 "name": &"JumpEnd",
 "speed": 32.0
 }, {
@@ -1786,7 +1758,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("419_bgwal")
 }],
-"loop": true,
+"loop": false,
 "name": &"Reception",
 "speed": 32.0
 }, {
@@ -1887,7 +1859,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("451_5xarn")
 }],
-"loop": true,
+"loop": false,
 "name": &"Stop",
 "speed": 32.0
 }, {
@@ -2137,7 +2109,7 @@ use_parent_material = true
 position = Vector2(0, -56)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_s4b6d")
-animation = &"CutSmall"
+animation = &"GrowBeggin"
 
 [node name="Abilities" type="Node2D" parent="."]
 
@@ -2182,6 +2154,10 @@ offset_right = 5.0
 offset_bottom = 6.0
 color = Color(1, 0, 0, 1)
 
+[connection signal="animation_finished" from="Visual/Anims/Body" to="AnimationDirector" method="_on_body_animation_finished"]
+[connection signal="cutted_plant" from="Abilities/GrowPlant" to="AnimationDirector" method="_on_grow_plant_cutted_plant"]
+[connection signal="finished_grow" from="Abilities/GrowPlant" to="AnimationDirector" method="_on_grow_plant_finished_grow"]
+[connection signal="started_grow" from="Abilities/GrowPlant" to="AnimationDirector" method="_on_grow_plant_started_grow"]
 [connection signal="area_entered" from="Areas/PlantDetector" to="Abilities/GrowPlant" method="_on_plant_detector_area_entered"]
 [connection signal="area_exited" from="Areas/PlantDetector" to="Abilities/GrowPlant" method="_on_plant_detector_area_exited"]
 [connection signal="area_entered" from="Areas/CollectibleDetector" to="Abilities/GrowPlant" method="_on_collectible_detector_area_entered"]
