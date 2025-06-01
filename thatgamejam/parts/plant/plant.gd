@@ -83,7 +83,7 @@ func pop_plant_stem_anim():
 	await get_tree().create_timer(0.025).timeout
 	new_plant_stem_anim.show()
 	SoundManager.play("flower_open")
-	SoundManager.play_random_from_category("blip")
+	#SoundManager.play_random_from_category("blip")
 
 func pop_plant_block(cost: int = 1):
 	block_popped += 1
