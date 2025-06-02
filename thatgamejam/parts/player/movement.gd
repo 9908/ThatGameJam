@@ -3,7 +3,7 @@ extends Node2D
 var listen_to_input: bool= true
 
 # Movement settings
-const MOVE_SPEED = 400.0
+const MOVE_SPEED = 300.0
 const ACCEL = 3000.0
 const DEACCEL = 1400.0
 

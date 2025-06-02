@@ -65,6 +65,8 @@ func _on_body_animation_finished() -> void:
 				current_state = "IdleA"
 				body.play("IdleA")
 	elif current_state == "Cutting":
+		owner.movement.listen_to_input = true
+		owner.movement.set_physics_process(true)
 		if abs(owner.velocity.x) > 0.1:
 			current_state = "Walk"
 			body.play("Walk")
@@ -77,6 +79,7 @@ func _on_body_animation_finished() -> void:
 		elif body.animation == "GrowStop":
 			current_state = "IdleA"
 			body.play("IdleA")
+			owner.movement.listen_to_input = true
 			owner.movement.set_physics_process(true)
 
 

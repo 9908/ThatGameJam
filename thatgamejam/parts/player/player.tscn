@@ -988,7 +988,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"GrowStop",
-"speed": 32.0
+"speed": 64.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2109,7 +2109,9 @@ use_parent_material = true
 position = Vector2(0, -56)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_s4b6d")
-animation = &"GrowBeggin"
+animation = &"GrowStop"
+frame = 31
+frame_progress = 1.0
 
 [node name="Abilities" type="Node2D" parent="."]
 
