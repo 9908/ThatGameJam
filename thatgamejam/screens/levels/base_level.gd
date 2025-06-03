@@ -7,8 +7,6 @@ var player_scn = preload("res://parts/player/player.tscn")
 func _ready() -> void:
 	Globals.level = self
 	Globals.props = $Props
-	
-
 
 func _enter_tree() -> void:
 	await get_tree().process_frame
@@ -22,8 +20,11 @@ func _enter_tree() -> void:
 	Globals.camera.set_target(Globals.player.camera_target)
 	await get_tree().process_frame
 	Globals.camera.teleport_position()
-	SoundManager.play_music("hierophant", 0.0, true, 3.0,true)
-
+	
+	$FmodEventEmitter2D.play()
+	FmodServer.play_one_shot("event:/sfx")
+	FmodServer.set_global_parameter_by_name("area",0.0)
+	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		Globals.pause_menu.toggle()
