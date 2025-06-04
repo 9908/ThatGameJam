@@ -143,20 +143,21 @@ func cut_off(cutoff_position: int):
 				junction_stem_id = id
 			else:
 				# erase block
-				if id == plant_stem_anims.size() - 1:
-					var junction_stem_frame = (fmod(plant_stem.length, STEM_STUCK_HEIGHT) / STEM_STUCK_HEIGHT) * 31
-					junction_stem.frame = junction_stem_frame  
-					if not junction_stem_id == 0:
-						plant_stem_anims[junction_stem_id-1].frame = 31 + junction_stem_frame
-					growth_time = (plant_stem_anim_popped-2)*GROWTH_TIME_INTERVAL + 1 # - junction_stem_frame/62 * GROWTH_TIME_INTERVAL
 				plant_stem_anim.queue_free()
 				plant_stem_anim_popped -= 1
-			plant_stem_height += STEM_STUCK_HEIGHT
 			id += 1
+			plant_stem_height += STEM_STUCK_HEIGHT
 		
+		#print(" ----- " + str(id) + "   ---  " + str(plant_stem_anims.size()))
+		var junction_stem_frame = (fmod(plant_stem.length, STEM_STUCK_HEIGHT) / STEM_STUCK_HEIGHT) * 31
+		junction_stem.frame = junction_stem_frame  
+		if not junction_stem_id == 0:
+			plant_stem_anims[junction_stem_id-1].frame = 31 + junction_stem_frame
+		growth_time = get_growth_time_from_length(plant_stem.length) #(plant_stem_anim_popped-2)*GROWTH_TIME_INTERVAL + 1 # - junction_stem_frame/62 * GROWTH_TIME_INTERVAL
+
 		await get_tree().create_timer(0.1).timeout
 		plant_stem_anims = clean_array(plant_stem_anims)
-		print(plant_stem_anims)
+		#print(plant_stem_anims)
 
 func _on_plant_stem_plant_collided() -> void:
 	touching_ceiling = true

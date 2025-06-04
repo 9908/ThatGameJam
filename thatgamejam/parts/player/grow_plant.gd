@@ -62,8 +62,9 @@ func cut_plant():
 	owner.movement.set_physics_process(false)
 	await get_tree().create_timer(.5).timeout
 	if is_instance_valid(nearby_plant):
-		nearby_plant.cut_off(plant_block_id)
 		get_ressource(nearby_plant.block_popped - plant_block_id)
+		nearby_plant.cut_off(plant_block_id)
+		#print("block_popped: " + str(nearby_plant.block_popped) + "    - Plant block ID: " + str(plant_block_id))
 	
 
 func _on_plant_detector_area_entered(area: Area2D) -> void:

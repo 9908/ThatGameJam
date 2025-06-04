@@ -262,7 +262,6 @@ animations = [{
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_gs0cg")
 animation = &"head"
-frame = 1
 offset = Vector2(0, -135)
 script = ExtResource("63_hsub4")
 
