@@ -62,7 +62,6 @@ init_length = 80.0
 
 [node name="Plant7" parent="Plants" index="13" instance=ExtResource("2_uvjpn")]
 position = Vector2(716, 594)
-init_length = 50.0
 
 [node name="Plant8" parent="Plants" index="14" instance=ExtResource("2_uvjpn")]
 position = Vector2(814, 594)

@@ -309,7 +309,6 @@ script = ExtResource("1_4isf5")
 length = 500.0
 
 [node name="Line2D" type="Line2D" parent="."]
-visible = false
 use_parent_material = true
 points = PackedVector2Array(1, 1, 1, -500)
 
@@ -325,7 +324,6 @@ use_parent_material = true
 position = Vector2(1, -500)
 
 [node name="ColorRect" type="ColorRect" parent="EndPoint"]
-visible = false
 use_parent_material = true
 offset_left = -12.0
 offset_top = -12.0
@@ -333,6 +331,7 @@ offset_right = 12.0
 offset_bottom = 12.0
 
 [node name="CollisionDetector" type="Area2D" parent="EndPoint"]
+position = Vector2(0, 24)
 collision_layer = 64
 collision_mask = 64
 

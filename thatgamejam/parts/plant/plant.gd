@@ -24,6 +24,7 @@ var plant_stem_anim_popped: int = 0
 var plant_stem_anims: Array
 var STEM_STUCK_HEIGHT: float = 260.0
 var GROWTH_TIME_INTERVAL: float = (0.5*(62.0/16.0))
+var can_touch_ceiling: bool = false
 
 func _ready() -> void:
 	set_process(false)
@@ -48,7 +49,9 @@ func _ready() -> void:
 			else:
 				pop_plant_stem_anim(false)
 	set_init_length(init_length)
-
+	await get_tree().create_timer(2.0).timeout
+	can_touch_ceiling = true
+	
 
 func get_growth_time_from_length(length_loc) -> float:
 	var growth_time_loc = GROWTH_TIME_INTERVAL * (length_loc / STEM_STUCK_HEIGHT)
@@ -67,18 +70,18 @@ func start_growing():
 		if not touching_ceiling:
 			for plant_anim in plant_stem_anims:
 				if not plant_anim.frame == 61:
-					plant_anim.play()
+					plant_anim.play_until_frame()
 
 
 func stop_growing():
 	set_process(false)
 	for plant_anim in plant_stem_anims:
-		plant_anim.pause()
+		plant_anim.stop_anim()
 	if block_popped == 0:
 		kill_plant()
 
+
 func _process(delta: float) -> void:
-	
 	modulate.a = lerp(modulate.a, 1.0, 0.05)
 	if not touching_ceiling:
 		growth_time += delta
@@ -95,10 +98,11 @@ func _process(delta: float) -> void:
 func pop_plant_stem_anim(make_sound: bool = true, last_frame: int = 61):
 	var new_plant_stem_anim = plant_stem_anim_scn.instantiate()
 	add_child(new_plant_stem_anim)
+	new_plant_stem_anim.frame = 0
 	new_plant_stem_anim.global_position = self.global_position + Vector2(0 , -10) + plant_stem_anim_popped*Vector2(3, -STEM_STUCK_HEIGHT)
 	plant_stem_anim_popped += 1
 	plant_stem_anims.append(new_plant_stem_anim)
-	new_plant_stem_anim.play_until_frame("head", last_frame)
+	new_plant_stem_anim.play_until_frame(last_frame)
 	await get_tree().create_timer(0.025).timeout
 	new_plant_stem_anim.show()
 	if make_sound:
@@ -139,6 +143,7 @@ func cut_off(cutoff_position: int):
 		for block in plant_blocks.get_children():
 			if block.plant_area.block_position > cutoff_position:
 				block.queue_free()
+				touching_ceiling = false
 				
 		var plant_stem_height: float = 0
 		var id: int = 0
@@ -176,9 +181,11 @@ func cut_off(cutoff_position: int):
 	
 	
 func _on_plant_stem_plant_collided() -> void:
+	if not can_touch_ceiling:
+		return
 	touching_ceiling = true
 	for plant_anim in plant_stem_anims:
-		plant_anim.pause()
+		plant_anim.stop_anim()
 
 
 func clean_array(dirty_array: Array) -> Array:
@@ -187,3 +194,13 @@ func clean_array(dirty_array: Array) -> Array:
 		if is_instance_valid(item) and not item == null:
 			cleaned_array.push_back(item)
 	return cleaned_array
+
+
+func _on_wiggle_area_area_entered(area: Area2D) -> void:
+	if area.owner == Globals.player and block_popped == 0:
+		wiggle()
+
+
+func wiggle():
+	for plant_anim in plant_stem_anims:
+		plant_anim.wiggle()
