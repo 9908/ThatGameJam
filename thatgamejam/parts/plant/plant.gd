@@ -74,7 +74,8 @@ func stop_growing():
 	set_process(false)
 	for plant_anim in plant_stem_anims:
 		plant_anim.pause()
-
+	if block_popped == 0:
+		kill_plant()
 
 func _process(delta: float) -> void:
 	
@@ -122,13 +123,16 @@ func pop_plant_block(cost: int = 1):
 		if Globals.player.grow_plant.ressource <= 0:
 			stop_growing()
 
-
+func kill_plant():
+	var particle_cut = cut_particle_scn.instantiate()
+	particle_cut.global_position = self.global_position
+	Globals.props.add_child(particle_cut)
+	queue_free()
+		
+		
 func cut_off(cutoff_position: int):
 	if cutoff_position == 0:
-		var particle_cut = cut_particle_scn.instantiate()
-		particle_cut.global_position = self.global_position
-		Globals.props.add_child(particle_cut)
-		queue_free()
+		kill_plant()
 	else:
 		plant_stem.length = cutoff_position * block_vertical_spacing + 75
 		block_popped = cutoff_position
