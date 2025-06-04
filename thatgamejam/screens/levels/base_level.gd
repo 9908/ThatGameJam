@@ -21,7 +21,7 @@ func _enter_tree() -> void:
 	await get_tree().process_frame
 	Globals.camera.teleport_position()
 	
-	#$FmodEventEmitter2D.play()
+	$FmodEventEmitter2D.play()
 	FmodServer.play_one_shot("event:/sfx")
 	FmodServer.set_global_parameter_by_name("area",0.0)
 	
