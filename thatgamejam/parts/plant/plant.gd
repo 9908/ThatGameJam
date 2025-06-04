@@ -33,9 +33,25 @@ func _ready() -> void:
 		for i in range(0, floori(init_length / block_vertical_spacing)):
 			plant_stem.length += block_vertical_spacing
 			pop_plant_block(0)
-		plant_stem.length = init_length
+		
+		growth_time = get_growth_time_from_length(init_length)
+		var plant_stem_anim_stucks = floori(growth_time / GROWTH_TIME_INTERVAL)
+		var junction_stem_frame_last = (fmod(init_length, STEM_STUCK_HEIGHT) / STEM_STUCK_HEIGHT) * 31
+		var junction_stem_frame_prelast = 31 + junction_stem_frame_last
+		for i in range(0, plant_stem_anim_stucks + 1):
+			if i == plant_stem_anim_stucks:
+				pop_plant_stem_anim(false, junction_stem_frame_last)
+			elif i == plant_stem_anim_stucks - 1:
+				pop_plant_stem_anim(false, junction_stem_frame_prelast)
+			else:
+				pop_plant_stem_anim(false)
 	set_init_length(init_length)
 
+
+func get_growth_time_from_length(length_loc) -> float:
+	var growth_time_loc = GROWTH_TIME_INTERVAL * (length_loc / STEM_STUCK_HEIGHT)
+	return growth_time_loc
+	
 
 func set_init_length(new_length):
 	init_length = new_length
@@ -73,17 +89,18 @@ func _process(delta: float) -> void:
 		pushing_wall.emit()
 
 
-func pop_plant_stem_anim():
+func pop_plant_stem_anim(make_sound: bool = true, last_frame: int = 61):
 	var new_plant_stem_anim = plant_stem_anim_scn.instantiate()
 	add_child(new_plant_stem_anim)
 	new_plant_stem_anim.global_position = self.global_position + Vector2(0 , -10) + plant_stem_anim_popped*Vector2(3, -STEM_STUCK_HEIGHT)
 	plant_stem_anim_popped += 1
 	plant_stem_anims.append(new_plant_stem_anim)
-	new_plant_stem_anim.play()
+	new_plant_stem_anim.play_until_frame("head", last_frame)
 	await get_tree().create_timer(0.025).timeout
 	new_plant_stem_anim.show()
-	SoundManager.play("flower_open")
-	#SoundManager.play_random_from_category("blip")
+	if make_sound:
+		SoundManager.play("flower_open")
+		#SoundManager.play_random_from_category("blip")
 
 func pop_plant_block(cost: int = 1):
 	block_popped += 1
