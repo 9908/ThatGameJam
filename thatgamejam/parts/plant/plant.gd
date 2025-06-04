@@ -126,11 +126,11 @@ func pop_plant_block(cost: int = 1):
 func cut_off(cutoff_position: int):
 	if cutoff_position == 0:
 		var particle_cut = cut_particle_scn.instantiate()
-		Globals.props.add_child(particle_cut)
 		particle_cut.global_position = self.global_position
+		Globals.props.add_child(particle_cut)
 		queue_free()
 	else:
-		plant_stem.length = cutoff_position * block_vertical_spacing
+		plant_stem.length = cutoff_position * block_vertical_spacing + 75
 		block_popped = cutoff_position
 		for block in plant_blocks.get_children():
 			if block.plant_area.block_position > cutoff_position:
@@ -162,8 +162,8 @@ func cut_off(cutoff_position: int):
 
 		await get_tree().create_timer(0.01).timeout
 		var particle_cut = cut_particle_scn.instantiate()
-		Globals.props.add_child(particle_cut)
 		particle_cut.global_position = plant_stem.end_point.global_position
+		Globals.props.add_child(particle_cut)
 		
 		await get_tree().create_timer(0.1).timeout
 		plant_stem_anims = clean_array(plant_stem_anims)
