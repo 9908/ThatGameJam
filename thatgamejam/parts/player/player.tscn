@@ -385,7 +385,7 @@
 [ext_resource type="Texture2D" uid="uid://4wu7cf74xj5k" path="res://assets/anim/Stop/Stop_0032.png" id="451_5xarn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(60.5, 106)
+size = Vector2(44.25, 106)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s4b6d"]
 animations = [{
@@ -2153,8 +2153,7 @@ floor_max_angle = 0.523599
 script = ExtResource("1_xlo1q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -54)
+position = Vector2(2, -54)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Visual" type="Node2D" parent="."]
@@ -2306,7 +2305,6 @@ libraries = {
 }
 
 [node name="Areas" type="Node2D" parent="."]
-visible = false
 
 [node name="PlantDetector" type="Area2D" parent="Areas"]
 collision_layer = 16

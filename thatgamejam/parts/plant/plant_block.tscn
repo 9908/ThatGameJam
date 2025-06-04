@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dwetwhh8pl3au"]
+[gd_scene load_steps=41 format=3 uid="uid://dwetwhh8pl3au"]
 
 [ext_resource type="Script" uid="uid://cw015d200uus3" path="res://parts/plant/plant_block.gd" id="1_hg20w"]
 [ext_resource type="Script" uid="uid://tovlxwtlqbu8" path="res://parts/plant/plant_area.gd" id="2_ta5s4"]
@@ -35,18 +35,48 @@
 [ext_resource type="Texture2D" uid="uid://nmkw2t83dweh" path="res://assets/anim/PlatformAnim/PlatformAnim_0032.png" id="34_5iotw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(116, 16.5)
+size = Vector2(104, 16.5)
 
 [sub_resource type="Animation" id="Animation_ta5s4"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Asset:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.90735e-06, -21)]
+}
 
 [sub_resource type="Animation" id="Animation_hg20w"]
 resource_name = "initiate"
 step = 0.1
 
+[sub_resource type="Animation" id="Animation_hmx1i"]
+resource_name = "bounce"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Asset:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.90735e-06, -21), Vector2(0, -10), Vector2(0, -21)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ta5s4"]
 _data = {
 &"RESET": SubResource("Animation_ta5s4"),
+&"bounce": SubResource("Animation_hmx1i"),
 &"initiate": SubResource("Animation_hg20w")
 }
 
@@ -155,7 +185,6 @@ animations = [{
 }]
 
 [node name="PlantBlock" type="StaticBody2D"]
-visible = false
 use_parent_material = true
 script = ExtResource("1_hg20w")
 
@@ -170,7 +199,7 @@ pivot_offset = Vector2(40, 10)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2.25)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_h2yge")
 one_way_collision = true
 
@@ -179,7 +208,6 @@ reset_on_save = false
 libraries = {
 &"": SubResource("AnimationLibrary_ta5s4")
 }
-autoplay = "initiate"
 
 [node name="PlantArea" type="Area2D" parent="."]
 collision_layer = 16
@@ -196,3 +224,7 @@ position = Vector2(-1.90735e-06, -21)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_oj714")
 animation = &"grow"
+frame = 30
+frame_progress = 1.0
+
+[connection signal="area_entered" from="PlantArea" to="." method="_on_plant_area_area_entered"]
