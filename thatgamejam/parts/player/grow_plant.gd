@@ -81,7 +81,7 @@ func _on_plant_detector_area_exited(_area: Area2D) -> void:
 
 func _on_collectible_detector_area_entered(area: Area2D) -> void:
 	area.owner.collected()
-	get_ressource(6)
+	get_ressource(1)
 
 
 func get_ressource(amount: int = 6):
