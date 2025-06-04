@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://6kdfyqnpkrmk" path="res://assets/anim/TigeAnim/TigeAnim_0062.png" id="61_gmq2c"]
 [ext_resource type="Texture2D" uid="uid://bwnir4621ioxw" path="res://assets/anim/TigeAnim/TigeAnim_0063.png" id="62_iy6xg"]
 [ext_resource type="Texture2D" uid="uid://3ac52xhqjt8e" path="res://assets/anim/TigeAnim/TigeAnim_0064.png" id="63_42jok"]
-[ext_resource type="Script" path="res://parts/plant/plant_stem_anim.gd" id="63_hsub4"]
+[ext_resource type="Script" uid="uid://bjmuo2cl7rpw4" path="res://parts/plant/plant_stem_anim.gd" id="63_hsub4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gs0cg"]
 animations = [{

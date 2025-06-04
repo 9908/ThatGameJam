@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c5m5maqnuqs4a"]
+[gd_scene load_steps=2 format=3 uid="uid://c5m5maqnuqs4a"]
+
+[ext_resource type="Texture2D" uid="uid://d2ty2qikyxtww" path="res://assets/props/StarSky.png" id="1_levqb"]
 
 [node name="BackpackRessourceVisualisation" type="Node2D"]
 
@@ -7,5 +9,10 @@ offset_left = -2.0
 offset_top = -2.0
 offset_right = 2.0
 offset_bottom = 2.0
+rotation = -0.785397
 pivot_offset = Vector2(2, 2)
-color = Color(0, 0, 0, 1)
+
+[node name="StarSky" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(0.144444, 0.144444)
+texture = ExtResource("1_levqb")

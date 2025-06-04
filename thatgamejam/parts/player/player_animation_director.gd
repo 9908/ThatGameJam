@@ -4,6 +4,7 @@ extends Node2D
 @onready var sprite: ColorRect = $"../Visual/ColorRect"
 @onready var visual: Node2D = $"../Visual"
 @onready var body: AnimatedSprite2D = $"../Visual/Anims/Body"
+@onready var animation_player_body: AnimationPlayer = $AnimationPlayerBody
 
 var squash_lerp = 30.0
 var current_state: String = ""
@@ -22,29 +23,29 @@ func _physics_process(delta):
 	if landed:
 		current_state = "Reception"
 		if body.animation != "Reception":
-			body.play("Reception")
+			animation_player_body.play("Reception")
 		return
 
 	if is_jumping and current_state != "JumpBeggin":
 		current_state = "JumpBeggin"
 		if body.animation != "JumpBeggin":
-			body.play("JumpBeggin")
+			animation_player_body.play("JumpBeggin")
 		return
 
 	if started_falling and current_state != "JumpEnd":
 		current_state = "JumpEnd"
 		if body.animation != "JumpEnd":
-			body.play("JumpEnd")
+			animation_player_body.play("JumpEnd")
 		return
 
 	if is_on_ground:
 		if abs(owner.velocity.x) > 0.1:
 			if current_state != "Walk":
 				current_state = "Walk"
-				body.play("Walk")
+				animation_player_body.play("Walk")
 		elif current_state not in ["Stop", "IdleA"]:
 			current_state = "Stop"
-			body.play("Stop")
+			animation_player_body.play("Stop")
 
 	visual.scale.x = sign(owner.velocity.x) if owner.velocity.x != 0 else visual.scale.x
 	previous_velocity = owner.velocity
@@ -55,43 +56,75 @@ func _on_body_animation_finished() -> void:
 	if current_state == "Stop":
 		if owner.velocity.x == 0 and owner.is_on_floor():
 			current_state = "IdleA"
-			body.play("IdleA")
+			animation_player_body.play("IdleA")
 	elif current_state == "Reception":
 		if owner.is_on_floor():
 			if abs(owner.velocity.x) > 0.1:
 				current_state = "Walk"
-				body.play("Walk")
+				animation_player_body.play("Walk")
 			else:
 				current_state = "IdleA"
-				body.play("IdleA")
+				animation_player_body.play("IdleA")
 	elif current_state == "Cutting":
 		owner.movement.listen_to_input = true
 		owner.movement.set_physics_process(true)
 		if abs(owner.velocity.x) > 0.1:
 			current_state = "Walk"
-			body.play("Walk")
+			animation_player_body.play("Walk")
 		else:
 			current_state = "IdleA"
-			body.play("IdleA")
+			animation_player_body.play("IdleA")
 	elif current_state == "Growing":
 		if body.animation == "GrowBeggin":
-			body.play("GrowIdle")
+			animation_player_body.play("GrowIdle")
 		elif body.animation == "GrowStop":
 			current_state = "IdleA"
-			body.play("IdleA")
+			animation_player_body.play("IdleA")
 			owner.movement.listen_to_input = true
 			owner.movement.set_physics_process(true)
 
 
 func _on_grow_plant_cutted_plant() -> void:
 	current_state = "Cutting"
-	body.play("CutBig")
+	animation_player_body.play("CutBig")
 
 
 func _on_grow_plant_started_grow() -> void:
 	current_state = "Growing"
-	body.play("GrowBeggin")
+	animation_player_body.play("GrowBeggin")
 
 
 func _on_grow_plant_finished_grow() -> void:
-	body.play("GrowStop")
+	animation_player_body.play("GrowStop")
+
+
+func _on_animation_player_body_animation_finished(_anim_name: StringName) -> void:
+	if current_state == "Stop":
+		if owner.velocity.x == 0 and owner.is_on_floor():
+			current_state = "IdleA"
+			animation_player_body.play("IdleA")
+	elif current_state == "Reception":
+		if owner.is_on_floor():
+			if abs(owner.velocity.x) > 0.1:
+				current_state = "Walk"
+				animation_player_body.play("Walk")
+			else:
+				current_state = "IdleA"
+				animation_player_body.play("IdleA")
+	elif current_state == "Cutting":
+		owner.movement.listen_to_input = true
+		owner.movement.set_physics_process(true)
+		if abs(owner.velocity.x) > 0.1:
+			current_state = "Walk"
+			animation_player_body.play("Walk")
+		else:
+			current_state = "IdleA"
+			animation_player_body.play("IdleA")
+	elif current_state == "Growing":
+		if body.animation == "GrowBeggin":
+			animation_player_body.play("GrowIdle")
+		elif body.animation == "GrowStop":
+			current_state = "IdleA"
+			animation_player_body.play("IdleA")
+			owner.movement.listen_to_input = true
+			owner.movement.set_physics_process(true)
