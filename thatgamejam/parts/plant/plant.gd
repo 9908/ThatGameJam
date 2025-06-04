@@ -98,6 +98,12 @@ func pop_plant_stem_anim(make_sound: bool = true, last_frame: int = 61):
 	new_plant_stem_anim.play_until_frame("head", last_frame)
 	await get_tree().create_timer(0.025).timeout
 	new_plant_stem_anim.show()
+	if make_sound:
+		pass
+		# TODO Make sound
+		#SoundManager.play("flower_open")
+		#SoundManager.play_random_from_category("blip")
+
 
 func pop_plant_block(cost: int = 1):
 	block_popped += 1
