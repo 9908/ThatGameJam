@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhg1aa3tehy8p"]
+
+[ext_resource type="Texture2D" uid="uid://dom0jr4ykld8" path="res://assets/temp/particule.png" id="1_emp4m"]
+[ext_resource type="Script" uid="uid://dbj12s22tl7fk" path="res://parts/plant/cut_particle.gd" id="1_okybb"]
+
+[sub_resource type="Curve" id="Curve_emp4m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_okybb"]
+curve = SubResource("Curve_emp4m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_okybb"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 11.73
+initial_velocity_max = 152.5
+gravity = Vector3(0, 0, 0)
+damping_min = 24.926
+damping_max = 35.776
+scale_min = 0.1
+scale_max = 0.5
+alpha_curve = SubResource("CurveTexture_okybb")
+
+[node name="CutParticle" type="Node2D"]
+use_parent_material = true
+script = ExtResource("1_okybb")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+use_parent_material = true
+emitting = false
+amount = 15
+texture = ExtResource("1_emp4m")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.59
+process_material = SubResource("ParticleProcessMaterial_okybb")

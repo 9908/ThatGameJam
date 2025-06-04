@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dwli8hbfy3pwu"]
+[gd_scene load_steps=6 format=4 uid="uid://dwli8hbfy3pwu"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_hiyiw"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="2_rbga4"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="4_qh4ms"]
 [ext_resource type="PackedScene" uid="uid://bfq064dvpkg3f" path="res://parts/collectible/physics_collectible.tscn" id="5_5pj12"]
+[ext_resource type="PackedScene" uid="uid://bhg1aa3tehy8p" path="res://parts/plant/cut_particle.tscn" id="5_qh4ms"]
 
 [node name="PlantBlobTestLevel" instance=ExtResource("1_hiyiw")]
 
@@ -68,3 +69,6 @@ position = Vector2(-603, -454)
 
 [node name="PlayerStartPos" parent="." index="13"]
 position = Vector2(718, 317)
+
+[node name="CutParticle" parent="." index="16" instance=ExtResource("5_qh4ms")]
+position = Vector2(643, 285)

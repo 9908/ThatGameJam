@@ -8,6 +8,8 @@ signal pushing_wall
 @onready var plant_blocks: Node2D = $PlantBlocks
 @onready var plant_area: Area2D = $PlantArea
 
+var cut_particle_scn = preload("res://parts/plant/cut_particle.tscn")
+
 var can_grow: bool = true
 var growth_rate: float = 135.0
 var plant_block_scn = preload("res://parts/plant/plant_block.tscn")
@@ -123,6 +125,9 @@ func pop_plant_block(cost: int = 1):
 
 func cut_off(cutoff_position: int):
 	if cutoff_position == 0:
+		var particle_cut = cut_particle_scn.instantiate()
+		Globals.props.add_child(particle_cut)
+		particle_cut.global_position = self.global_position
 		queue_free()
 	else:
 		plant_stem.length = cutoff_position * block_vertical_spacing
@@ -155,10 +160,17 @@ func cut_off(cutoff_position: int):
 			plant_stem_anims[junction_stem_id-1].frame = 31 + junction_stem_frame
 		growth_time = get_growth_time_from_length(plant_stem.length) #(plant_stem_anim_popped-2)*GROWTH_TIME_INTERVAL + 1 # - junction_stem_frame/62 * GROWTH_TIME_INTERVAL
 
+		await get_tree().create_timer(0.01).timeout
+		var particle_cut = cut_particle_scn.instantiate()
+		Globals.props.add_child(particle_cut)
+		particle_cut.global_position = plant_stem.end_point.global_position
+		
 		await get_tree().create_timer(0.1).timeout
 		plant_stem_anims = clean_array(plant_stem_anims)
 		#print(plant_stem_anims)
-
+		
+	
+	
 func _on_plant_stem_plant_collided() -> void:
 	touching_ceiling = true
 	for plant_anim in plant_stem_anims:
