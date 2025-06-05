@@ -43,17 +43,22 @@ func _physics_process(delta):
 			if current_state != "Walk":
 				current_state = "Walk"
 				animation_player_body.play("Walk")
-		elif current_state not in ["Stop", "IdleA"]:
-			current_state = "Stop"
-			animation_player_body.play("Stop")
-
+		elif current_state not in ["Stop", "StopSmooth", "IdleA"]:
+			if current_state == "Reception":
+				current_state = "Stop"
+				animation_player_body.play("Stop")
+			else:
+				current_state = "StopSmooth"
+				animation_player_body.play("StopSmooth")
+		
+		
 	visual.scale.x = sign(owner.velocity.x) if owner.velocity.x != 0 else visual.scale.x
 	previous_velocity = owner.velocity
 
 
 
 func _on_body_animation_finished() -> void:
-	if current_state == "Stop":
+	if current_state == "Stop" or current_state == "StopSmooth":
 		if owner.velocity.x == 0 and owner.is_on_floor():
 			current_state = "IdleA"
 			animation_player_body.play("IdleA")
@@ -99,7 +104,7 @@ func _on_grow_plant_finished_grow() -> void:
 
 
 func _on_animation_player_body_animation_finished(_anim_name: StringName) -> void:
-	if current_state == "Stop":
+	if current_state == "Stop" or current_state == "StopSmooth":
 		if owner.velocity.x == 0 and owner.is_on_floor():
 			current_state = "IdleA"
 			animation_player_body.play("IdleA")
