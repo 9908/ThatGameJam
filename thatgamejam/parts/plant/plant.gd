@@ -55,6 +55,10 @@ func _ready() -> void:
 			else:
 				pop_plant_stem_anim(false)
 	set_init_length(init_length)
+	
+	## FLAG-SFX "Sfx_StemStart" 
+	# Plays Once when the Plant is instantiated : "Sfx_StemStart" 
+	
 	await get_tree().create_timer(2.0).timeout
 	can_touch_ceiling = true
 	#for i in range(0, 10000):
@@ -75,6 +79,7 @@ func set_init_length(new_length):
 	
 
 func start_growing():
+	# FLAG_SFX
 	if can_grow:
 		set_process(true)
 		if not touching_ceiling:
@@ -117,11 +122,6 @@ func pop_plant_stem_anim(make_sound: bool = true, last_frame: int = 61):
 	new_plant_stem_anim.play_until_frame(last_frame)
 	await get_tree().create_timer(0.025).timeout
 	new_plant_stem_anim.show()
-	if make_sound:
-		pass
-		# TODO Make sound
-		#SoundManager.play("flower_open")
-		#SoundManager.play_random_from_category("blip")
 
 
 func pop_plant_block(cost: int = 1):
@@ -141,7 +141,7 @@ func pop_plant_block(cost: int = 1):
 
 	new_side_stem.global_position = global_position + Vector2(plant_block_pos_x, new_side_stem_pos_y)
 	new_side_stem.scale.x *= -block_pop_direction_loc
-	new_side_stem.scale.x *= abs(distance_to_stem/75.0)
+	new_side_stem.scale.x *= abs(distance_to_stem/79.0)
 	
 	await get_tree().create_timer(0.8).timeout
 	var new_plant_block = plant_block_scn.instantiate()
@@ -150,13 +150,19 @@ func pop_plant_block(cost: int = 1):
 	
 	await get_tree().create_timer(0.01).timeout
 	new_plant_block.show()
+	
 	if not cost == 0:
 		Globals.player.grow_plant.remove_ressource(cost)
 		if Globals.player.grow_plant.ressource <= 0:
 			stop_growing()
+			
+	## FLAG-SFX "Sfx_Flower"
+	# Plays Once when a flower platform grows : "Sfx_Flower"
 
 
 func kill_plant():
+	## FLAG-SFX "Sfx_StemStop"
+	# Plays Once when the Plant is destroyed : "Sfx_StemStop"
 	var particle_cut = cut_particle_scn.instantiate()
 	particle_cut.global_position = self.global_position
 	Globals.props.add_child(particle_cut)
@@ -167,16 +173,23 @@ func cut_off(cutoff_position: int):
 	if cutoff_position == 0:
 		kill_plant()
 	else:
+		var block_destroyed: bool = false
 		plant_stem.length = cutoff_position * block_vertical_spacing + 75
 		block_popped = cutoff_position
 		for block in plant_blocks.get_children():
 			if block.plant_area.block_position > cutoff_position:
 				block.queue_free()
+				block_destroyed = true
 				touching_ceiling = false
 		if fmod(cutoff_position, 2) == 0:
 			block_pop_direction = 1
 		else:
 			block_pop_direction = -1
+		
+		if block_destroyed:
+			pass
+			## FLAG-SFX "Sfx_PlantCut"
+			# Plays Once when the Plant is cutoff intermediary level : "Sfx_PlantCut"
 		
 		var plant_stem_height: float = 0
 		var id: int = 0

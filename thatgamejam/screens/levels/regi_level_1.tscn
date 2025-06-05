@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://ca3uxvkcvpamo"]
+[gd_scene load_steps=4 format=4 uid="uid://ca3uxvkcvpamo"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_liu0w"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="2_hv6qa"]
+[ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="3_hv6qa"]
 
 [node name="BaseLevel" instance=ExtResource("1_liu0w")]
 
@@ -52,3 +53,9 @@ position = Vector2(1431, -643)
 
 [node name="Collectible16" parent="Collectible" index="14" instance=ExtResource("2_hv6qa")]
 position = Vector2(1431, -643)
+
+[node name="MusicTrigger" parent="." index="12" instance=ExtResource("3_hv6qa")]
+position = Vector2(-297, 440)
+
+[node name="MusicTrigger2" parent="." index="13" instance=ExtResource("3_hv6qa")]
+position = Vector2(730, 440)

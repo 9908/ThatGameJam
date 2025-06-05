@@ -47,6 +47,8 @@ func _physics_process(delta):
 			if current_state == "Reception":
 				current_state = "Stop"
 				animation_player_body.play("Stop")
+				## FLAG-SFX "Sfx_PlayerLand"
+				# Plays Once when the player Lands : "Sfx_PlayerLand"
 			else:
 				current_state = "StopSmooth"
 				animation_player_body.play("StopSmooth")

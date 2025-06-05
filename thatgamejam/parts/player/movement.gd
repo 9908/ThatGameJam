@@ -53,6 +53,8 @@ func _physics_process(delta):
 	# Jump buffering
 	if Input.is_action_just_pressed("jump") and listen_to_input:
 		jump_buffer_timer = JUMP_BUFFER_TIME
+		## FLAG-SFX "Sfx_PlayerJump"
+		# Plays Once when the player jumps : "Sfx_PlayerJump"
 	else:
 		jump_buffer_timer -= delta
 

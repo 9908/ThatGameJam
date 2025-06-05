@@ -16,6 +16,9 @@ func dies(hazard):
 	var respawn_pos = last_save_point.get(last_save_point.size()-1)
 	Globals.player.hide()
 	Globals.player.set_active(false)
+	
+	## FLAG-SFX "Sfx_PlayerHit"
+	# Plays Once when the player is hit / dead : "Sfx_PlayerHit"
 	await get_tree().create_timer(1.0).timeout
 	Globals.player.set_active(true)
 	Globals.player.show()
