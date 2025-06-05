@@ -2,7 +2,7 @@
 extends Node
 
 @export var gradients: Array[Gradient] = []
-@export_range(0.0, 2.999, 0.01) var day_progress: float = 0.0 : set = set_day_progress
+@export_range(0.0, 9.999, 0.01) var day_progress: float = 0.0 : set = set_day_progress
 @export_node_path("TextureRect") var color_rect_path: NodePath
 
 var blended_gradient := Gradient.new()

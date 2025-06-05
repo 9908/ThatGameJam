@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=26 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -13,20 +13,48 @@
 [ext_resource type="Script" uid="uid://dnebbhspdocje" path="res://screens/fade.gd" id="5_ycjph"]
 
 [sub_resource type="Gradient" id="Gradient_nrb37"]
-offsets = PackedFloat32Array(0, 0.295082, 0.714754, 1)
-colors = PackedColorArray(0.243137, 0.188235, 0.317647, 1, 0.462745, 0.329412, 0.47451, 1, 0.443137, 0.52549, 0.639216, 1, 0.105882, 0.254902, 0.396078, 1)
+offsets = PackedFloat32Array(0, 0.357692, 0.688462, 1)
+colors = PackedColorArray(0.0235294, 0.188235, 0.337255, 1, 0.32549, 0.439216, 0.431373, 1, 0.627451, 0.623529, 0.368627, 1, 0.760784, 0.670588, 0.396078, 1)
 
 [sub_resource type="Gradient" id="Gradient_owlgm"]
-offsets = PackedFloat32Array(0, 0.408629, 0.794416, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.28038, 0.32261, 0.488281, 1, 0.267761, 0.383172, 0.835938, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.353846, 0.653846, 1)
+colors = PackedColorArray(0.0235294, 0.176471, 0.305882, 1, 0.368627, 0.45098, 0.231373, 1, 0.631373, 0.54902, 0.231373, 1, 0.768627, 0.588235, 0.25098, 1)
 
 [sub_resource type="Gradient" id="Gradient_xd12c"]
-offsets = PackedFloat32Array(0, 0.312183, 0.786802, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.464844, 0.875, 0.855774, 1, 0.902344, 0.49782, 0.444122, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.4, 0.738462, 1)
+colors = PackedColorArray(0.0196078, 0.168627, 0.309804, 1, 0.2, 0.356863, 0.313726, 1, 0.554309, 0.46264, 0.422972, 1, 0.592157, 0.341176, 0.403922, 1)
+
+[sub_resource type="Gradient" id="Gradient_1s7cm"]
+offsets = PackedFloat32Array(0, 0.376923, 0.661538, 1)
+colors = PackedColorArray(0.0117647, 0.0117647, 0.113725, 1, 0.505882, 0.172549, 0.396078, 1, 0.25098, 0.109804, 0.423529, 1, 0.0356193, 0.183449, 0.208088, 1)
+
+[sub_resource type="Gradient" id="Gradient_lwayx"]
+offsets = PackedFloat32Array(0, 0.392308, 0.703846, 1)
+colors = PackedColorArray(0.0627451, 0.0156863, 0.196078, 1, 0.345098, 0.266667, 0.529412, 1, 0.211765, 0.411765, 0.392157, 1, 0.0901961, 0.0784314, 0.262745, 1)
+
+[sub_resource type="Gradient" id="Gradient_o25a7"]
+offsets = PackedFloat32Array(0, 0.365385, 0.711538, 1)
+colors = PackedColorArray(0.113725, 0.141176, 0.215686, 1, 0.317647, 0.376471, 0.384314, 1, 0.694118, 0.623529, 0.0901961, 1, 0.152941, 0.207843, 0.0705882, 1)
+
+[sub_resource type="Gradient" id="Gradient_fu4o2"]
+offsets = PackedFloat32Array(0, 0.323077, 0.646154, 1)
+colors = PackedColorArray(0.0823529, 0.0431373, 0.188235, 1, 0.2, 0.176471, 0.466667, 1, 0.521569, 0.458824, 0.356863, 1, 0.690082, 0.621994, 0.0545877, 1)
+
+[sub_resource type="Gradient" id="Gradient_g5qc2"]
+offsets = PackedFloat32Array(0, 0.415385, 0.688462, 1)
+colors = PackedColorArray(0.262745, 0.439216, 0.670588, 1, 0.443137, 0.627451, 0.682353, 1, 0.580392, 0.698039, 0.705882, 1, 0.678431, 0.564706, 0.682353, 1)
+
+[sub_resource type="Gradient" id="Gradient_k2lyy"]
+offsets = PackedFloat32Array(0, 0.365385, 0.696154, 1)
+colors = PackedColorArray(0.247059, 0.105882, 0.447059, 1, 0.203922, 0.313726, 0.701961, 1, 0.368627, 0.509804, 0.752941, 1, 0.678431, 0.670588, 0.823529, 1)
+
+[sub_resource type="Gradient" id="Gradient_iwpbl"]
+
+[sub_resource type="Gradient" id="Gradient_ft7qg"]
 
 [sub_resource type="Gradient" id="Gradient_era8c"]
-offsets = PackedFloat32Array(0, 0.295082, 0.714754, 1)
-colors = PackedColorArray(0.243137, 0.188235, 0.317647, 1, 0.462745, 0.329412, 0.47451, 1, 0.443137, 0.52549, 0.639216, 1, 0.105882, 0.254902, 0.396078, 1)
+offsets = PackedFloat32Array(0, 0.353846, 0.769231, 1)
+colors = PackedColorArray(0.227451, 0.286275, 0.360784, 1, 0.286275, 0.352941, 0.462745, 1, 0.109804, 0.121569, 0.243137, 1, 0.832644, 0.19181, 0.19181, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_1s7cm"]
 gradient = SubResource("Gradient_era8c")
@@ -48,7 +76,8 @@ layer = -1
 
 [node name="DynamicBackground" type="Node" parent="Background"]
 script = ExtResource("3_nrb37")
-gradients = Array[Gradient]([SubResource("Gradient_nrb37"), SubResource("Gradient_owlgm"), SubResource("Gradient_xd12c")])
+gradients = Array[Gradient]([SubResource("Gradient_nrb37"), SubResource("Gradient_owlgm"), SubResource("Gradient_xd12c"), SubResource("Gradient_1s7cm"), SubResource("Gradient_lwayx"), SubResource("Gradient_o25a7"), SubResource("Gradient_fu4o2"), SubResource("Gradient_g5qc2"), SubResource("Gradient_k2lyy"), SubResource("Gradient_iwpbl"), SubResource("Gradient_ft7qg")])
+day_progress = 3.18
 color_rect_path = NodePath("ColorRect")
 
 [node name="ColorRect" type="TextureRect" parent="Background/DynamicBackground"]
