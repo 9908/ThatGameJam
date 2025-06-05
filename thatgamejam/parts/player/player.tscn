@@ -2205,6 +2205,58 @@ tracks/3/keys = {
 "values": [Vector2(-32, -95), Vector2(-30, -97), Vector2(-28, -99), Vector2(-28, -101), Vector2(-34, -101), Vector2(-40, -96), Vector2(-41, -92), Vector2(-42, -89), Vector2(-42, -90), Vector2(-42, -92), Vector2(-42, -93)]
 }
 
+[sub_resource type="Animation" id="Animation_ap2dt"]
+resource_name = "StopSmooth"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"StopSmooth"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Backpack:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.477381, 0.477381, 0.477381, 0.477381, 0.477381, 0.398842, 0.351585, 0.351585, 0.295096, 0.259515]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Backpack:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-32, -95), Vector2(-33, -96), Vector2(-35, -98), Vector2(-37, -100), Vector2(-37, -99), Vector2(-39, -98), Vector2(-41, -97), Vector2(-41, -96), Vector2(-41, -95), Vector2(-42, -94)]
+}
+
 [sub_resource type="Animation" id="Animation_mhmtd"]
 resource_name = "Walk"
 loop_mode = 1
@@ -2256,58 +2308,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.527045, 0.527045, 0.517957, 0.519093, 0.520229, 0.509255, 0.512813, 0.516371, 0.519929, 0.523487, 0.527045]
-}
-
-[sub_resource type="Animation" id="Animation_ap2dt"]
-resource_name = "StopSmooth"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"StopSmooth"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 31]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Backpack:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.477381, 0.477381, 0.477381, 0.477381, 0.477381, 0.398842, 0.351585, 0.351585, 0.295096, 0.259515]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Backpack:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-32, -95), Vector2(-33, -96), Vector2(-35, -98), Vector2(-37, -100), Vector2(-37, -99), Vector2(-39, -98), Vector2(-41, -97), Vector2(-41, -96), Vector2(-41, -95), Vector2(-42, -94)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_02clc"]

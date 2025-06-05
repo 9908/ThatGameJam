@@ -141,7 +141,7 @@ func pop_plant_block(cost: int = 1):
 
 	new_side_stem.global_position = global_position + Vector2(plant_block_pos_x, new_side_stem_pos_y)
 	new_side_stem.scale.x *= -block_pop_direction_loc
-	new_side_stem.scale.x *= abs(distance_to_stem/80.0)
+	new_side_stem.scale.x *= abs(distance_to_stem/75.0)
 	
 	await get_tree().create_timer(0.8).timeout
 	var new_plant_block = plant_block_scn.instantiate()
