@@ -1,9 +1,10 @@
-[gd_scene load_steps=433 format=3 uid="uid://dvegjstwenvl"]
+[gd_scene load_steps=437 format=3 uid="uid://dvegjstwenvl"]
 
 [ext_resource type="Script" uid="uid://td4km5asd0n3" path="res://parts/player/player.gd" id="1_xlo1q"]
 [ext_resource type="Script" uid="uid://cglok38iatmxm" path="res://parts/player/movement.gd" id="2_aaff8"]
 [ext_resource type="PackedScene" uid="uid://c5m5maqnuqs4a" path="res://parts/collectible/backpack_ressource_visualisation.tscn" id="2_cixe0"]
 [ext_resource type="Script" uid="uid://dxplvwdfx176s" path="res://parts/collectible/backpack.gd" id="2_s4b6d"]
+[ext_resource type="Texture2D" uid="uid://dom0jr4ykld8" path="res://assets/temp/particule.png" id="2_x7byw"]
 [ext_resource type="Script" uid="uid://hv3b5y0ql4rs" path="res://parts/player/grow_plant.gd" id="3_40wer"]
 [ext_resource type="Script" uid="uid://xre3judc673b" path="res://parts/player/player_animation_director.gd" id="3_nh1j4"]
 [ext_resource type="Texture2D" uid="uid://bn7jogfqj4ooh" path="res://assets/anim/CutBig/CutBig_0001.png" id="4_82qxm"]
@@ -418,6 +419,25 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(44.25, 106)
+
+[sub_resource type="Curve" id="Curve_emp4m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x7byw"]
+curve = SubResource("Curve_emp4m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_okybb"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 11.73
+initial_velocity_max = 152.5
+gravity = Vector3(0, 0, 0)
+damping_min = 24.926
+damping_max = 35.776
+scale_min = 0.3
+alpha_curve = SubResource("CurveTexture_x7byw")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s4b6d"]
 animations = [{
@@ -2341,6 +2361,19 @@ script = ExtResource("1_xlo1q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -54)
 shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="DeadParticle" type="GPUParticles2D" parent="."]
+modulate = Color(0.40625, 0.40625, 0.40625, 1)
+use_parent_material = true
+position = Vector2(5, -61)
+emitting = false
+amount = 15
+texture = ExtResource("2_x7byw")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.59
+process_material = SubResource("ParticleProcessMaterial_okybb")
 
 [node name="Visual" type="Node2D" parent="."]
 use_parent_material = true
