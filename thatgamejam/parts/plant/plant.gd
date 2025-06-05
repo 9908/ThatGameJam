@@ -26,6 +26,12 @@ var STEM_STUCK_HEIGHT: float = 260.0
 var GROWTH_TIME_INTERVAL: float = (0.5*(62.0/16.0))
 var can_touch_ceiling: bool = false
 
+var plant_side_stem_anim_scn = preload("res://parts/plant/plant_side_stem_anim.tscn")
+var plant_side_stem_anims: Array
+
+@onready var line_2d: Line2D = $Line2D
+
+
 func _ready() -> void:
 	set_process(false)
 	plant_area.plant = self
@@ -51,8 +57,12 @@ func _ready() -> void:
 	set_init_length(init_length)
 	await get_tree().create_timer(2.0).timeout
 	can_touch_ceiling = true
-	
-
+	#for i in range(0, 10000):
+		#var new_side_stem_pos_y = -i + 35
+		#var sin_point = 15*sin(2*PI*(new_side_stem_pos_y+85)/(STEM_STUCK_HEIGHT)) - 3 * (new_side_stem_pos_y+85)/STEM_STUCK_HEIGHT
+		#line_2d.add_point(Vector2(sin_point, new_side_stem_pos_y + 85))
+		
+		
 func get_growth_time_from_length(length_loc) -> float:
 	var growth_time_loc = GROWTH_TIME_INTERVAL * (length_loc / STEM_STUCK_HEIGHT)
 	return growth_time_loc
@@ -69,14 +79,16 @@ func start_growing():
 		set_process(true)
 		if not touching_ceiling:
 			for plant_anim in plant_stem_anims:
-				if not plant_anim.frame == 61:
-					plant_anim.play_until_frame()
+				if is_instance_valid(plant_anim):
+					if not plant_anim.frame == 61:
+						plant_anim.play_until_frame()
 
 
 func stop_growing():
 	set_process(false)
 	for plant_anim in plant_stem_anims:
-		plant_anim.stop_anim()
+		if is_instance_valid(plant_anim):
+			plant_anim.stop_anim()
 	if block_popped == 0:
 		kill_plant()
 
@@ -115,17 +127,34 @@ func pop_plant_stem_anim(make_sound: bool = true, last_frame: int = 61):
 func pop_plant_block(cost: int = 1):
 	block_popped += 1
 	block_pop_direction *= -1
+	var stem_length_loc = -plant_stem.length
+	var block_popped_loc = block_popped
+	var block_pop_direction_loc = block_pop_direction
+	var new_side_stem = plant_side_stem_anim_scn.instantiate()
+	plant_side_stem_anims.append(new_side_stem)
+	add_child(new_side_stem)
+	var plant_block_pos_x = block_pop_direction_loc * 48 * 1.5 
+	var new_side_stem_pos_y = stem_length_loc + 35
+	plant_block_pos_x += - 3 * (new_side_stem_pos_y+85)/STEM_STUCK_HEIGHT
+	var sin_point = 15*sin(2*PI*(new_side_stem_pos_y+85)/(STEM_STUCK_HEIGHT)) - 3 * (new_side_stem_pos_y+85)/STEM_STUCK_HEIGHT
+	var distance_to_stem = sin_point - plant_block_pos_x
+
+	new_side_stem.global_position = global_position + Vector2(plant_block_pos_x, new_side_stem_pos_y)
+	new_side_stem.scale.x *= -block_pop_direction_loc
+	new_side_stem.scale.x *= abs(distance_to_stem/80.0)
 	
+	await get_tree().create_timer(0.8).timeout
 	var new_plant_block = plant_block_scn.instantiate()
 	plant_blocks.add_child(new_plant_block)
-	new_plant_block.initiate(global_position + Vector2(block_pop_direction * 48 * 1.5, -plant_stem.length), self, block_popped)
-
+	new_plant_block.initiate(global_position + Vector2(plant_block_pos_x, stem_length_loc), self, block_popped_loc)
+	
 	await get_tree().create_timer(0.01).timeout
 	new_plant_block.show()
 	if not cost == 0:
 		Globals.player.grow_plant.remove_ressource(cost)
 		if Globals.player.grow_plant.ressource <= 0:
 			stop_growing()
+
 
 func kill_plant():
 	var particle_cut = cut_particle_scn.instantiate()
@@ -144,13 +173,16 @@ func cut_off(cutoff_position: int):
 			if block.plant_area.block_position > cutoff_position:
 				block.queue_free()
 				touching_ceiling = false
-				
+		if fmod(cutoff_position, 2) == 0:
+			block_pop_direction = 1
+		else:
+			block_pop_direction = -1
+		
 		var plant_stem_height: float = 0
 		var id: int = 0
 		var junction_stem = null
 		var junction_stem_id: int = 0
 		for plant_stem_anim in plant_stem_anims:
-			#print(str(plant_stem_height) + "   ---  " + str(plant_stem.length))
 			if plant_stem_height < plant_stem.length:
 				#Keep Block
 				junction_stem = plant_stem_anim
@@ -161,13 +193,16 @@ func cut_off(cutoff_position: int):
 				plant_stem_anim_popped -= 1
 			id += 1
 			plant_stem_height += STEM_STUCK_HEIGHT
-		
-		#print(" ----- " + str(id) + "   ---  " + str(plant_stem_anims.size()))
+			
+		for plant_stem_side_anim in plant_side_stem_anims:
+			if plant_stem_side_anim.global_position.y  < global_position.y - plant_stem.length:
+				plant_stem_side_anim.queue_free()
+			
 		var junction_stem_frame = (fmod(plant_stem.length, STEM_STUCK_HEIGHT) / STEM_STUCK_HEIGHT) * 31
 		junction_stem.frame = junction_stem_frame  
 		if not junction_stem_id == 0:
 			plant_stem_anims[junction_stem_id-1].frame = 31 + junction_stem_frame
-		growth_time = get_growth_time_from_length(plant_stem.length) #(plant_stem_anim_popped-2)*GROWTH_TIME_INTERVAL + 1 # - junction_stem_frame/62 * GROWTH_TIME_INTERVAL
+		growth_time = get_growth_time_from_length(plant_stem.length) 
 
 		await get_tree().create_timer(0.01).timeout
 		var particle_cut = cut_particle_scn.instantiate()
@@ -176,10 +211,9 @@ func cut_off(cutoff_position: int):
 		
 		await get_tree().create_timer(0.1).timeout
 		plant_stem_anims = clean_array(plant_stem_anims)
-		#print(plant_stem_anims)
-		
-	
-	
+		plant_side_stem_anims = clean_array(plant_side_stem_anims)
+
+
 func _on_plant_stem_plant_collided() -> void:
 	if not can_touch_ceiling:
 		return

@@ -53,7 +53,7 @@ init_length = 600.0
 
 [node name="Plant11" parent="Plants" index="10" instance=ExtResource("2_rbga4")]
 position = Vector2(1991, 495)
-init_length = 650.0
+init_length = 5000.0
 
 [node name="Collectible2" parent="." index="9" instance=ExtResource("4_qh4ms")]
 position = Vector2(-115, 398)
