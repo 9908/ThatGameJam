@@ -53,7 +53,6 @@ position = Vector2(0, -3.84054)
 
 [node name="StarSky" type="Sprite2D" parent="Visual"]
 position = Vector2(4.76837e-07, -0.15946)
-rotation = -0.785397
 texture = ExtResource("2_vqsir")
 
 [node name="ColorRect" type="ColorRect" parent="Visual"]

@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://boxhuyg61cdbk" path="res://parts/letter_box/letter_box.tscn" id="2_snut5"]
 
 [sub_resource type="Gradient" id="Gradient_10oib"]
-offsets = PackedFloat32Array(0, 0.534125, 1)
-colors = PackedColorArray(0.14273, 0.170931, 0.309918, 1, 0.411089, 0.393808, 0.554309, 1, 0.690082, 0.503883, 0.689729, 1)
+offsets = PackedFloat32Array(0, 0.483333, 1)
+colors = PackedColorArray(0.690082, 0.503883, 0.689729, 1, 0.411089, 0.393808, 0.554309, 1, 0.14273, 0.170931, 0.309918, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_uxlly"]
 gradient = SubResource("Gradient_10oib")
