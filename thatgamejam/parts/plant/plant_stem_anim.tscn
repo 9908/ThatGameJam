@@ -263,6 +263,8 @@ use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_gs0cg")
 animation = &"head"
 autoplay = "head"
+frame = 61
+frame_progress = 1.0
 offset = Vector2(0, -135)
 script = ExtResource("63_hsub4")
 
