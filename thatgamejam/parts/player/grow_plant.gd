@@ -49,7 +49,8 @@ func stop_growing():
 	finished_grow.emit()
 	growing = false
 	nearby_plant.stop_growing()
-	Globals.camera.set_target(Globals.player.camera_target)
+	if not Globals.ongoing_explosion:
+		Globals.camera.set_target(Globals.player.camera_target)
 
 
 func cut_plant():

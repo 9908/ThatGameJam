@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://nx7exqfharm8" path="res://assets/props/BlobSmall.png" id="2_1r6ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxxq2"]
-size = Vector2(44, 20)
+size = Vector2(62, 26)
 
 [sub_resource type="Animation" id="Animation_csl4r"]
 resource_name = "Explodes"
@@ -325,7 +325,7 @@ collision_layer = 0
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlantDetector"]
-position = Vector2(0, 10)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_qxxq2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -21,22 +21,32 @@ func _on_get_pushed():
 	if explosion_progress > 1:
 		explodes()
 		plant.pushing_wall.disconnect(_on_get_pushed)
+		plant.touching_ceiling = false
 
 
 func explodes():
 	if exploded:
 		return
+	Globals.ongoing_explosion = true
 	exploded = true
 	animation_player.play("Explodes")
+	Globals.camera.set_target(self)
+	var chain_reaction = false
 	await get_tree().create_timer(0.15).timeout
 	destroy_tiles_around()
 	for blob_area in explosion_area.get_overlapping_areas():
 		await get_tree().create_timer(0.2).timeout
 		var blob = blob_area.owner
+		if blob == self or blob.exploded:
+			continue
 		blob.explodes()
-	#pop_collectible()
-	#await get_tree().create_timer(0.3).timeout
-	#pop_collectible()
+		chain_reaction = true
+		
+	if not chain_reaction:
+		await get_tree().create_timer(1.0).timeout
+		Globals.camera.set_target(Globals.player)
+		Globals.ongoing_explosion = false
+		
 	await get_tree().create_timer(4.0).timeout
 	queue_free()
 
