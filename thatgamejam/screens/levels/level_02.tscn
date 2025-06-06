@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1q5m6edwjj26"]
+[gd_scene load_steps=8 format=4 uid="uid://c1q5m6edwjj26"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_tp3pm"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="2_ehgvl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxrs7jq0ve1qn" path="res://parts/hazard/spike.tscn" id="3_ms7vn"]
 [ext_resource type="PackedScene" uid="uid://cichohdr60q2" path="res://screens/levels/level_03.tscn" id="4_uvjpn"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="5_u1xq2"]
+[ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="7_82ier"]
 
 [node name="Level_02" instance=ExtResource("1_tp3pm")]
 time_of_day = 2.0
@@ -283,3 +284,21 @@ offset_right = 2568.0
 offset_bottom = -251.0
 text = "Hard: 1
 Easy: 2"
+
+[node name="AudioTriggers" type="Node" parent="." index="10"]
+
+[node name="MusicTrigger1" parent="AudioTriggers" index="0" instance=ExtResource("7_82ier")]
+position = Vector2(-6720, 545)
+one_shot = true
+event_name = "area"
+value = 2.0
+
+[node name="JingleTrigger1" parent="AudioTriggers" index="1" instance=ExtResource("7_82ier")]
+position = Vector2(-4127, 372)
+event_name = "jingle"
+value = 4.0
+
+[node name="JingleTrigger2" parent="AudioTriggers" index="2" instance=ExtResource("7_82ier")]
+position = Vector2(-3172, 406)
+event_name = "jingle"
+value = 5.0

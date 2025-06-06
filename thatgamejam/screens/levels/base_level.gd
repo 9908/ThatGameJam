@@ -21,10 +21,6 @@ func _enter_tree() -> void:
 	await get_tree().process_frame
 	Globals.camera.teleport_position()
 	
-	
-	
-	FmodServer.set_global_parameter_by_name("area",0.0)
-	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		Globals.pause_menu.toggle()
