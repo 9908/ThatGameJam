@@ -4,10 +4,13 @@ var player_scn = preload("res://parts/player/player.tscn")
 @onready var player_start_pos: Marker2D = $PlayerStartPos
 @export var time_of_day: float = 0
 
+
 func _ready() -> void:
 	Globals.level = self
 	Globals.props = $Props
-
+	Globals.tilemap = $TileMap
+	 
+	
 func _enter_tree() -> void:
 	await get_tree().process_frame
 	Globals.dynamic_background.set_day_progress(time_of_day)

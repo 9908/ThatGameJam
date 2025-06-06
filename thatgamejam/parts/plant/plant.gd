@@ -56,7 +56,7 @@ func _ready() -> void:
 				pop_plant_stem_anim(false)
 	set_init_length(init_length)
 
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(.2).timeout
 	can_touch_ceiling = true
 	#for i in range(0, 10000):
 		#var new_side_stem_pos_y = -i + 35

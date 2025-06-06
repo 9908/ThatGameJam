@@ -14,3 +14,4 @@ var pause_menu
 var dynamic_background
 var props
 var vignette
+var tilemap

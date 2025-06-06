@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhyc6f1avv8b4"]
+[gd_scene load_steps=18 format=3 uid="uid://dhyc6f1avv8b4"]
 
 [ext_resource type="Script" uid="uid://b46i6qya4bscp" path="res://parts/blob/blob.gd" id="1_csl4r"]
 [ext_resource type="Texture2D" uid="uid://dom0jr4ykld8" path="res://assets/temp/particule.png" id="2_1lkky"]
+[ext_resource type="Texture2D" uid="uid://nx7exqfharm8" path="res://assets/props/BlobSmall.png" id="2_1r6ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxxq2"]
 size = Vector2(44, 20)
 
 [sub_resource type="Animation" id="Animation_csl4r"]
 resource_name = "Explodes"
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,7 +17,7 @@ tracks/0/path = NodePath("Visual/ColorRect:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
+"times": PackedFloat32Array(0, 0.15, 0.55),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5), Vector2(3, 3)]
@@ -28,7 +29,7 @@ tracks/1/path = NodePath("Visual/ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
+"times": PackedFloat32Array(0, 0.15, 0.55),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -40,10 +41,46 @@ tracks/2/path = NodePath("GPUParticles2D:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.151662),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Particule:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_x7ibp"]
@@ -60,6 +97,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-18, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_1lkky"]
@@ -112,6 +161,54 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(-18, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles2D2:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visual:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Particule:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visual:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_1r6ck"]
 resource_name = "Shake"
@@ -142,6 +239,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 0.7), Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.9), Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1lkky"]
 _data = {
@@ -162,19 +271,49 @@ curve = SubResource("Curve_1lkky")
 particle_flag_disable_z = true
 direction = Vector3(0, 1, 0)
 spread = 90.0
-initial_velocity_min = 87.4
-initial_velocity_max = 249.35
+initial_velocity_max = 74.15
 gravity = Vector3(0, 0, 0)
 scale_min = 0.1
 scale_max = 0.5
 alpha_curve = SubResource("CurveTexture_1r6ck")
 
+[sub_resource type="Curve" id="Curve_xipp3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_okybb"]
+curve = SubResource("Curve_xipp3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m8uiy"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 11.73
+initial_velocity_max = 152.5
+gravity = Vector3(0, 0, 0)
+damping_min = 24.926
+damping_max = 35.776
+scale_min = 0.3
+alpha_curve = SubResource("CurveTexture_okybb")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lkky"]
+radius = 166.108
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1r6ck"]
+radius = 31.0644
+
 [node name="Blob" type="Node2D"]
+use_parent_material = true
 script = ExtResource("1_csl4r")
 
 [node name="Visual" type="Node2D" parent="."]
 
+[node name="BlobSmall" type="Sprite2D" parent="Visual"]
+scale = Vector2(0.501852, 0.501852)
+texture = ExtResource("2_1r6ck")
+
 [node name="ColorRect" type="ColorRect" parent="Visual"]
+visible = false
 offset_left = -18.0
 offset_right = 17.0
 offset_bottom = 10.0
@@ -182,7 +321,7 @@ pivot_offset = Vector2(18, 1)
 color = Color(1, 0.914063, 0, 1)
 
 [node name="PlantDetector" type="Area2D" parent="."]
-collision_layer = 64
+collision_layer = 0
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlantDetector"]
@@ -196,11 +335,49 @@ libraries = {
 autoplay = "Idle"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-modulate = Color(1, 0.913725, 0, 1)
+modulate = Color(0.74902, 0.647059, 0.443137, 1)
+z_index = 1
 emitting = false
+amount = 15
 texture = ExtResource("2_1lkky")
+lifetime = 2.0
 one_shot = true
 explosiveness = 0.9
 process_material = SubResource("ParticleProcessMaterial_1r6ck")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(0.40625, 0.40625, 0.40625, 1)
+z_index = 1
+use_parent_material = true
+position = Vector2(0, 1)
+emitting = false
+amount = 15
+texture = ExtResource("2_1lkky")
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.59
+process_material = SubResource("ParticleProcessMaterial_m8uiy")
+
+[node name="ExplosionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea"]
+shape = SubResource("CircleShape2D_1lkky")
+
+[node name="Particule" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+scale = Vector2(3.50385, 3.50385)
+texture = ExtResource("2_1lkky")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_1r6ck")
 
 [connection signal="area_entered" from="PlantDetector" to="." method="_on_plant_detector_area_entered"]
