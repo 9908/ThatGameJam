@@ -110,7 +110,7 @@ walk_to_the_right_fade = true
 position = Vector2(-1492, 385)
 
 [node name="Right" parent="LevelEdgeSetters" index="1"]
-position = Vector2(4891, -891)
+position = Vector2(7809.81, -811.685)
 
 [node name="Top" parent="LevelEdgeSetters" index="2"]
 position = Vector2(2417, -2439)
