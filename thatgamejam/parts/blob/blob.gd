@@ -21,7 +21,7 @@ func _on_get_pushed():
 	if explosion_progress > 1:
 		explodes()
 		plant.pushing_wall.disconnect(_on_get_pushed)
-		plant.touching_ceiling = false
+		plant.touched_explosive_blob()
 
 
 func explodes():
@@ -44,7 +44,10 @@ func explodes():
 		
 	if not chain_reaction:
 		await get_tree().create_timer(1.0).timeout
-		Globals.camera.set_target(Globals.player)
+		if Globals.plant_growing == null:
+			Globals.camera.set_target(Globals.player)
+		else:
+			Globals.camera.set_target(Globals.plant_growing.plant_stem.end_point)
 		Globals.ongoing_explosion = false
 		
 	await get_tree().create_timer(4.0).timeout

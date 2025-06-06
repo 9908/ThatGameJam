@@ -2,6 +2,7 @@ extends Node
 
 var ressource: int = 0
 var ongoing_explosion: bool = false
+var plant_growing = null
 
 var main
 var player

@@ -19,7 +19,7 @@ var block_vertical_spacing: float = 48.0 * 3.0
 var touching_ceiling: bool = false
 
 var plant_stem_anim_scn = preload("res://parts/plant/plant_stem_anim.tscn")
-var growth_time: float = 0.0
+#var growth_time: float = 0.0
 var plant_stem_anim_popped: int = 0
 var plant_stem_anims: Array
 var STEM_STUCK_HEIGHT: float = 260.0
@@ -30,6 +30,7 @@ var plant_side_stem_anim_scn = preload("res://parts/plant/plant_side_stem_anim.t
 var plant_side_stem_anims: Array
 
 @onready var line_2d: Line2D = $Line2D
+@onready var debug: RichTextLabel = $Debug
 
 
 func _ready() -> void:
@@ -43,8 +44,8 @@ func _ready() -> void:
 			plant_stem.length += block_vertical_spacing
 			pop_plant_block(0)
 		
-		growth_time = get_growth_time_from_length(init_length)
-		var plant_stem_anim_stucks = floori(growth_time / GROWTH_TIME_INTERVAL)
+		#growth_time = get_growth_time_from_length(init_length)
+		var plant_stem_anim_stucks = floori(get_growth_time_from_length(init_length) / GROWTH_TIME_INTERVAL)
 		var junction_stem_frame_last = (fmod(init_length, STEM_STUCK_HEIGHT) / STEM_STUCK_HEIGHT) * 31
 		var junction_stem_frame_prelast = 31 + junction_stem_frame_last
 		for i in range(0, plant_stem_anim_stucks + 1):
@@ -96,13 +97,15 @@ func stop_growing():
 
 
 func _process(delta: float) -> void:
+	#debug.text = str(growth_time)
 	modulate.a = lerp(modulate.a, 1.0, 0.05)
 	if not touching_ceiling:
-		growth_time += delta
-		if floori(growth_time / GROWTH_TIME_INTERVAL) >= plant_stem_anim_popped:
+		#growth_time += delta
+		plant_stem.length += delta * growth_rate
+		if floori(plant_stem.length / STEM_STUCK_HEIGHT) >= plant_stem_anim_popped:
+		#if floori(growth_time / GROWTH_TIME_INTERVAL) >= plant_stem_anim_popped:
 			pop_plant_stem_anim()
 			
-		plant_stem.length += delta * growth_rate
 		if floori(plant_stem.length / block_vertical_spacing) > block_popped:
 			pop_plant_block()
 	else:
@@ -215,7 +218,7 @@ func cut_off(cutoff_position: int):
 		junction_stem.frame = junction_stem_frame  
 		if not junction_stem_id == 0:
 			plant_stem_anims[junction_stem_id-1].frame = 31 + junction_stem_frame
-		growth_time = get_growth_time_from_length(plant_stem.length) 
+		#growth_time = get_growth_time_from_length(plant_stem.length) 
 
 		await get_tree().create_timer(0.01).timeout
 		var particle_cut = cut_particle_scn.instantiate()
@@ -230,10 +233,17 @@ func cut_off(cutoff_position: int):
 func _on_plant_stem_plant_collided() -> void:
 	if not can_touch_ceiling:
 		return
+	
 	touching_ceiling = true
 	for plant_anim in plant_stem_anims:
 		plant_anim.stop_anim()
 
+
+func touched_explosive_blob():
+	touching_ceiling = false
+	for plant_anim in plant_stem_anims:
+		plant_anim.play_until_frame()
+		
 
 func clean_array(dirty_array: Array) -> Array:
 	var cleaned_array = []

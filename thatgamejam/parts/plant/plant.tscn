@@ -44,5 +44,12 @@ z_index = 1
 width = 2.0
 default_color = Color(1, 0, 0, 1)
 
+[node name="Debug" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -29.0
+offset_right = 336.0
+offset_bottom = 40.0
+text = "debug"
+
 [connection signal="plant_collided" from="PlantStem" to="." method="_on_plant_stem_plant_collided"]
 [connection signal="area_entered" from="WiggleArea" to="." method="_on_wiggle_area_area_entered"]

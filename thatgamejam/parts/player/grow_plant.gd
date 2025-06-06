@@ -27,14 +27,23 @@ func start_growing():
 	if growing or not owner.is_on_floor() or ressource <= 0: 
 		return
 	growing = true
-	owner.movement.set_physics_process(false)
 	started_grow.emit()
+	owner.movement.set_physics_process(false)
+	
+		
 	if nearby_plant == null:
 		nearby_plant = plant_scn.instantiate()
 		nearby_plant.init_length = 0.0
 		Globals.plants.add_child(nearby_plant)
 		nearby_plant.global_position = owner.global_position + Vector2(0, 1)
-		nearby_plant.start_growing()	
+		
+		await get_tree().create_timer(.2).timeout
+		if not growing:
+			return
+			
+		nearby_plant.start_growing()
+		
+		Globals.plant_growing = nearby_plant
 		## FLAG-SFX "Sfx_StemStart"
 		FmodServer.play_one_shot("event:/root") 
 		# Plays Once when the Plant is instantiated : "Sfx_StemStart" 
@@ -46,6 +55,7 @@ func start_growing():
 func stop_growing():
 	if nearby_plant == null or not growing:
 		return
+	Globals.plant_growing = null
 	finished_grow.emit()
 	growing = false
 	nearby_plant.stop_growing()
