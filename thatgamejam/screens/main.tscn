@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=30 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://c40r4iw83noy" path="res://parts/letter_box/pop_up_question.gd" id="4_ycjph"]
 [ext_resource type="Script" uid="uid://c17v2e17lebqk" path="res://screens/pause_menu.gd" id="5_ramac"]
 [ext_resource type="Script" uid="uid://dnebbhspdocje" path="res://screens/fade.gd" id="5_ycjph"]
+[ext_resource type="Script" uid="uid://cqwoelg4761qh" path="res://screens/vignette.gd" id="8_owlgm"]
+[ext_resource type="Shader" uid="uid://wfnv46b7l4xu" path="res://screens/vignette.gdshader" id="8_xd12c"]
+[ext_resource type="Texture2D" uid="uid://cnobbackhysu" path="res://assets/art/filter_circle_1080.png" id="9_era8c"]
 
 [sub_resource type="Gradient" id="Gradient_nrb37"]
 offsets = PackedFloat32Array(0, 0.357692, 0.688462, 1)
@@ -58,6 +61,12 @@ colors = PackedColorArray(0.0209412, 0.0124706, 0.128549, 1, 0.476941, 0.18949, 
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_1s7cm"]
 gradient = SubResource("Gradient_era8c")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_era8c"]
+shader = ExtResource("8_xd12c")
+shader_parameter/cutoff = 1.0
+shader_parameter/smooth_size = 0.217
+shader_parameter/mask = ExtResource("9_era8c")
 
 [sub_resource type="Resource" id="Resource_lquwl"]
 script = ExtResource("4_tci2t")
@@ -288,6 +297,16 @@ offset_bottom = 1093.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("5_ycjph")
+
+[node name="Vignette" type="ColorRect" parent="UI"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_era8c")
+offset_left = -5.0
+offset_top = -15.0
+offset_right = 1944.0
+offset_bottom = 1093.0
+mouse_filter = 2
+script = ExtResource("8_owlgm")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(425, 411)
