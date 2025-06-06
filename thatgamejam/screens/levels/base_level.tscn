@@ -27,16 +27,6 @@ process_mode = 3
 material = SubResource("ShaderMaterial_wy38e")
 script = ExtResource("1_lv6o2")
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://FMODbank/Desktop/Master.strings.bank", "res://FMODbank/Desktop/Master.bank"]
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/test"
-event_guid = "{e296b063-ca2b-4a02-a2f2-8a899b896c00}"
-
-[node name="FmodListener2D" type="FmodListener2D" parent="."]
-position = Vector2(396, 524)
-
 [node name="TileMap" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(1, 0)

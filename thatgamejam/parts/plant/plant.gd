@@ -56,7 +56,8 @@ func _ready() -> void:
 				pop_plant_stem_anim(false)
 	set_init_length(init_length)
 	
-	## FLAG-SFX "Sfx_StemStart" 
+	## FLAG-SFX "Sfx_StemStart"
+	FmodServer.play_one_shot("event:/root") 
 	# Plays Once when the Plant is instantiated : "Sfx_StemStart" 
 	
 	await get_tree().create_timer(2.0).timeout
@@ -157,6 +158,7 @@ func pop_plant_block(cost: int = 1):
 			stop_growing()
 			
 	## FLAG-SFX "Sfx_Flower"
+	FmodServer.play_one_shot("event:/flower")
 	# Plays Once when a flower platform grows : "Sfx_Flower"
 
 
@@ -172,6 +174,7 @@ func kill_plant():
 func cut_off(cutoff_position: int):
 	if cutoff_position == 0:
 		kill_plant()
+		FmodServer.play_one_shot("event:/popout")
 	else:
 		var block_destroyed: bool = false
 		plant_stem.length = cutoff_position * block_vertical_spacing + 75
@@ -189,6 +192,7 @@ func cut_off(cutoff_position: int):
 		if block_destroyed:
 			pass
 			## FLAG-SFX "Sfx_PlantCut"
+			FmodServer.play_one_shot("event:/popout")
 			# Plays Once when the Plant is cutoff intermediary level : "Sfx_PlantCut"
 		
 		var plant_stem_height: float = 0
@@ -246,6 +250,8 @@ func clean_array(dirty_array: Array) -> Array:
 func _on_wiggle_area_area_entered(area: Area2D) -> void:
 	if area.owner == Globals.player and block_popped == 0:
 		wiggle()
+		# SFX - Regi wiggle plant
+		FmodServer.play_one_shot("event:/bulb")
 
 
 func wiggle():

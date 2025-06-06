@@ -48,10 +48,12 @@ func _physics_process(delta):
 				current_state = "Stop"
 				animation_player_body.play("Stop")
 				## FLAG-SFX "Sfx_PlayerLand"
+				FmodServer.play_one_shot("event:/landing")
 				# Plays Once when the player Lands : "Sfx_PlayerLand"
 			else:
 				current_state = "StopSmooth"
 				animation_player_body.play("StopSmooth")
+				FmodServer.play_one_shot("event:/landing")
 		
 		
 	visual.scale.x = sign(owner.velocity.x) if owner.velocity.x != 0 else visual.scale.x

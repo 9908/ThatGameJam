@@ -69,6 +69,14 @@ ease = 2
 y_sort_enabled = true
 script = ExtResource("1_cbuj4")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://FMODbank/Desktop/Master.strings.bank", "res://FMODbank/Desktop/Master.bank"]
+
+[node name="FmodMusic" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/music"
+event_guid = "{e296b063-ca2b-4a02-a2f2-8a899b896c00}"
+autoplay = true
+
 [node name="LevelSelect" parent="." instance=ExtResource("1_ee7ou")]
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -290,6 +298,8 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_ee7ou")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="FmodListener2D" type="FmodListener2D" parent="Camera"]
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 top_level = true
