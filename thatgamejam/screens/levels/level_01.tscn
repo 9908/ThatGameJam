@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://64oje6veby00"]
+[gd_scene load_steps=12 format=4 uid="uid://64oje6veby00"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_e3883"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="2_3my4n"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="3_h8qba"]
 [ext_resource type="Texture2D" uid="uid://cxrgj142l4ifr" path="res://assets/temp/menu_cloud_05.png" id="3_t6imu"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="6_kxt30"]
+[ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="8_vvwnw"]
 
 [sub_resource type="Gradient" id="Gradient_wy38e"]
 offsets = PackedFloat32Array(0, 0.534125, 1)
@@ -253,3 +254,20 @@ position = Vector2(5592, -2470)
 
 [node name="Bottom" parent="LevelEdgeSetters" index="3"]
 position = Vector2(-438, 824)
+
+[node name="AudioTriggers" type="Node" parent="." index="10"]
+
+[node name="MusicTrigger1" parent="AudioTriggers" index="0" instance=ExtResource("8_vvwnw")]
+position = Vector2(730, 440)
+event_name = "area"
+value = 1.0
+
+[node name="JingleTrigger1" parent="AudioTriggers" index="1" instance=ExtResource("8_vvwnw")]
+position = Vector2(15034, -1159)
+event_name = "jingle"
+value = 1.0
+
+[node name="JingleTrigger2" parent="AudioTriggers" index="2" instance=ExtResource("8_vvwnw")]
+position = Vector2(18785, -1425)
+event_name = "jingle"
+value = 2.0
