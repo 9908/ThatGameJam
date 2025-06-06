@@ -34,7 +34,10 @@ func start_growing():
 		nearby_plant.init_length = 0.0
 		Globals.plants.add_child(nearby_plant)
 		nearby_plant.global_position = owner.global_position + Vector2(0, 1)
-		nearby_plant.start_growing()
+		nearby_plant.start_growing()	
+		## FLAG-SFX "Sfx_StemStart"
+		FmodServer.play_one_shot("event:/root") 
+		# Plays Once when the Plant is instantiated : "Sfx_StemStart" 
 	else:
 		nearby_plant.start_growing()
 	Globals.camera.set_target(nearby_plant.plant_stem.end_point)
