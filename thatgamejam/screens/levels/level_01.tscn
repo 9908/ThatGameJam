@@ -140,11 +140,11 @@ position = Vector2(16930, -562)
 init_length = 120.0
 
 [node name="Plant56" parent="Plants" index="28" instance=ExtResource("3_h8qba")]
-position = Vector2(17818, -564)
+position = Vector2(17818, -563)
 init_length = 86.0
 
 [node name="Plant57" parent="Plants" index="29" instance=ExtResource("3_h8qba")]
-position = Vector2(17909, -564)
+position = Vector2(17909, -563)
 init_length = 120.0
 
 [node name="Plant38" parent="Plants" index="30" instance=ExtResource("3_h8qba")]
