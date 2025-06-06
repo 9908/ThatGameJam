@@ -1,4 +1,5 @@
 extends Node2D
+class_name BaseLevel
 
 var player_scn = preload("res://parts/player/player.tscn")
 @onready var player_start_pos: Marker2D = $PlayerStartPos

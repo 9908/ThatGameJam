@@ -1,11 +1,15 @@
 extends Node2D
 
+signal explodeded
+
 var collectible_scn = preload("res://parts/collectible/physics_collectible.tscn")
 var destructed_wall_scn = preload("res://parts/blob/DestructedWall.tscn")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var explosion_area: Area2D = $ExplosionArea
+@onready var visual: Node2D = $Visual
 
+@export var radius = 3
 var explosion_progress: float = 0.0
 var plant 
 var exploded: bool = false
@@ -13,7 +17,7 @@ var exploded: bool = false
 func _on_plant_detector_area_entered(area: Area2D) -> void:
 	plant = area.owner.owner
 	plant.pushing_wall.connect(_on_get_pushed)
-
+	visual.modulate = Color.RED
 
 func _on_get_pushed():
 	explosion_progress += 0.1
@@ -27,37 +31,37 @@ func _on_get_pushed():
 func explodes():
 	if exploded:
 		return
-	Globals.ongoing_explosion = true
+	Globals.ongoing_explosion += 1 
 	exploded = true
 	animation_player.play("Explodes")
 	Globals.camera.set_target(self)
 	var chain_reaction = false
 	await get_tree().create_timer(0.15).timeout
 	destroy_tiles_around()
+	explodeded.emit()
 	for blob_area in explosion_area.get_overlapping_areas():
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.1).timeout
 		var blob = blob_area.owner
 		if blob == self or blob.exploded:
 			continue
 		blob.explodes()
 		chain_reaction = true
 		
-	if not chain_reaction:
-		await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
+	Globals.ongoing_explosion -= 1
+	if Globals.ongoing_explosion == 0 :
 		if Globals.plant_growing == null:
 			Globals.camera.set_target(Globals.player)
 		else:
 			Globals.camera.set_target(Globals.plant_growing.plant_stem.end_point)
-		Globals.ongoing_explosion = false
-		
-	await get_tree().create_timer(4.0).timeout
+	
+	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
 
 func destroy_tiles_around():
 	var tilemap = Globals.tilemap
 	var center = tilemap.local_to_map(global_position)
-	var radius = 3
 	var radius_squared = radius * radius
 
 	for x in range(-ceil(radius), ceil(radius) + 1):

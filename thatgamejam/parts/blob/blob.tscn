@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://nx7exqfharm8" path="res://assets/props/BlobSmall.png" id="2_1r6ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxxq2"]
-size = Vector2(62, 26)
+size = Vector2(62, 32)
 
 [sub_resource type="Animation" id="Animation_csl4r"]
 resource_name = "Explodes"
