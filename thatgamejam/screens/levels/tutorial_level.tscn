@@ -26,7 +26,7 @@ y_sort_enabled = true
 script = ExtResource("3_6ud0y")
 
 [node name="Plant" parent="Plants" instance=ExtResource("9_k861e")]
-position = Vector2(599, 577)
+position = Vector2(600, 576)
 
 [node name="Plant2" parent="Plants" instance=ExtResource("9_k861e")]
 position = Vector2(755, 577)

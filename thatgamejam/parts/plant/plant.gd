@@ -55,11 +55,7 @@ func _ready() -> void:
 			else:
 				pop_plant_stem_anim(false)
 	set_init_length(init_length)
-	
-	## FLAG-SFX "Sfx_StemStart"
-	FmodServer.play_one_shot("event:/root") 
-	# Plays Once when the Plant is instantiated : "Sfx_StemStart" 
-	
+
 	await get_tree().create_timer(2.0).timeout
 	can_touch_ceiling = true
 	#for i in range(0, 10000):
@@ -156,10 +152,10 @@ func pop_plant_block(cost: int = 1):
 		Globals.player.grow_plant.remove_ressource(cost)
 		if Globals.player.grow_plant.ressource <= 0:
 			stop_growing()
-			
-	## FLAG-SFX "Sfx_Flower"
-	FmodServer.play_one_shot("event:/flower")
-	# Plays Once when a flower platform grows : "Sfx_Flower"
+
+		## FLAG-SFX "Sfx_Flower"
+		FmodServer.play_one_shot("event:/flower")
+		# Plays Once when a flower platform grows : "Sfx_Flower"
 
 
 func kill_plant():
