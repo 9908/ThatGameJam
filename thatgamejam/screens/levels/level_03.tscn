@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cichohdr60q2"]
+[gd_scene load_steps=14 format=4 uid="uid://cichohdr60q2"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_2qnqe"]
 [ext_resource type="Shader" uid="uid://dihirnecvcxfs" path="res://screens/levels/base_level.gdshader" id="2_due4l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dhyc6f1avv8b4" path="res://parts/blob/blob.tscn" id="6_w8ikc"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="7_e0dc1"]
 [ext_resource type="PackedScene" uid="uid://d1s4fmlm1410k" path="res://parts/vignette_trigger.tscn" id="9_ja2ci"]
+[ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="10_6ddup"]
 
 [sub_resource type="Gradient" id="Gradient_wy38e"]
 offsets = PackedFloat32Array(0, 0.534125, 1)
@@ -275,3 +276,16 @@ cut_off = 0.25
 [node name="VignetteTrigger4" parent="Vignettes" index="6" instance=ExtResource("9_ja2ci")]
 position = Vector2(17348.4, 6944.83)
 cut_off = 0.5
+
+[node name="AudioTriggers" type="Node" parent="." index="11"]
+
+[node name="MusicTrigger1" parent="AudioTriggers" index="0" instance=ExtResource("10_6ddup")]
+position = Vector2(16919, 6978)
+scale = Vector2(-0.515207, 0.321895)
+event_name = "area"
+value = 3.0
+
+[node name="JingleTrigger1" parent="AudioTriggers" index="1" instance=ExtResource("10_6ddup")]
+position = Vector2(-178, 166)
+event_name = "jingle"
+value = 1.0
