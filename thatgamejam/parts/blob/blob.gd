@@ -17,7 +17,7 @@ var exploded: bool = false
 func _on_plant_detector_area_entered(area: Area2D) -> void:
 	plant = area.owner.owner
 	plant.pushing_wall.connect(_on_get_pushed)
-	visual.modulate = Color.RED
+	
 
 func _on_get_pushed():
 	explosion_progress += 0.1

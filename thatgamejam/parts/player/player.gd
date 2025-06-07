@@ -29,6 +29,9 @@ func dies(hazard):
 	## FLAG-SFX "Sfx_PlayerHit"
 	# Plays Once when the player is hit / dead : "Sfx_PlayerHit"
 	await get_tree().create_timer(1.0).timeout
+	if active:
+		return
+	velocity = Vector2.ZERO
 	Globals.player.set_active(true)
 	Globals.player.global_position = respawn_pos
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
