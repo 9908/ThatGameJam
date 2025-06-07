@@ -320,12 +320,18 @@ one_shot = true
 event_name = "area"
 value = 2.0
 
-[node name="JingleTrigger1" parent="AudioTriggers" index="1" instance=ExtResource("7_82ier")]
+[node name="birds" parent="AudioTriggers" index="1" instance=ExtResource("7_82ier")]
+position = Vector2(-6719, 543)
+one_shot = true
+event_name = "ambiance"
+value = 1.0
+
+[node name="JingleTrigger1" parent="AudioTriggers" index="2" instance=ExtResource("7_82ier")]
 position = Vector2(-4127, 372)
 event_name = "jingle"
 value = 4.0
 
-[node name="JingleTrigger2" parent="AudioTriggers" index="2" instance=ExtResource("7_82ier")]
+[node name="JingleTrigger2" parent="AudioTriggers" index="3" instance=ExtResource("7_82ier")]
 position = Vector2(-3172, 406)
 event_name = "jingle"
 value = 5.0

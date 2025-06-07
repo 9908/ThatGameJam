@@ -394,12 +394,23 @@ cut_off = 0.5
 [node name="AudioTriggers" type="Node" parent="." index="11"]
 
 [node name="MusicTrigger1" parent="AudioTriggers" index="0" instance=ExtResource("10_6ddup")]
-position = Vector2(16919, 6978)
+position = Vector2(-1361, 482)
 scale = Vector2(-0.515207, 0.321895)
 event_name = "area"
 value = 3.0
 
-[node name="JingleTrigger1" parent="AudioTriggers" index="1" instance=ExtResource("10_6ddup")]
-position = Vector2(-178, 166)
+[node name="cavedroneTrigger" parent="AudioTriggers" index="1" instance=ExtResource("10_6ddup")]
+position = Vector2(1432, 3374)
+scale = Vector2(-0.515207, 0.321895)
+event_name = "ambiance"
+value = 2.0
+
+[node name="windTrigger" parent="AudioTriggers" index="2" instance=ExtResource("10_6ddup")]
+position = Vector2(-1357, 481)
+scale = Vector2(-0.515207, 0.321895)
+event_name = "ambiance"
+
+[node name="JingleTrigger4" parent="AudioTriggers" index="3" instance=ExtResource("10_6ddup")]
+position = Vector2(1424, 1154)
 event_name = "jingle"
-value = 1.0
+value = 4.0
