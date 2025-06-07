@@ -4,7 +4,23 @@
 
 [node name="BackpackRessourceVisualisation" type="Node2D"]
 
+[node name="Visual" type="Node2D" parent="."]
+position = Vector2(0, 0.07973)
+scale = Vector2(0.5, 0.5)
+
+[node name="StarSky" type="Sprite2D" parent="Visual"]
+position = Vector2(4.76837e-07, -0.15946)
+texture = ExtResource("1_levqb")
+
+[node name="ColorRect" type="ColorRect" parent="Visual"]
+offset_left = -12.0
+offset_top = -10.1595
+offset_right = 10.0
+offset_bottom = 11.8405
+pivot_offset = Vector2(20, 20)
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -2.0
 offset_top = -2.0
 offset_right = 2.0
@@ -13,6 +29,7 @@ rotation = -0.785397
 pivot_offset = Vector2(2, 2)
 
 [node name="StarSky" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-9.53674e-07, 0)
 scale = Vector2(0.144444, 0.144444)
 texture = ExtResource("1_levqb")
