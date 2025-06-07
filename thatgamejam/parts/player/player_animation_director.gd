@@ -15,15 +15,27 @@ func _physics_process(delta):
 	var is_jumping = not is_on_ground and owner.velocity.y < 0
 	var is_falling = not is_on_ground and owner.velocity.y > 0
 	var started_falling = not is_on_ground and previous_velocity.y < 0 and owner.velocity.y >= 0
-	var landed = is_on_ground and previous_velocity.y > 0 and owner.velocity.y == 0 and current_state not in ["Reception", "JumpBeggin", "JumpEnd"]
+	var landed = is_on_ground and previous_velocity.y > 0 and owner.velocity.y == 0 #and current_state not in ["Reception", "JumpBeggin", "JumpEnd"]
 
-	if current_state == "Cutting" or current_state == "Growing":
+	if current_state == "Cutting" or current_state == "Growing" or current_state == "Reception":
 		return
 		
 	if landed:
-		current_state = "Reception"
-		if body.animation != "Reception":
-			animation_player_body.play("Reception")
+		if owner.fall_distance > 0.66:
+			current_state = "Reception"
+			if body.animation != "Reception":
+				animation_player_body.play("Reception")
+				owner.set_active(false)
+		else:
+			current_state = "Stop"
+			if body.animation != "Stop":
+				animation_player_body.play("Stop")
+		
+		## FLAG-SFX "Sfx_PlayerLand"
+		FmodServer.play_one_shot("event:/landing")		
+		previous_velocity = owner.velocity
+		owner.fall_distance = 0
+		
 		return
 
 	if is_jumping and current_state != "JumpBeggin":
@@ -43,19 +55,15 @@ func _physics_process(delta):
 			if current_state != "Walk":
 				current_state = "Walk"
 				animation_player_body.play("Walk")
-		elif current_state not in ["Stop", "StopSmooth", "IdleA"]:
+		elif current_state not in ["Stop", "StopSmooth", "IdleA", "Reception"]:
 			if current_state == "Reception":
 				current_state = "Stop"
 				animation_player_body.play("Stop")
-				## FLAG-SFX "Sfx_PlayerLand"
-				FmodServer.play_one_shot("event:/landing")
 				# Plays Once when the player Lands : "Sfx_PlayerLand"
 			else:
 				current_state = "StopSmooth"
 				animation_player_body.play("StopSmooth")
-				FmodServer.play_one_shot("event:/landing")
-		
-		
+	
 	visual.scale.x = sign(owner.velocity.x) if owner.velocity.x != 0 else visual.scale.x
 	previous_velocity = owner.velocity
 
@@ -107,7 +115,10 @@ func _on_grow_plant_finished_grow() -> void:
 	animation_player_body.play("GrowStop")
 
 
-func _on_animation_player_body_animation_finished(_anim_name: StringName) -> void:
+func _on_animation_player_body_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Reception":
+		owner.set_active(true)
+				
 	if current_state == "Stop" or current_state == "StopSmooth":
 		if owner.velocity.x == 0 and owner.is_on_floor():
 			current_state = "IdleA"

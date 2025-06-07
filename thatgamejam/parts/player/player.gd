@@ -12,10 +12,21 @@ var active: bool = true  : set = set_active
 var last_save_point: PackedVector2Array
 var tween: Tween
 
+var fall_distance: float = 0
+@onready var debug: RichTextLabel = $Debug
+
 func _ready() -> void:
 	Globals.player = self
 
 
+func _process(delta: float) -> void:
+	if velocity.y > 0:
+		fall_distance += delta
+	elif velocity.y < 0:
+		fall_distance = 0
+	debug.text = str(fall_distance)
+	
+	
 func dies(hazard):
 	var respawn_pos = last_save_point.get(last_save_point.size()-1)
 	if tween:

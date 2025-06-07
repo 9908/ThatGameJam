@@ -2172,6 +2172,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [0, 63]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Backpack:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.9, 1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.522021, 0.676897, 0.768537, 0.50146, 0.403448, 0.403448, 0.445622, 0.490061, 0.528591, 0.530364, 0.50564, 0.463926, 0.438519, 0.379822, 0.290702, 0.282953]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Backpack:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.9, 1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-36, -98), Vector2(-29, -96), Vector2(-19, -89), Vector2(-22, -83), Vector2(-23, -81), Vector2(-24, -79), Vector2(-23, -81), Vector2(-23, -82), Vector2(-22, -84), Vector2(-24, -85), Vector2(-26, -88), Vector2(-30, -89), Vector2(-33, -91), Vector2(-36, -92), Vector2(-39, -92), Vector2(-42, -92)]
+}
 
 [sub_resource type="Animation" id="Animation_g3x4u"]
 resource_name = "Stop"
@@ -2554,6 +2578,12 @@ offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 6.0
 color = Color(1, 0, 0, 1)
+
+[node name="Debug" type="RichTextLabel" parent="."]
+visible = false
+offset_right = 310.0
+offset_bottom = 40.0
+text = "123"
 
 [connection signal="animation_finished" from="Visual/Anims/Body" to="AnimationDirector" method="_on_body_animation_finished"]
 [connection signal="cutted_plant" from="Abilities/GrowPlant" to="AnimationDirector" method="_on_grow_plant_cutted_plant"]

@@ -28,11 +28,7 @@ init_length = 500.0
 position = Vector2(1521, 495)
 init_length = 550.0
 
-[node name="Plant10" parent="Plants" index="4" instance=ExtResource("2_rbga4")]
-position = Vector2(1757, 495)
-init_length = 600.0
-
-[node name="Plant11" parent="Plants" index="5" instance=ExtResource("2_rbga4")]
+[node name="Plant11" parent="Plants" index="4" instance=ExtResource("2_rbga4")]
 position = Vector2(1991, 495)
 init_length = 5000.0
 
