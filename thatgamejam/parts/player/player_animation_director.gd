@@ -6,6 +6,10 @@ extends Node2D
 @onready var body: AnimatedSprite2D = $"../Visual/Anims/Body"
 @onready var animation_player_body: AnimationPlayer = $AnimationPlayerBody
 
+var dust_particle_scn = preload("res://parts/player/footstep_particle.tscn")
+
+@onready var foot_pos: Marker2D = $"../Visual/FootPos"
+
 var squash_lerp = 30.0
 var current_state: String = ""
 var previous_velocity := Vector2.ZERO
@@ -23,16 +27,18 @@ func _physics_process(delta):
 	if landed:
 		if owner.fall_distance > 0.66:
 			current_state = "Reception"
+			## FLAG-SFX "Heavy - Landing"
+			#FmodServer.play_one_shot("event:/landing")		
 			if body.animation != "Reception":
 				animation_player_body.play("Reception")
 				owner.set_active(false)
 		else:
 			current_state = "Stop"
+			## FLAG-SFX "Soft Landing"
+			FmodServer.play_one_shot("event:/landing")		
 			if body.animation != "Stop":
 				animation_player_body.play("Stop")
 		
-		## FLAG-SFX "Sfx_PlayerLand"
-		FmodServer.play_one_shot("event:/landing")		
 		previous_velocity = owner.velocity
 		owner.fall_distance = 0
 		
@@ -148,3 +154,9 @@ func _on_animation_player_body_animation_finished(anim_name: StringName) -> void
 			animation_player_body.play("IdleA")
 			owner.movement.listen_to_input = true
 			owner.movement.set_physics_process(true)
+
+
+func pop_footstep():
+	var new_dust = dust_particle_scn.instantiate()
+	new_dust.global_position = foot_pos.global_position
+	Globals.props.add_child(new_dust)

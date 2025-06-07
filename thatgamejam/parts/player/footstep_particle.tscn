@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc271paf4p32o"]
+
+[ext_resource type="Script" uid="uid://7x3r2kmixbsi" path="res://parts/player/footstep_particle.gd" id="1_bnahi"]
+[ext_resource type="Texture2D" uid="uid://dom0jr4ykld8" path="res://assets/temp/particule.png" id="2_bnahi"]
+
+[sub_resource type="Curve" id="Curve_bnahi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_no6b4"]
+curve = SubResource("Curve_bnahi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pvay1"]
+particle_flag_disable_z = true
+angle_min = -266.9
+angle_max = 238.8
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 10.0
+initial_velocity_max = 40.0
+angular_velocity_min = -533.85
+angular_velocity_max = 540.88
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.28
+alpha_curve = SubResource("CurveTexture_no6b4")
+
+[node name="FootStepParticle" type="Node2D"]
+use_parent_material = true
+script = ExtResource("1_bnahi")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+use_parent_material = true
+emitting = false
+amount = 5
+texture = ExtResource("2_bnahi")
+lifetime = 0.35
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_pvay1")
