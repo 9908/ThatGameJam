@@ -49,6 +49,10 @@ window/size/mode=2
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[global_group]
+
+physics_collectible=""
+
 [input]
 
 ui_left={

@@ -46,6 +46,9 @@ func explodes():
 			continue
 		blob.explodes()
 		chain_reaction = true
+	
+	for physics_collectible in get_tree().get_nodes_in_group("physics_collectible"):
+		physics_collectible.apply_impulse(Vector2(0, -1))
 		
 	await get_tree().create_timer(2.0).timeout
 	Globals.ongoing_explosion -= 1
