@@ -2353,6 +2353,23 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.527045, 0.527045, 0.517957, 0.519093, 0.520229, 0.509255, 0.512813, 0.516371, 0.519929, 0.523487, 0.527045]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../AnimationDirector")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"pop_footstep"
+}, {
+"args": [],
+"method": &"pop_footstep"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_02clc"]
 _data = {
@@ -2401,6 +2418,9 @@ process_material = SubResource("ParticleProcessMaterial_okybb")
 
 [node name="Visual" type="Node2D" parent="."]
 use_parent_material = true
+
+[node name="FootPos" type="Marker2D" parent="Visual"]
+position = Vector2(20, -8)
 
 [node name="ColorRect" type="ColorRect" parent="Visual"]
 visible = false

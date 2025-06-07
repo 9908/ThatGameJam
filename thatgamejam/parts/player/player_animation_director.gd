@@ -6,6 +6,10 @@ extends Node2D
 @onready var body: AnimatedSprite2D = $"../Visual/Anims/Body"
 @onready var animation_player_body: AnimationPlayer = $AnimationPlayerBody
 
+var dust_particle_scn = preload("res://parts/player/footstep_particle.tscn")
+
+@onready var foot_pos: Marker2D = $"../Visual/FootPos"
+
 var squash_lerp = 30.0
 var current_state: String = ""
 var previous_velocity := Vector2.ZERO
@@ -148,3 +152,9 @@ func _on_animation_player_body_animation_finished(anim_name: StringName) -> void
 			animation_player_body.play("IdleA")
 			owner.movement.listen_to_input = true
 			owner.movement.set_physics_process(true)
+
+
+func pop_footstep():
+	var new_dust = dust_particle_scn.instantiate()
+	new_dust.global_position = foot_pos.global_position
+	Globals.props.add_child(new_dust)
