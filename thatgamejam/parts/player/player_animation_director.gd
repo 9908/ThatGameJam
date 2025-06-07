@@ -28,7 +28,7 @@ func _physics_process(delta):
 		if owner.fall_distance > 0.66:
 			current_state = "Reception"
 			## FLAG-SFX "Heavy - Landing"
-			FmodServer.play_one_shot("event:/biglanding")		
+			#FmodServer.play_one_shot("event:/landing")		
 			if body.animation != "Reception":
 				animation_player_body.play("Reception")
 				owner.set_active(false)
