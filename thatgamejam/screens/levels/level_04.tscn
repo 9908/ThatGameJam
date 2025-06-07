@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://loftp3uhl0k0"]
+[gd_scene load_steps=20 format=4 uid="uid://loftp3uhl0k0"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_fs847"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="2_3i1nn"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bfq064dvpkg3f" path="res://parts/collectible/physics_collectible.tscn" id="6_58mvu"]
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="8_1jlog"]
 [ext_resource type="PackedScene" uid="uid://d1s4fmlm1410k" path="res://parts/vignette_trigger.tscn" id="10_2xa4r"]
+[ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="13_8o5xk"]
 
 [sub_resource type="Gradient" id="Gradient_58mvu"]
 offsets = PackedFloat32Array(0, 0.534125, 1)
@@ -567,6 +568,30 @@ position = Vector2(1041, -1911)
 rotation = 1.57079
 transition_time = 5.0
 cut_off = 0.28
+
+[node name="AudioTriggers" type="Node" parent="." index="13"]
+
+[node name="MusicTrigger1" parent="AudioTriggers" index="0" instance=ExtResource("13_8o5xk")]
+position = Vector2(-8794, 325)
+scale = Vector2(-0.515207, 0.321895)
+event_name = "area"
+value = 4.0
+
+[node name="cavedroneTrigger" parent="AudioTriggers" index="1" instance=ExtResource("13_8o5xk")]
+position = Vector2(-8807, 359)
+scale = Vector2(-0.515207, 0.321895)
+event_name = "ambiance"
+value = 2.0
+
+[node name="windTrigger" parent="AudioTriggers" index="2" instance=ExtResource("13_8o5xk")]
+position = Vector2(426, -4304)
+scale = Vector2(-0.515207, 0.321895)
+event_name = "ambiance"
+
+[node name="JingleTrigger6" parent="AudioTriggers" index="3" instance=ExtResource("13_8o5xk")]
+position = Vector2(-8828, 407)
+event_name = "jingle"
+value = 5.0
 
 [connection signal="explodeded" from="Props/BigBlob" to="." method="_on_big_blob_explodeded"]
 
