@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dwli8hbfy3pwu"]
+[gd_scene load_steps=8 format=4 uid="uid://dwli8hbfy3pwu"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_hiyiw"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="2_rbga4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfq064dvpkg3f" path="res://parts/collectible/physics_collectible.tscn" id="5_5pj12"]
 [ext_resource type="PackedScene" uid="uid://bhg1aa3tehy8p" path="res://parts/plant/cut_particle.tscn" id="5_qh4ms"]
 [ext_resource type="PackedScene" uid="uid://dhyc6f1avv8b4" path="res://parts/blob/blob.tscn" id="6_5pj12"]
+[ext_resource type="PackedScene" uid="uid://bxrs7jq0ve1qn" path="res://parts/hazard/spike.tscn" id="7_8084o"]
 
 [node name="PlantBlobTestLevel" instance=ExtResource("1_hiyiw")]
 
@@ -88,3 +89,36 @@ position = Vector2(152, -143)
 
 [node name="DestructibleWall" type="Node2D" parent="." index="26"]
 use_parent_material = true
+
+[node name="Spike" parent="." index="27" instance=ExtResource("7_8084o")]
+position = Vector2(606, -11)
+
+[node name="Spike2" parent="." index="28" instance=ExtResource("7_8084o")]
+position = Vector2(547, -64)
+
+[node name="Spike3" parent="." index="29" instance=ExtResource("7_8084o")]
+position = Vector2(708, -108)
+
+[node name="Spike4" parent="." index="30" instance=ExtResource("7_8084o")]
+position = Vector2(200, -13)
+
+[node name="Spike5" parent="." index="31" instance=ExtResource("7_8084o")]
+position = Vector2(217, -81)
+
+[node name="Spike6" parent="." index="32" instance=ExtResource("7_8084o")]
+position = Vector2(210, -173)
+
+[node name="Spike7" parent="." index="33" instance=ExtResource("7_8084o")]
+position = Vector2(-40, 170)
+
+[node name="Spike8" parent="." index="34" instance=ExtResource("7_8084o")]
+position = Vector2(-32, 101)
+
+[node name="Spike9" parent="." index="35" instance=ExtResource("7_8084o")]
+position = Vector2(-197, -25)
+
+[node name="Spike10" parent="." index="36" instance=ExtResource("7_8084o")]
+position = Vector2(81, -39)
+
+[node name="Spike11" parent="." index="37" instance=ExtResource("7_8084o")]
+position = Vector2(-105, -157)

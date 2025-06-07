@@ -4,6 +4,7 @@ signal explodeded
 
 var collectible_scn = preload("res://parts/collectible/physics_collectible.tscn")
 var destructed_wall_scn = preload("res://parts/blob/DestructedWall.tscn")
+var destructed_spike_scn = preload("res://parts/blob/DestructedSpike.tscn")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var explosion_area: Area2D = $ExplosionArea
@@ -40,13 +41,24 @@ func explodes():
 	await get_tree().create_timer(0.15).timeout
 	destroy_tiles_around()
 	explodeded.emit()
+	
+	for spike_area in explosion_area.get_overlapping_areas():
+		var spike = spike_area.owner
+		if spike.is_in_group("spike"):
+			var new_destructed_spike = destructed_spike_scn.instantiate()
+			new_destructed_spike.global_position = spike.global_position 
+			Globals.props.add_child(new_destructed_spike)
+			spike.queue_free()
+		
 	for blob_area in explosion_area.get_overlapping_areas():
 		await get_tree().create_timer(0.1).timeout
-		var blob = blob_area.owner
-		if blob == self or blob.exploded:
-			continue
-		blob.explodes()
-		chain_reaction = true
+		if is_instance_valid(blob_area):
+			var blob = blob_area.owner
+			if blob.is_in_group("blob"):
+				if blob == self or blob.exploded:
+					continue
+				blob.explodes()
+				chain_reaction = true
 	
 	for physics_collectible in get_tree().get_nodes_in_group("physics_collectible"):
 		physics_collectible.apply_impulse(Vector2(0, -1))

@@ -52,6 +52,8 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/phantom_
 [global_group]
 
 physics_collectible=""
+spike=""
+blob=""
 
 [input]
 
