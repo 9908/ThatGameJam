@@ -14,6 +14,7 @@ func initiate(new_pos: Vector2, plant, id: int):
 
 func bounce():
 	animation_player.play("bounce")
+	# FLAG-SFX - Platform bounce
 
 
 func _on_plant_area_area_entered(area: Area2D) -> void:
