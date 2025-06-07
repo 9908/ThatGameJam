@@ -17,3 +17,4 @@ var dynamic_background
 var props
 var vignette
 var tilemap
+var tutorial 

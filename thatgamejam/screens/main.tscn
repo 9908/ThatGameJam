@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=34 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://cqwoelg4761qh" path="res://screens/vignette.gd" id="8_owlgm"]
 [ext_resource type="Shader" uid="uid://wfnv46b7l4xu" path="res://screens/vignette.gdshader" id="8_xd12c"]
 [ext_resource type="Texture2D" uid="uid://cnobbackhysu" path="res://assets/art/filter_circle_1080.png" id="9_era8c"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="11_lwayx"]
+[ext_resource type="Script" uid="uid://dqu3mx1i1y078" path="res://screens/tutoriel.gd" id="12_o25a7"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="16_o25a7"]
 
 [sub_resource type="Gradient" id="Gradient_nrb37"]
@@ -321,6 +323,17 @@ offset_right = 1944.0
 offset_bottom = 1093.0
 mouse_filter = 2
 script = ExtResource("8_owlgm")
+
+[node name="Tutoriel" type="RichTextLabel" parent="UI"]
+offset_left = 144.0
+offset_top = 863.0
+offset_right = 1785.0
+offset_bottom = 1064.0
+theme_override_fonts/normal_font = ExtResource("11_lwayx")
+theme_override_font_sizes/normal_font_size = 50
+text = "Keyboard arrows to move and jump"
+horizontal_alignment = 1
+script = ExtResource("12_o25a7")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(425, 411)

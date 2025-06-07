@@ -409,3 +409,4 @@ event_name = "jingle"
 value = 3.0
 
 [connection signal="body_entered" from="Collectible/StarCutscene/StarCutscene" to="Collectible/StarCutscene" method="_on_star_cutscene_body_entered"]
+[connection signal="collectid" from="Collectible/StarCutscene/CollectibleCutscene" to="." method="_on_collectible_cutscene_collectid"]

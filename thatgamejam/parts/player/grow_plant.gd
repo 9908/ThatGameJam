@@ -3,6 +3,7 @@ extends Node2D
 signal cutted_plant
 signal started_grow
 signal finished_grow
+signal learned_to_grow
 
 var ressource: int = 0
 
@@ -59,6 +60,8 @@ func stop_growing():
 	finished_grow.emit()
 	growing = false
 	nearby_plant.stop_growing()
+	if nearby_plant.block_popped > 0:
+		learned_to_grow.emit()
 	if Globals.ongoing_explosion == 0:
 		Globals.camera.set_target(Globals.player.camera_target)
 

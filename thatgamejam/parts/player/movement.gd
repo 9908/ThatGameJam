@@ -1,5 +1,7 @@
 extends Node2D
 
+signal jumped
+
 var listen_to_input: bool= true
 
 # Movement settings
@@ -53,6 +55,7 @@ func _physics_process(delta):
 	# Jump buffering
 	if Input.is_action_just_pressed("jump") and listen_to_input:
 		jump_buffer_timer = JUMP_BUFFER_TIME
+		jumped.emit()
 		## FLAG-SFX "Sfx_PlayerJump"
 		FmodServer.play_one_shot("event:/jump")
 		# Plays Once when the player jumps : "Sfx_PlayerJump"
