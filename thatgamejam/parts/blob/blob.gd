@@ -34,6 +34,7 @@ func explodes():
 	Globals.ongoing_explosion += 1 
 	exploded = true
 	animation_player.play("Explodes")
+	Globals.camera.set_screenshake()
 	Globals.camera.set_target(self)
 	var chain_reaction = false
 	await get_tree().create_timer(0.15).timeout

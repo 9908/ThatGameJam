@@ -3,6 +3,8 @@ extends Camera2D
 @onready var phantom_camera_2d: PhantomCamera2D = $"../PhantomCamera2D"
 @onready var phantom_camera_host: PhantomCameraHost = $PhantomCameraHost
 
+var tween
+
 func _ready() -> void:
 	Globals.camera = self
 	set_process(false)
@@ -29,5 +31,7 @@ func set_boundaries(left, right, top, bottom):
 
 func set_screenshake(value= 100, time = 1):
 	phantom_camera_2d.noise.amplitude = value
-	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	if tween:
+		tween.kill()
+	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(phantom_camera_2d.noise, "amplitude", 0.0, time)

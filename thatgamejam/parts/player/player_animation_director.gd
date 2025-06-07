@@ -27,6 +27,7 @@ func _physics_process(delta):
 	if landed:
 		if owner.fall_distance > 0.66:
 			current_state = "Reception"
+			Globals.camera.set_screenshake()
 			## FLAG-SFX "Heavy - Landing"
 			#FmodServer.play_one_shot("event:/landing")		
 			if body.animation != "Reception":
