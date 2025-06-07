@@ -25,3 +25,9 @@ func set_boundaries(left, right, top, bottom):
 	phantom_camera_2d.limit_right = right.global_position.x
 	phantom_camera_2d.limit_bottom = bottom.global_position.y
 	phantom_camera_2d.limit_top = top.global_position.y
+
+
+func set_screenshake(value= 100, time = 1):
+	phantom_camera_2d.noise.amplitude = value
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(phantom_camera_2d.noise, "amplitude", 0.0, time)

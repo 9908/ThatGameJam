@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=32 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cqwoelg4761qh" path="res://screens/vignette.gd" id="8_owlgm"]
 [ext_resource type="Shader" uid="uid://wfnv46b7l4xu" path="res://screens/vignette.gdshader" id="8_xd12c"]
 [ext_resource type="Texture2D" uid="uid://cnobbackhysu" path="res://assets/art/filter_circle_1080.png" id="9_era8c"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="16_o25a7"]
 
 [sub_resource type="Gradient" id="Gradient_nrb37"]
 offsets = PackedFloat32Array(0, 0.357692, 0.688462, 1)
@@ -55,12 +56,12 @@ colors = PackedColorArray(0.247059, 0.105882, 0.447059, 1, 0.203922, 0.313726, 0
 
 [sub_resource type="Gradient" id="Gradient_ft7qg"]
 
-[sub_resource type="Gradient" id="Gradient_era8c"]
+[sub_resource type="Gradient" id="Gradient_n85nt"]
 offsets = PackedFloat32Array(0, 0.379692, 0.669153, 1)
 colors = PackedColorArray(0.0209412, 0.0124706, 0.128549, 1, 0.476941, 0.18949, 0.420078, 1, 0.243921, 0.164157, 0.417882, 1, 0.0454431, 0.164546, 0.217926, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1s7cm"]
-gradient = SubResource("Gradient_era8c")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1dcbi"]
+gradient = SubResource("Gradient_n85nt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_era8c"]
 shader = ExtResource("8_xd12c")
@@ -73,6 +74,19 @@ script = ExtResource("4_tci2t")
 duration = 1.0
 transition = 0
 ease = 2
+
+[sub_resource type="Resource" id="Resource_1s7cm"]
+script = ExtResource("16_o25a7")
+amplitude = 0.0
+frequency = 3.0
+randomize_noise_seed = 1
+noise_seed = 0
+positional_noise = true
+rotational_noise = false
+positional_multiplier_x = 1.0
+positional_multiplier_y = 1.0
+rotational_multiplier = 1.0
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -103,7 +117,7 @@ offset_top = -18.0
 offset_right = 3056.0
 offset_bottom = 1948.0
 rotation = 1.57079
-texture = SubResource("GradientTexture1D_1s7cm")
+texture = SubResource("GradientTexture1D_1dcbi")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("1_ycjph")
@@ -328,6 +342,7 @@ follow_mode = 2
 tween_resource = SubResource("Resource_lquwl")
 follow_damping = true
 follow_damping_value = Vector2(0.5, 0.5)
+noise = SubResource("Resource_1s7cm")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [connection signal="pressed" from="UI/PopUpQuestion/PopUpQuestion/QuestionContainer/YesButton" to="UI/PopUpQuestion" method="_on_yes_button_pressed"]
