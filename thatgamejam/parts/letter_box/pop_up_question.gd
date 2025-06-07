@@ -13,6 +13,13 @@ var choose_to_give: bool = false
 @onready var receive_container: HBoxContainer = $PopUpQuestion/ReceiveContainer
 @onready var success_container: HBoxContainer = $PopUpQuestion/SuccessContainer
 
+@onready var yes_button: Button = $PopUpQuestion/QuestionContainer/YesButton
+@onready var share_button_button: Button = $PopUpQuestion/LineEditContainer/ShareButtonButton
+@onready var activate_code_button: Button = $PopUpQuestion/ReceiveContainer/ActivateCodeButton
+@onready var give: Button = $PopUpQuestion/GiveOrReceiveContainer/Give
+@onready var close_receive: Button = $PopUpQuestion/SuccessContainer/CloseReceive
+
+
 var activated_codes: Array = []
 
 func _ready() -> void:
@@ -21,6 +28,7 @@ func _ready() -> void:
 	hide()
 	hide_all_containers()
 	question_container.show()
+	yes_button.grab_focus()
 	
 
 func hide_all_containers():
@@ -32,26 +40,32 @@ func hide_all_containers():
 	
 		
 func set_active(new_val: bool):
-	if not first_activation and not choose_to_give:
-		visible = new_val
-		return
-	first_activation = false
 	visible = new_val
+	Globals.player.set_active(not new_val)
+	Globals.player.velocity.x = 0
+	yes_button.grab_focus()
+	if not first_activation and not choose_to_give:
+		return
+		
+	first_activation = false
 	if choose_to_give:
 		if Globals.player.grow_plant.ressource == 0:
 			hide_all_containers()
 			receive_container.show()
+			activate_code_button.grab_focus()
 			line_edit_receive.text = ""
 			rich_text_label.text = "Enter gifted code"
 		else:
 			hide_all_containers()
 			give_or_receive_container.show()
+			give.grab_focus()
 			rich_text_label.text = ""
 	
 
 func _on_yes_button_pressed() -> void:
 	hide_all_containers()
 	line_edit_container.show()
+	share_button_button.grab_focus()
 	line_edit_give.text = ""
 	update_share_window()
 	choose_to_give = true
@@ -112,6 +126,7 @@ func _on_close_pressed() -> void:
 func _on_give_pressed() -> void:
 	hide_all_containers()
 	line_edit_container.show()
+	share_button_button.grab_focus()
 	line_edit_give.text = ""
 	update_share_window()
 	
@@ -119,6 +134,7 @@ func _on_give_pressed() -> void:
 func _on_receive_pressed() -> void:
 	hide_all_containers()
 	receive_container.show()
+	activate_code_button.grab_focus()
 	line_edit_receive.text = ""
 	rich_text_label.text = "Enter gifted code"
 
@@ -133,10 +149,14 @@ func _on_activate_code_button_pressed() -> void:
 		rich_text_label.text = "Enter a gifted code not already used"
 		return
 	var decoded_value = decode_donation(line_edit_receive.text)
-	print(decoded_value)
-	if not decoded_value.light == 0:
-		activated_codes.append(line_edit_receive.text)
-		Globals.player.grow_plant.get_ressource(decoded_value.light)
-		rich_text_label.text = "Successfully received " + str(decoded_value.light) + " --- Amazing !"
-		hide_all_containers()
-		success_container.show()
+
+	if decoded_value.has("light"):
+		if not decoded_value.light == 0:
+			activated_codes.append(line_edit_receive.text)
+			Globals.player.grow_plant.get_ressource(decoded_value.light)
+			rich_text_label.text = "Successfully received " + str(decoded_value.light) + " --- Amazing !"
+			hide_all_containers()
+			success_container.show()
+			close_receive.grab_focus()
+	else:
+		rich_text_label.text = "Enter a valid code"

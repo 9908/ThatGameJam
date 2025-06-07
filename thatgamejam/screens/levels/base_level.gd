@@ -25,8 +25,9 @@ func _enter_tree() -> void:
 	await get_tree().process_frame
 	Globals.camera.teleport_position()
 	
+	
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and not Globals.pop_up_question.visible:
 		Globals.pause_menu.toggle()
 
 

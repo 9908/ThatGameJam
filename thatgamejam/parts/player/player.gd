@@ -46,7 +46,6 @@ func set_active(new_val: bool):
 	grow_plant.set_process(active)
 	grow_plant.set_physics_process(active)
 	grow_plant.set_process_input(active)
-	animation_director.set_process(active)
-	animation_director.set_physics_process(active)
-	animation_director.set_process_input(active)
-	
+	#animation_director.set_process(active)
+	#animation_director.set_physics_process(active)
+	#animation_director.set_process_input(active)

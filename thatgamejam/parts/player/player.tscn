@@ -2515,6 +2515,7 @@ script = ExtResource("2_aaff8")
 script = ExtResource("3_40wer")
 
 [node name="AnimationDirector" type="Node2D" parent="."]
+process_mode = 1
 script = ExtResource("3_nh1j4")
 
 [node name="AnimationPlayerBody" type="AnimationPlayer" parent="AnimationDirector"]
