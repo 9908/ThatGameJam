@@ -39,6 +39,7 @@ func dies(hazard):
 	
 	## FLAG-SFX "Sfx_PlayerHit"
 	# Plays Once when the player is hit / dead : "Sfx_PlayerHit"
+	FmodServer.play_one_shot("event:/hurt")
 	await get_tree().create_timer(1.0).timeout
 	if active:
 		return

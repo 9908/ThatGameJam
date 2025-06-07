@@ -35,6 +35,7 @@ func explodes():
 	Globals.ongoing_explosion += 1 
 	exploded = true
 	animation_player.play("Explodes")
+	FmodServer.play_one_shot("event:/blobexplode")
 	Globals.camera.set_screenshake()
 	Globals.camera.set_target(self)
 	var chain_reaction = false
