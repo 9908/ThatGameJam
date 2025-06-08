@@ -148,7 +148,7 @@ script = ExtResource("1_hb46q")
 use_parent_material = true
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visual"]
-use_parent_material = true
+modulate = Color(0.581624, 0.709592, 0.968411, 1)
 position = Vector2(1, -81.75)
 scale = Vector2(0.30463, 0.30463)
 sprite_frames = SubResource("SpriteFrames_v6xsa")
