@@ -18,6 +18,12 @@ func set_target(new_target):
 	phantom_camera_2d.follow_target = new_target
 
 
+func set_new_zoom(new_val):
+	var tween 
+	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(phantom_camera_2d, "zoom", new_val, 3.5)
+
+
 func teleport_position():
 	phantom_camera_2d.teleport_position()
 

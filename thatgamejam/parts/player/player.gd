@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var animation_director: Node2D = $AnimationDirector
 @onready var camera_target: Marker2D = $CameraTarget/EndPoint
 @onready var visual: Node2D = $Visual
+@onready var ressource_visualisation: Node2D = $Visual/Backpack/RessourceVisualisation
 
 var dead_particle_scn = preload("res://parts/plant/dead_particle.tscn")
 
