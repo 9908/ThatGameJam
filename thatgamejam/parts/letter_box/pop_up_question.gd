@@ -1,7 +1,7 @@
 extends Control
 
 var first_activation: bool = true
-var choose_to_give: bool = false
+var choose_to_give: bool = true
 
 @onready var rich_text_label: RichTextLabel = $PopUpQuestion/TextContainer/RichTextLabel
 @onready var line_edit_give: LineEdit = $PopUpQuestion/LineEditContainer/LineEdit
@@ -61,7 +61,7 @@ func set_active(new_val: bool):
 			hide_all_containers()
 			give_or_receive_container.show()
 			give.grab_focus()
-			rich_text_label.text = ""
+			rich_text_label.text = "Do you want to send all your stars to another player ?"
 	
 
 func _on_yes_button_pressed() -> void:
@@ -70,7 +70,6 @@ func _on_yes_button_pressed() -> void:
 	share_button_button.grab_focus()
 	line_edit_give.text = ""
 	update_share_window()
-	choose_to_give = true
 	
 
 func update_share_window():

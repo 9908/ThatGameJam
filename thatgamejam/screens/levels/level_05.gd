@@ -36,6 +36,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				secret_ending = false
 				continue
 			missing_star.completed = true
+			missing_star.fade_away()
 			var new_star = completed_star.instantiate()
 			new_star.global_position = Globals.player.ressource_visualisation.global_position
 			new_star.move_to(missing_star.global_position)
