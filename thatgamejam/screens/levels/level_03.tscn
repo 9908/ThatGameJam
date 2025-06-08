@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://dihirnecvcxfs" path="res://screens/levels/base_level.gdshader" id="2_due4l"]
 [ext_resource type="PackedScene" uid="uid://bdhokrxsbsa2o" path="res://parts/plant/plant.tscn" id="2_e1uog"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="3_due4l"]
-[ext_resource type="Script" path="res://screens/levels/level_03.gd" id="3_frr0v"]
+[ext_resource type="Script" uid="uid://bgkod0xlufwwc" path="res://screens/levels/level_03.gd" id="3_frr0v"]
 [ext_resource type="PackedScene" uid="uid://loftp3uhl0k0" path="res://screens/levels/level_04.tscn" id="4_e1uog"]
 [ext_resource type="PackedScene" uid="uid://bxrs7jq0ve1qn" path="res://parts/hazard/spike.tscn" id="5_aplpn"]
 [ext_resource type="PackedScene" uid="uid://dhyc6f1avv8b4" path="res://parts/blob/blob.tscn" id="6_w8ikc"]
