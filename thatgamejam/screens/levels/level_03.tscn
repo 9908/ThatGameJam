@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cichohdr60q2"]
+[gd_scene load_steps=21 format=4 uid="uid://cichohdr60q2"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_2qnqe"]
 [ext_resource type="Shader" uid="uid://dihirnecvcxfs" path="res://screens/levels/base_level.gdshader" id="2_due4l"]
@@ -10,6 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://cvxhh2k1plv2h" path="res://parts/collectible/collectible.tscn" id="7_e0dc1"]
 [ext_resource type="PackedScene" uid="uid://d1s4fmlm1410k" path="res://parts/vignette_trigger.tscn" id="9_ja2ci"]
 [ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="10_6ddup"]
+[ext_resource type="PackedScene" uid="uid://dw2c2w3ww5xc5" path="res://parts/gradient_trigger.tscn" id="11_g25y5"]
+[ext_resource type="Texture2D" uid="uid://cq7dj6ak2kfsi" path="res://assets/props/GrassA.png" id="12_i6ifw"]
+[ext_resource type="Texture2D" uid="uid://bf7h1f6o37vq3" path="res://assets/props/RootA.png" id="13_l7oyt"]
+[ext_resource type="Texture2D" uid="uid://d3yjigll61yq2" path="res://assets/props/RootB.png" id="14_6s6h4"]
+[ext_resource type="Texture2D" uid="uid://bjje2yvu4l0kh" path="res://assets/props/RootC.png" id="15_ntpke"]
+[ext_resource type="Texture2D" uid="uid://b0k067ce4quja" path="res://assets/props/SmallRoundRocks.png" id="16_wi2vh"]
+[ext_resource type="Texture2D" uid="uid://o4wb8jf34ki0" path="res://assets/props/SmallTriangleRocks.png" id="17_l7oyt"]
 
 [sub_resource type="Gradient" id="Gradient_wy38e"]
 offsets = PackedFloat32Array(0, 0.0625, 0.161058, 0.300481, 0.418269)
@@ -266,118 +273,76 @@ position = Vector2(-430.604, -515.367)
 [node name="Collectible28" parent="Collectible" index="8" instance=ExtResource("7_e0dc1")]
 position = Vector2(-608.522, -369.603)
 
-[node name="Collectible49" parent="Collectible" index="9" instance=ExtResource("7_e0dc1")]
-position = Vector2(-601, 465)
-
-[node name="Collectible50" parent="Collectible" index="10" instance=ExtResource("7_e0dc1")]
-position = Vector2(-540, 405)
-
-[node name="Collectible51" parent="Collectible" index="11" instance=ExtResource("7_e0dc1")]
-position = Vector2(-480, 468)
-
-[node name="Collectible52" parent="Collectible" index="12" instance=ExtResource("7_e0dc1")]
-position = Vector2(-445, 393)
-
-[node name="Collectible53" parent="Collectible" index="13" instance=ExtResource("7_e0dc1")]
-position = Vector2(-389, 472)
-
-[node name="Collectible54" parent="Collectible" index="14" instance=ExtResource("7_e0dc1")]
-position = Vector2(-342, 402)
-
-[node name="Collectible55" parent="Collectible" index="15" instance=ExtResource("7_e0dc1")]
-position = Vector2(-484, 317)
-
-[node name="Collectible56" parent="Collectible" index="16" instance=ExtResource("7_e0dc1")]
-position = Vector2(-392, 311)
-
-[node name="Collectible57" parent="Collectible" index="17" instance=ExtResource("7_e0dc1")]
-position = Vector2(-590, 324)
-
-[node name="Collectible58" parent="Collectible" index="18" instance=ExtResource("7_e0dc1")]
-position = Vector2(-635, 388)
-
-[node name="Collectible59" parent="Collectible" index="19" instance=ExtResource("7_e0dc1")]
-position = Vector2(-436, 294)
-
-[node name="Collectible60" parent="Collectible" index="20" instance=ExtResource("7_e0dc1")]
-position = Vector2(-345, 250)
-
-[node name="Collectible61" parent="Collectible" index="21" instance=ExtResource("7_e0dc1")]
-position = Vector2(-303, 354)
-
-[node name="Collectible62" parent="Collectible" index="22" instance=ExtResource("7_e0dc1")]
-position = Vector2(-303, 354)
-
-[node name="Collectible18" parent="Collectible" index="23" instance=ExtResource("7_e0dc1")]
+[node name="Collectible18" parent="Collectible" index="9" instance=ExtResource("7_e0dc1")]
 position = Vector2(8346.91, 4703.08)
 
-[node name="Collectible19" parent="Collectible" index="24" instance=ExtResource("7_e0dc1")]
+[node name="Collectible19" parent="Collectible" index="10" instance=ExtResource("7_e0dc1")]
 position = Vector2(8517.52, 4703.08)
 
-[node name="Collectible20" parent="Collectible" index="25" instance=ExtResource("7_e0dc1")]
+[node name="Collectible20" parent="Collectible" index="11" instance=ExtResource("7_e0dc1")]
 position = Vector2(11417.5, 4831.59)
 
-[node name="Collectible21" parent="Collectible" index="26" instance=ExtResource("7_e0dc1")]
+[node name="Collectible21" parent="Collectible" index="12" instance=ExtResource("7_e0dc1")]
 position = Vector2(11801.6, 5909.73)
 
-[node name="Collectible47" parent="Collectible" index="27" instance=ExtResource("7_e0dc1")]
+[node name="Collectible47" parent="Collectible" index="13" instance=ExtResource("7_e0dc1")]
 position = Vector2(10021, 6209)
 
-[node name="Collectible48" parent="Collectible" index="28" instance=ExtResource("7_e0dc1")]
+[node name="Collectible48" parent="Collectible" index="14" instance=ExtResource("7_e0dc1")]
 position = Vector2(10187, 6202)
 
-[node name="Collectible30" parent="Collectible" index="29" instance=ExtResource("7_e0dc1")]
+[node name="Collectible30" parent="Collectible" index="15" instance=ExtResource("7_e0dc1")]
 position = Vector2(11752.7, 5515.64)
 
-[node name="Collectible31" parent="Collectible" index="30" instance=ExtResource("7_e0dc1")]
+[node name="Collectible31" parent="Collectible" index="16" instance=ExtResource("7_e0dc1")]
 position = Vector2(11901.6, 5510.8)
 
-[node name="Collectible32" parent="Collectible" index="31" instance=ExtResource("7_e0dc1")]
+[node name="Collectible32" parent="Collectible" index="17" instance=ExtResource("7_e0dc1")]
 position = Vector2(16010.5, 6390.91)
 
-[node name="Collectible34" parent="Collectible" index="32" instance=ExtResource("7_e0dc1")]
+[node name="Collectible34" parent="Collectible" index="18" instance=ExtResource("7_e0dc1")]
 position = Vector2(15198.7, 6964.3)
 
-[node name="Collectible44" parent="Collectible" index="33" instance=ExtResource("7_e0dc1")]
+[node name="Collectible44" parent="Collectible" index="19" instance=ExtResource("7_e0dc1")]
 position = Vector2(15720.8, 6492.42)
 
-[node name="Collectible39" parent="Collectible" index="34" instance=ExtResource("7_e0dc1")]
+[node name="Collectible39" parent="Collectible" index="20" instance=ExtResource("7_e0dc1")]
 position = Vector2(18318.2, 7273.6)
 
-[node name="Collectible40" parent="Collectible" index="35" instance=ExtResource("7_e0dc1")]
+[node name="Collectible40" parent="Collectible" index="21" instance=ExtResource("7_e0dc1")]
 position = Vector2(18318.2, 7433.32)
 
-[node name="Collectible41" parent="Collectible" index="36" instance=ExtResource("7_e0dc1")]
+[node name="Collectible41" parent="Collectible" index="22" instance=ExtResource("7_e0dc1")]
 position = Vector2(18318.2, 7554.84)
 
-[node name="Collectible45" parent="Collectible" index="37" instance=ExtResource("7_e0dc1")]
+[node name="Collectible45" parent="Collectible" index="23" instance=ExtResource("7_e0dc1")]
 position = Vector2(18990.5, 5318.96)
 
-[node name="Collectible46" parent="Collectible" index="38" instance=ExtResource("7_e0dc1")]
+[node name="Collectible46" parent="Collectible" index="24" instance=ExtResource("7_e0dc1")]
 position = Vector2(18990.5, 5520.38)
 
-[node name="Collectible35" parent="Collectible" index="39" instance=ExtResource("7_e0dc1")]
+[node name="Collectible35" parent="Collectible" index="25" instance=ExtResource("7_e0dc1")]
 position = Vector2(15523, 6010.4)
 
-[node name="Collectible33" parent="Collectible" index="40" instance=ExtResource("7_e0dc1")]
+[node name="Collectible33" parent="Collectible" index="26" instance=ExtResource("7_e0dc1")]
 position = Vector2(16126, 6390.07)
 
-[node name="Collectible36" parent="Collectible" index="41" instance=ExtResource("7_e0dc1")]
+[node name="Collectible36" parent="Collectible" index="27" instance=ExtResource("7_e0dc1")]
 position = Vector2(16924.3, 6390.91)
 
-[node name="Collectible37" parent="Collectible" index="42" instance=ExtResource("7_e0dc1")]
+[node name="Collectible37" parent="Collectible" index="28" instance=ExtResource("7_e0dc1")]
 position = Vector2(17135.6, 6390.07)
 
-[node name="Collectible38" parent="Collectible" index="43" instance=ExtResource("7_e0dc1")]
+[node name="Collectible38" parent="Collectible" index="29" instance=ExtResource("7_e0dc1")]
 position = Vector2(17254.3, 6390.07)
 
-[node name="Collectible42" parent="Collectible" index="44" instance=ExtResource("7_e0dc1")]
+[node name="Collectible42" parent="Collectible" index="30" instance=ExtResource("7_e0dc1")]
 position = Vector2(16349.5, 5991.43)
 
-[node name="Collectible43" parent="Collectible" index="45" instance=ExtResource("7_e0dc1")]
+[node name="Collectible43" parent="Collectible" index="31" instance=ExtResource("7_e0dc1")]
 position = Vector2(16349.5, 5808.25)
 
-[node name="Collectible17" parent="Collectible" index="46" instance=ExtResource("7_e0dc1")]
+[node name="Collectible17" parent="Collectible" index="32" instance=ExtResource("7_e0dc1")]
 position = Vector2(3507.49, 3067.84)
 
 [node name="PlayerStartPos" parent="." index="6"]
@@ -427,16 +392,8 @@ cut_off = 0.4
 position = Vector2(16921.8, 6878.99)
 cut_off = 0.25
 
-[node name="VignetteTrigger9" parent="Vignettes" index="6" instance=ExtResource("9_ja2ci")]
-position = Vector2(17407.1, 6191.09)
-cut_off = 0.25
-
-[node name="VignetteTrigger4" parent="Vignettes" index="7" instance=ExtResource("9_ja2ci")]
+[node name="VignetteTrigger4" parent="Vignettes" index="6" instance=ExtResource("9_ja2ci")]
 position = Vector2(17129.1, 6867.02)
-cut_off = 0.5
-
-[node name="VignetteTrigger8" parent="Vignettes" index="8" instance=ExtResource("9_ja2ci")]
-position = Vector2(17577.3, 6192.76)
 cut_off = 0.5
 
 [node name="AudioTriggers" type="Node" parent="." index="11"]
@@ -462,3 +419,1489 @@ event_name = "ambiance"
 position = Vector2(1417, 1387)
 event_name = "jingle"
 value = 6.0
+
+[node name="GradientsTrigger" type="Node2D" parent="." index="12"]
+
+[node name="GradientTrigger" parent="GradientsTrigger" index="0" instance=ExtResource("11_g25y5")]
+position = Vector2(1419, 1299)
+time_of_day = 3.0
+transition_time = 5.0
+
+[node name="GradientTrigger2" parent="GradientsTrigger" index="1" instance=ExtResource("11_g25y5")]
+position = Vector2(7701, 3725)
+time_of_day = 4.0
+transition_time = 5.0
+
+[node name="GradientTrigger3" parent="GradientsTrigger" index="2" instance=ExtResource("11_g25y5")]
+position = Vector2(11901, 6563)
+time_of_day = 5.0
+transition_time = 5.0
+
+[node name="Sprites" type="Node2D" parent="." index="13"]
+z_index = -1
+use_parent_material = true
+
+[node name="GrassA" type="Sprite2D" parent="Sprites" index="0"]
+use_parent_material = true
+position = Vector2(475, 841)
+rotation = -0.206187
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA2" type="Sprite2D" parent="Sprites" index="1"]
+use_parent_material = true
+position = Vector2(511, 808)
+rotation = 0.00312389
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA3" type="Sprite2D" parent="Sprites" index="2"]
+use_parent_material = true
+position = Vector2(743, 801)
+rotation = 0.00312389
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA4" type="Sprite2D" parent="Sprites" index="3"]
+use_parent_material = true
+position = Vector2(793, 810)
+rotation = 0.326941
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA5" type="Sprite2D" parent="Sprites" index="4"]
+use_parent_material = true
+position = Vector2(914, 907)
+rotation = 0.326941
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA6" type="Sprite2D" parent="Sprites" index="5"]
+use_parent_material = true
+position = Vector2(4720, 3325)
+rotation = 0.326941
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA7" type="Sprite2D" parent="Sprites" index="6"]
+use_parent_material = true
+position = Vector2(4562, 3357)
+rotation = -0.182466
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA8" type="Sprite2D" parent="Sprites" index="7"]
+use_parent_material = true
+position = Vector2(6033, 3401)
+rotation = -0.182466
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA9" type="Sprite2D" parent="Sprites" index="8"]
+use_parent_material = true
+position = Vector2(6253, 3358)
+rotation = 0.246178
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA10" type="Sprite2D" parent="Sprites" index="9"]
+use_parent_material = true
+position = Vector2(6278, 3383)
+rotation = 0.539045
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA11" type="Sprite2D" parent="Sprites" index="10"]
+use_parent_material = true
+position = Vector2(8910, 5617)
+rotation = 0.539045
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA12" type="Sprite2D" parent="Sprites" index="11"]
+use_parent_material = true
+position = Vector2(8811, 5611)
+rotation = -0.0434119
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA13" type="Sprite2D" parent="Sprites" index="12"]
+use_parent_material = true
+position = Vector2(10012, 5627)
+rotation = -0.0434119
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA14" type="Sprite2D" parent="Sprites" index="13"]
+use_parent_material = true
+position = Vector2(10151, 5615)
+rotation = 0.156533
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA15" type="Sprite2D" parent="Sprites" index="14"]
+use_parent_material = true
+position = Vector2(10170, 5645)
+rotation = 0.651259
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA16" type="Sprite2D" parent="Sprites" index="15"]
+use_parent_material = true
+position = Vector2(11508, 6542)
+rotation = 0.651259
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA17" type="Sprite2D" parent="Sprites" index="16"]
+use_parent_material = true
+position = Vector2(11375, 6575)
+rotation = 0.0838572
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA18" type="Sprite2D" parent="Sprites" index="17"]
+use_parent_material = true
+position = Vector2(11389, 6546)
+rotation = -0.308521
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA19" type="Sprite2D" parent="Sprites" index="18"]
+use_parent_material = true
+position = Vector2(12603, 6528)
+rotation = -0.308521
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA20" type="Sprite2D" parent="Sprites" index="19"]
+use_parent_material = true
+position = Vector2(12743, 6531)
+rotation = 0.310563
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA21" type="Sprite2D" parent="Sprites" index="20"]
+use_parent_material = true
+position = Vector2(12762, 6574)
+rotation = 0.500407
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA22" type="Sprite2D" parent="Sprites" index="21"]
+use_parent_material = true
+position = Vector2(13611, 6534)
+rotation = 0.500407
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA23" type="Sprite2D" parent="Sprites" index="22"]
+use_parent_material = true
+position = Vector2(13629, 6564)
+rotation = 0.704194
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA24" type="Sprite2D" parent="Sprites" index="23"]
+use_parent_material = true
+position = Vector2(13443, 6582)
+rotation = -0.24212
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA25" type="Sprite2D" parent="Sprites" index="24"]
+use_parent_material = true
+position = Vector2(15481, 6384)
+rotation = -0.24212
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA26" type="Sprite2D" parent="Sprites" index="25"]
+use_parent_material = true
+position = Vector2(15459, 6431)
+rotation = -0.167623
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA27" type="Sprite2D" parent="Sprites" index="26"]
+use_parent_material = true
+position = Vector2(15600, 6426)
+rotation = 0.483707
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA28" type="Sprite2D" parent="Sprites" index="27"]
+use_parent_material = true
+position = Vector2(19070, 7774)
+rotation = 0.483707
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA29" type="Sprite2D" parent="Sprites" index="28"]
+use_parent_material = true
+position = Vector2(18986, 7772)
+rotation = -0.111069
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA30" type="Sprite2D" parent="Sprites" index="29"]
+use_parent_material = true
+position = Vector2(18271, 7633)
+rotation = -0.111069
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="GrassA31" type="Sprite2D" parent="Sprites" index="30"]
+use_parent_material = true
+position = Vector2(18391, 7669)
+rotation = 0.424667
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_i6ifw")
+
+[node name="RootA" type="Sprite2D" parent="Sprites" index="31"]
+use_parent_material = true
+position = Vector2(1954, 814)
+rotation = -0.0133399
+scale = Vector2(-0.34719, 0.516693)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA4" type="Sprite2D" parent="Sprites" index="32"]
+use_parent_material = true
+position = Vector2(3794, 2906)
+rotation = -0.0133399
+scale = Vector2(-0.282349, 0.41837)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA5" type="Sprite2D" parent="Sprites" index="33"]
+use_parent_material = true
+position = Vector2(6480, 3001)
+rotation = -0.0133399
+scale = Vector2(-0.282349, 0.41837)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA2" type="Sprite2D" parent="Sprites" index="34"]
+use_parent_material = true
+position = Vector2(1260, 1263)
+rotation = -0.0133399
+scale = Vector2(0.345704, 0.363923)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA3" type="Sprite2D" parent="Sprites" index="35"]
+use_parent_material = true
+position = Vector2(1326, 2015)
+rotation = -0.0133399
+scale = Vector2(0.345704, 0.363923)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootB" type="Sprite2D" parent="Sprites" index="36"]
+use_parent_material = true
+position = Vector2(1967, 700)
+scale = Vector2(-0.352624, 0.461682)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB3" type="Sprite2D" parent="Sprites" index="37"]
+use_parent_material = true
+position = Vector2(3394, 2924)
+scale = Vector2(0.269645, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB4" type="Sprite2D" parent="Sprites" index="38"]
+use_parent_material = true
+position = Vector2(6321, 3001)
+scale = Vector2(0.269645, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB5" type="Sprite2D" parent="Sprites" index="39"]
+use_parent_material = true
+position = Vector2(5866, 3033)
+scale = Vector2(0.269645, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB2" type="Sprite2D" parent="Sprites" index="40"]
+use_parent_material = true
+position = Vector2(1264, 1136)
+scale = Vector2(0.368885, 0.380039)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootC" type="Sprite2D" parent="Sprites" index="41"]
+use_parent_material = true
+position = Vector2(1571, 1070)
+scale = Vector2(-0.325643, 0.454974)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC4" type="Sprite2D" parent="Sprites" index="42"]
+use_parent_material = true
+position = Vector2(1622, 3063)
+scale = Vector2(-0.325643, 0.454974)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC5" type="Sprite2D" parent="Sprites" index="43"]
+use_parent_material = true
+position = Vector2(2747, 3134)
+scale = Vector2(-0.325643, 0.454974)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC2" type="Sprite2D" parent="Sprites" index="44"]
+use_parent_material = true
+position = Vector2(248, 812)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC3" type="Sprite2D" parent="Sprites" index="45"]
+use_parent_material = true
+position = Vector2(1238, 2998)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC7" type="Sprite2D" parent="Sprites" index="46"]
+use_parent_material = true
+position = Vector2(5731, 3087)
+scale = Vector2(0.350208, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootA6" type="Sprite2D" parent="Sprites" index="47"]
+use_parent_material = true
+position = Vector2(7509, 4797)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootB6" type="Sprite2D" parent="Sprites" index="48"]
+use_parent_material = true
+position = Vector2(7971, 4560)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB7" type="Sprite2D" parent="Sprites" index="49"]
+use_parent_material = true
+position = Vector2(7626, 4750)
+scale = Vector2(0.269645, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootC8" type="Sprite2D" parent="Sprites" index="50"]
+use_parent_material = true
+position = Vector2(7926, 4784)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootA7" type="Sprite2D" parent="Sprites" index="51"]
+use_parent_material = true
+position = Vector2(9517, 4685)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA11" type="Sprite2D" parent="Sprites" index="52"]
+use_parent_material = true
+position = Vector2(11722, 5350)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA12" type="Sprite2D" parent="Sprites" index="53"]
+use_parent_material = true
+position = Vector2(13311, 5235)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA13" type="Sprite2D" parent="Sprites" index="54"]
+use_parent_material = true
+position = Vector2(15379, 5946)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA14" type="Sprite2D" parent="Sprites" index="55"]
+use_parent_material = true
+position = Vector2(17345, 6713)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA15" type="Sprite2D" parent="Sprites" index="56"]
+use_parent_material = true
+position = Vector2(18161, 7400)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA16" type="Sprite2D" parent="Sprites" index="57"]
+use_parent_material = true
+position = Vector2(18798, 5291)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA17" type="Sprite2D" parent="Sprites" index="58"]
+use_parent_material = true
+position = Vector2(18487, 5985)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA18" type="Sprite2D" parent="Sprites" index="59"]
+use_parent_material = true
+position = Vector2(16548, 6180)
+rotation = -0.0133399
+scale = Vector2(-0.298372, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA8" type="Sprite2D" parent="Sprites" index="60"]
+use_parent_material = true
+position = Vector2(8118, 5162)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootA10" type="Sprite2D" parent="Sprites" index="61"]
+use_parent_material = true
+position = Vector2(12447, 6383)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootB8" type="Sprite2D" parent="Sprites" index="62"]
+use_parent_material = true
+position = Vector2(9813, 4704)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB10" type="Sprite2D" parent="Sprites" index="63"]
+use_parent_material = true
+position = Vector2(11953, 5816)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB11" type="Sprite2D" parent="Sprites" index="64"]
+use_parent_material = true
+position = Vector2(12868, 5244)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB12" type="Sprite2D" parent="Sprites" index="65"]
+use_parent_material = true
+position = Vector2(13665, 5296)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB13" type="Sprite2D" parent="Sprites" index="66"]
+use_parent_material = true
+position = Vector2(13789, 5720)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB14" type="Sprite2D" parent="Sprites" index="67"]
+use_parent_material = true
+position = Vector2(15649, 5914)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB15" type="Sprite2D" parent="Sprites" index="68"]
+use_parent_material = true
+position = Vector2(15329, 6873)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB16" type="Sprite2D" parent="Sprites" index="69"]
+use_parent_material = true
+position = Vector2(16313, 5666)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB17" type="Sprite2D" parent="Sprites" index="70"]
+use_parent_material = true
+position = Vector2(16506, 5773)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB18" type="Sprite2D" parent="Sprites" index="71"]
+use_parent_material = true
+position = Vector2(16533, 6122)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB19" type="Sprite2D" parent="Sprites" index="72"]
+use_parent_material = true
+position = Vector2(17381, 6240)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB20" type="Sprite2D" parent="Sprites" index="73"]
+use_parent_material = true
+position = Vector2(18593, 5918)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB21" type="Sprite2D" parent="Sprites" index="74"]
+use_parent_material = true
+position = Vector2(19300, 5961)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB22" type="Sprite2D" parent="Sprites" index="75"]
+use_parent_material = true
+position = Vector2(19058, 5156)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB23" type="Sprite2D" parent="Sprites" index="76"]
+use_parent_material = true
+position = Vector2(19200, 5308)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB24" type="Sprite2D" parent="Sprites" index="77"]
+use_parent_material = true
+position = Vector2(18138, 6675)
+scale = Vector2(-0.210374, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB25" type="Sprite2D" parent="Sprites" index="78"]
+use_parent_material = true
+position = Vector2(17373, 6649)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB26" type="Sprite2D" parent="Sprites" index="79"]
+use_parent_material = true
+position = Vector2(17148, 6203)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB27" type="Sprite2D" parent="Sprites" index="80"]
+use_parent_material = true
+position = Vector2(16158, 6137)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB28" type="Sprite2D" parent="Sprites" index="81"]
+use_parent_material = true
+position = Vector2(16002, 6129)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB29" type="Sprite2D" parent="Sprites" index="82"]
+use_parent_material = true
+position = Vector2(15422, 5894)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB30" type="Sprite2D" parent="Sprites" index="83"]
+use_parent_material = true
+position = Vector2(15059, 6851)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB31" type="Sprite2D" parent="Sprites" index="84"]
+use_parent_material = true
+position = Vector2(16154, 6654)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB32" type="Sprite2D" parent="Sprites" index="85"]
+use_parent_material = true
+position = Vector2(16723, 6587)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB33" type="Sprite2D" parent="Sprites" index="86"]
+use_parent_material = true
+position = Vector2(17219, 6833)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB34" type="Sprite2D" parent="Sprites" index="87"]
+use_parent_material = true
+position = Vector2(18412, 6609)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB35" type="Sprite2D" parent="Sprites" index="88"]
+use_parent_material = true
+position = Vector2(18869, 5148)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB36" type="Sprite2D" parent="Sprites" index="89"]
+use_parent_material = true
+position = Vector2(18805, 5222)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB37" type="Sprite2D" parent="Sprites" index="90"]
+use_parent_material = true
+position = Vector2(12720, 5152)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB38" type="Sprite2D" parent="Sprites" index="91"]
+use_parent_material = true
+position = Vector2(12462, 5224)
+scale = Vector2(0.327412, 0.388245)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootB9" type="Sprite2D" parent="Sprites" index="92"]
+use_parent_material = true
+position = Vector2(9985, 4683)
+scale = Vector2(0.269645, 0.395709)
+texture = ExtResource("14_6s6h4")
+
+[node name="RootC9" type="Sprite2D" parent="Sprites" index="93"]
+use_parent_material = true
+position = Vector2(10299, 4707)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC13" type="Sprite2D" parent="Sprites" index="94"]
+use_parent_material = true
+position = Vector2(12921, 5274)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC14" type="Sprite2D" parent="Sprites" index="95"]
+use_parent_material = true
+position = Vector2(12795, 5569)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC15" type="Sprite2D" parent="Sprites" index="96"]
+use_parent_material = true
+position = Vector2(12848, 6224)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC16" type="Sprite2D" parent="Sprites" index="97"]
+use_parent_material = true
+position = Vector2(13856, 5766)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC17" type="Sprite2D" parent="Sprites" index="98"]
+use_parent_material = true
+position = Vector2(13590, 5196)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC18" type="Sprite2D" parent="Sprites" index="99"]
+use_parent_material = true
+position = Vector2(13421, 5172)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC19" type="Sprite2D" parent="Sprites" index="100"]
+use_parent_material = true
+position = Vector2(15723, 6029)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC20" type="Sprite2D" parent="Sprites" index="101"]
+use_parent_material = true
+position = Vector2(15832, 6218)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC21" type="Sprite2D" parent="Sprites" index="102"]
+use_parent_material = true
+position = Vector2(16479, 5698)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC22" type="Sprite2D" parent="Sprites" index="103"]
+use_parent_material = true
+position = Vector2(16623, 6261)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC23" type="Sprite2D" parent="Sprites" index="104"]
+use_parent_material = true
+position = Vector2(16477, 6618)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC24" type="Sprite2D" parent="Sprites" index="105"]
+use_parent_material = true
+position = Vector2(18206, 6718)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC25" type="Sprite2D" parent="Sprites" index="106"]
+use_parent_material = true
+position = Vector2(18494, 7390)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC10" type="Sprite2D" parent="Sprites" index="107"]
+use_parent_material = true
+position = Vector2(8575, 5109)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootA9" type="Sprite2D" parent="Sprites" index="108"]
+use_parent_material = true
+position = Vector2(9950, 5942)
+rotation = -0.0133399
+scale = Vector2(0.223737, 0.375029)
+texture = ExtResource("13_l7oyt")
+
+[node name="RootC11" type="Sprite2D" parent="Sprites" index="109"]
+use_parent_material = true
+position = Vector2(10317, 6094)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC12" type="Sprite2D" parent="Sprites" index="110"]
+use_parent_material = true
+position = Vector2(12865, 6318)
+scale = Vector2(-0.249792, 0.385378)
+texture = ExtResource("15_ntpke")
+
+[node name="RootC6" type="Sprite2D" parent="Sprites" index="111"]
+use_parent_material = true
+position = Vector2(2195, 3057)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_ntpke")
+
+[node name="SmallRoundRocks" type="Sprite2D" parent="Sprites" index="112"]
+use_parent_material = true
+position = Vector2(-1553, 539)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks2" type="Sprite2D" parent="Sprites" index="113"]
+use_parent_material = true
+position = Vector2(78, 494)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks3" type="Sprite2D" parent="Sprites" index="114"]
+use_parent_material = true
+position = Vector2(-308, 503)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks4" type="Sprite2D" parent="Sprites" index="115"]
+use_parent_material = true
+position = Vector2(294, 865)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks5" type="Sprite2D" parent="Sprites" index="116"]
+use_parent_material = true
+position = Vector2(1194, 876)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks6" type="Sprite2D" parent="Sprites" index="117"]
+use_parent_material = true
+position = Vector2(1638, 872)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks7" type="Sprite2D" parent="Sprites" index="118"]
+use_parent_material = true
+position = Vector2(1981, 863)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks8" type="Sprite2D" parent="Sprites" index="119"]
+use_parent_material = true
+position = Vector2(2243, 538)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks9" type="Sprite2D" parent="Sprites" index="120"]
+use_parent_material = true
+position = Vector2(2477, 538)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallRoundRocks10" type="Sprite2D" parent="Sprites" index="121"]
+use_parent_material = true
+position = Vector2(2799, 532)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_wi2vh")
+
+[node name="SmallTriangleRocks" type="Sprite2D" parent="Sprites" index="122"]
+use_parent_material = true
+position = Vector2(1221, 3436)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks2" type="Sprite2D" parent="Sprites" index="123"]
+use_parent_material = true
+position = Vector2(1143, 3336)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks3" type="Sprite2D" parent="Sprites" index="124"]
+use_parent_material = true
+position = Vector2(1632, 3427)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks4" type="Sprite2D" parent="Sprites" index="125"]
+use_parent_material = true
+position = Vector2(1286, 2460)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks5" type="Sprite2D" parent="Sprites" index="126"]
+use_parent_material = true
+position = Vector2(1559, 2022)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks6" type="Sprite2D" parent="Sprites" index="127"]
+use_parent_material = true
+position = Vector2(1274, 1561)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks7" type="Sprite2D" parent="Sprites" index="128"]
+use_parent_material = true
+position = Vector2(2285, 3345)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks8" type="Sprite2D" parent="Sprites" index="129"]
+use_parent_material = true
+position = Vector2(2638, 3342)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks9" type="Sprite2D" parent="Sprites" index="130"]
+use_parent_material = true
+position = Vector2(2728, 3326)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks10" type="Sprite2D" parent="Sprites" index="131"]
+use_parent_material = true
+position = Vector2(3670, 3094)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks11" type="Sprite2D" parent="Sprites" index="132"]
+use_parent_material = true
+position = Vector2(4219, 3056)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks12" type="Sprite2D" parent="Sprites" index="133"]
+use_parent_material = true
+position = Vector2(4449, 3334)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks13" type="Sprite2D" parent="Sprites" index="134"]
+use_parent_material = true
+position = Vector2(4364, 3347)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks14" type="Sprite2D" parent="Sprites" index="135"]
+use_parent_material = true
+position = Vector2(4196, 3337)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks15" type="Sprite2D" parent="Sprites" index="136"]
+use_parent_material = true
+position = Vector2(4079, 3346)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks16" type="Sprite2D" parent="Sprites" index="137"]
+use_parent_material = true
+position = Vector2(5710, 3380)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks17" type="Sprite2D" parent="Sprites" index="138"]
+use_parent_material = true
+position = Vector2(5974, 3395)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks18" type="Sprite2D" parent="Sprites" index="139"]
+use_parent_material = true
+position = Vector2(6381, 3390)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks19" type="Sprite2D" parent="Sprites" index="140"]
+use_parent_material = true
+position = Vector2(7568, 3326)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks20" type="Sprite2D" parent="Sprites" index="141"]
+use_parent_material = true
+position = Vector2(7453, 3344)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks21" type="Sprite2D" parent="Sprites" index="142"]
+use_parent_material = true
+position = Vector2(7272, 3330)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks22" type="Sprite2D" parent="Sprites" index="143"]
+use_parent_material = true
+position = Vector2(7350, 3348)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks23" type="Sprite2D" parent="Sprites" index="144"]
+use_parent_material = true
+position = Vector2(7126, 3336)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks24" type="Sprite2D" parent="Sprites" index="145"]
+use_parent_material = true
+position = Vector2(8023, 4688)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks25" type="Sprite2D" parent="Sprites" index="146"]
+use_parent_material = true
+position = Vector2(8606, 4703)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks26" type="Sprite2D" parent="Sprites" index="147"]
+use_parent_material = true
+position = Vector2(8117, 4733)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks27" type="Sprite2D" parent="Sprites" index="148"]
+use_parent_material = true
+position = Vector2(7928, 5104)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks28" type="Sprite2D" parent="Sprites" index="149"]
+use_parent_material = true
+position = Vector2(7617, 5115)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks29" type="Sprite2D" parent="Sprites" index="150"]
+use_parent_material = true
+position = Vector2(7516, 5094)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks30" type="Sprite2D" parent="Sprites" index="151"]
+use_parent_material = true
+position = Vector2(8066, 4980)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks31" type="Sprite2D" parent="Sprites" index="152"]
+use_parent_material = true
+position = Vector2(8750, 4981)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks32" type="Sprite2D" parent="Sprites" index="153"]
+use_parent_material = true
+position = Vector2(9043, 4968)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks33" type="Sprite2D" parent="Sprites" index="154"]
+use_parent_material = true
+position = Vector2(8128, 5341)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks34" type="Sprite2D" parent="Sprites" index="155"]
+use_parent_material = true
+position = Vector2(8204, 5357)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks35" type="Sprite2D" parent="Sprites" index="156"]
+use_parent_material = true
+position = Vector2(8661, 5351)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks36" type="Sprite2D" parent="Sprites" index="157"]
+use_parent_material = true
+position = Vector2(8747, 5636)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks37" type="Sprite2D" parent="Sprites" index="158"]
+use_parent_material = true
+position = Vector2(8962, 5646)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks38" type="Sprite2D" parent="Sprites" index="159"]
+use_parent_material = true
+position = Vector2(9943, 5644)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks39" type="Sprite2D" parent="Sprites" index="160"]
+use_parent_material = true
+position = Vector2(10226, 5638)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks40" type="Sprite2D" parent="Sprites" index="161"]
+use_parent_material = true
+position = Vector2(9564, 5654)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks41" type="Sprite2D" parent="Sprites" index="162"]
+use_parent_material = true
+position = Vector2(9500, 5651)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks42" type="Sprite2D" parent="Sprites" index="163"]
+use_parent_material = true
+position = Vector2(9416, 5646)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks43" type="Sprite2D" parent="Sprites" index="164"]
+use_parent_material = true
+position = Vector2(9368, 4976)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks44" type="Sprite2D" parent="Sprites" index="165"]
+use_parent_material = true
+position = Vector2(10480, 4975)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks45" type="Sprite2D" parent="Sprites" index="166"]
+use_parent_material = true
+position = Vector2(10565, 5102)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks46" type="Sprite2D" parent="Sprites" index="167"]
+use_parent_material = true
+position = Vector2(11129, 5212)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks47" type="Sprite2D" parent="Sprites" index="168"]
+use_parent_material = true
+position = Vector2(11532, 4863)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks48" type="Sprite2D" parent="Sprites" index="169"]
+use_parent_material = true
+position = Vector2(11436, 5549)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks49" type="Sprite2D" parent="Sprites" index="170"]
+use_parent_material = true
+position = Vector2(11048, 5798)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks50" type="Sprite2D" parent="Sprites" index="171"]
+use_parent_material = true
+position = Vector2(11020, 6586)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks51" type="Sprite2D" parent="Sprites" index="172"]
+use_parent_material = true
+position = Vector2(11317, 6598)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks52" type="Sprite2D" parent="Sprites" index="173"]
+use_parent_material = true
+position = Vector2(11575, 6609)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks53" type="Sprite2D" parent="Sprites" index="174"]
+use_parent_material = true
+position = Vector2(10882, 6276)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks54" type="Sprite2D" parent="Sprites" index="175"]
+use_parent_material = true
+position = Vector2(9919, 6262)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks55" type="Sprite2D" parent="Sprites" index="176"]
+use_parent_material = true
+position = Vector2(10086, 6270)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks56" type="Sprite2D" parent="Sprites" index="177"]
+use_parent_material = true
+position = Vector2(11975, 5915)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks57" type="Sprite2D" parent="Sprites" index="178"]
+use_parent_material = true
+position = Vector2(11909, 5929)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks58" type="Sprite2D" parent="Sprites" index="179"]
+use_parent_material = true
+position = Vector2(11695, 5937)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks59" type="Sprite2D" parent="Sprites" index="180"]
+use_parent_material = true
+position = Vector2(11691, 5522)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks60" type="Sprite2D" parent="Sprites" index="181"]
+use_parent_material = true
+position = Vector2(12007, 5536)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks61" type="Sprite2D" parent="Sprites" index="182"]
+use_parent_material = true
+position = Vector2(12157, 5409)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks62" type="Sprite2D" parent="Sprites" index="183"]
+use_parent_material = true
+position = Vector2(12794, 5403)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks63" type="Sprite2D" parent="Sprites" index="184"]
+use_parent_material = true
+position = Vector2(13747, 5382)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks64" type="Sprite2D" parent="Sprites" index="185"]
+use_parent_material = true
+position = Vector2(13272, 5935)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks65" type="Sprite2D" parent="Sprites" index="186"]
+use_parent_material = true
+position = Vector2(12129, 5924)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks66" type="Sprite2D" parent="Sprites" index="187"]
+use_parent_material = true
+position = Vector2(12045, 5891)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks67" type="Sprite2D" parent="Sprites" index="188"]
+use_parent_material = true
+position = Vector2(12388, 5930)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks68" type="Sprite2D" parent="Sprites" index="189"]
+use_parent_material = true
+position = Vector2(13051, 5939)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks69" type="Sprite2D" parent="Sprites" index="190"]
+use_parent_material = true
+position = Vector2(13133, 5946)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks70" type="Sprite2D" parent="Sprites" index="191"]
+use_parent_material = true
+position = Vector2(12965, 6581)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks71" type="Sprite2D" parent="Sprites" index="192"]
+use_parent_material = true
+position = Vector2(13073, 6537)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks72" type="Sprite2D" parent="Sprites" index="193"]
+use_parent_material = true
+position = Vector2(13157, 6586)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks73" type="Sprite2D" parent="Sprites" index="194"]
+use_parent_material = true
+position = Vector2(13373, 6605)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks74" type="Sprite2D" parent="Sprites" index="195"]
+use_parent_material = true
+position = Vector2(13704, 6590)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks75" type="Sprite2D" parent="Sprites" index="196"]
+use_parent_material = true
+position = Vector2(12459, 6608)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks76" type="Sprite2D" parent="Sprites" index="197"]
+use_parent_material = true
+position = Vector2(14558, 6598)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks77" type="Sprite2D" parent="Sprites" index="198"]
+use_parent_material = true
+position = Vector2(14832, 6463)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks78" type="Sprite2D" parent="Sprites" index="199"]
+use_parent_material = true
+position = Vector2(15381, 6418)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks79" type="Sprite2D" parent="Sprites" index="200"]
+use_parent_material = true
+position = Vector2(15637, 6421)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks80" type="Sprite2D" parent="Sprites" index="201"]
+use_parent_material = true
+position = Vector2(15832, 6392)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks81" type="Sprite2D" parent="Sprites" index="202"]
+use_parent_material = true
+position = Vector2(15914, 6397)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks82" type="Sprite2D" parent="Sprites" index="203"]
+use_parent_material = true
+position = Vector2(16681, 6411)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks83" type="Sprite2D" parent="Sprites" index="204"]
+use_parent_material = true
+position = Vector2(15030, 6722)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks84" type="Sprite2D" parent="Sprites" index="205"]
+use_parent_material = true
+position = Vector2(15012, 6965)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks85" type="Sprite2D" parent="Sprites" index="206"]
+use_parent_material = true
+position = Vector2(15083, 6986)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks86" type="Sprite2D" parent="Sprites" index="207"]
+use_parent_material = true
+position = Vector2(15420, 6991)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks87" type="Sprite2D" parent="Sprites" index="208"]
+use_parent_material = true
+position = Vector2(15765, 6978)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks88" type="Sprite2D" parent="Sprites" index="209"]
+use_parent_material = true
+position = Vector2(15883, 6962)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks89" type="Sprite2D" parent="Sprites" index="210"]
+use_parent_material = true
+position = Vector2(16479, 6970)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks90" type="Sprite2D" parent="Sprites" index="211"]
+use_parent_material = true
+position = Vector2(16548, 6962)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks91" type="Sprite2D" parent="Sprites" index="212"]
+use_parent_material = true
+position = Vector2(15749, 7186)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks92" type="Sprite2D" parent="Sprites" index="213"]
+use_parent_material = true
+position = Vector2(16018, 7178)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks93" type="Sprite2D" parent="Sprites" index="214"]
+use_parent_material = true
+position = Vector2(15620, 7128)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks94" type="Sprite2D" parent="Sprites" index="215"]
+use_parent_material = true
+position = Vector2(15868, 6753)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks95" type="Sprite2D" parent="Sprites" index="216"]
+use_parent_material = true
+position = Vector2(15791, 6751)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks96" type="Sprite2D" parent="Sprites" index="217"]
+use_parent_material = true
+position = Vector2(16190, 6740)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks97" type="Sprite2D" parent="Sprites" index="218"]
+use_parent_material = true
+position = Vector2(16548, 6750)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks98" type="Sprite2D" parent="Sprites" index="219"]
+use_parent_material = true
+position = Vector2(16778, 6992)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks99" type="Sprite2D" parent="Sprites" index="220"]
+use_parent_material = true
+position = Vector2(17277, 6989)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks100" type="Sprite2D" parent="Sprites" index="221"]
+use_parent_material = true
+position = Vector2(16844, 6389)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks101" type="Sprite2D" parent="Sprites" index="222"]
+use_parent_material = true
+position = Vector2(16933, 6407)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks102" type="Sprite2D" parent="Sprites" index="223"]
+use_parent_material = true
+position = Vector2(17464, 6410)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks103" type="Sprite2D" parent="Sprites" index="224"]
+use_parent_material = true
+position = Vector2(18149, 6394)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks104" type="Sprite2D" parent="Sprites" index="225"]
+use_parent_material = true
+position = Vector2(18300, 6389)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks105" type="Sprite2D" parent="Sprites" index="226"]
+use_parent_material = true
+position = Vector2(18363, 6409)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks106" type="Sprite2D" parent="Sprites" index="227"]
+use_parent_material = true
+position = Vector2(19257, 6355)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks107" type="Sprite2D" parent="Sprites" index="228"]
+use_parent_material = true
+position = Vector2(19381, 6223)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks108" type="Sprite2D" parent="Sprites" index="229"]
+use_parent_material = true
+position = Vector2(19898, 6213)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks109" type="Sprite2D" parent="Sprites" index="230"]
+use_parent_material = true
+position = Vector2(19211, 5726)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks110" type="Sprite2D" parent="Sprites" index="231"]
+use_parent_material = true
+position = Vector2(18757, 5744)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks111" type="Sprite2D" parent="Sprites" index="232"]
+use_parent_material = true
+position = Vector2(18177, 7646)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks112" type="Sprite2D" parent="Sprites" index="233"]
+use_parent_material = true
+position = Vector2(18443, 7662)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks113" type="Sprite2D" parent="Sprites" index="234"]
+use_parent_material = true
+position = Vector2(18892, 7744)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")
+
+[node name="SmallTriangleRocks114" type="Sprite2D" parent="Sprites" index="235"]
+use_parent_material = true
+position = Vector2(19219, 7639)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_l7oyt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://64oje6veby00"]
+[gd_scene load_steps=31 format=4 uid="uid://64oje6veby00"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_e3883"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="2_3my4n"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bjje2yvu4l0kh" path="res://assets/props/RootC.png" id="15_m5ofh"]
 [ext_resource type="Texture2D" uid="uid://b0k067ce4quja" path="res://assets/props/SmallRoundRocks.png" id="16_pj70o"]
 [ext_resource type="PackedScene" uid="uid://dw2c2w3ww5xc5" path="res://parts/gradient_trigger.tscn" id="17_m5ofh"]
+[ext_resource type="Texture2D" uid="uid://bfqvpxdoaw81l" path="res://assets/props/House.png" id="18_f281j"]
 
 [sub_resource type="Gradient" id="Gradient_wy38e"]
 offsets = PackedFloat32Array(0, 0.175481, 0.377404, 0.536058, 0.788462, 1)
@@ -739,6 +740,17 @@ texture = ExtResource("16_pj70o")
 position = Vector2(11161, -236)
 time_of_day = 1.0
 transition_time = 10.0
+
+[node name="Background" type="Node2D" parent="." index="13"]
+modulate = Color(1, 1, 1, 0.529412)
+z_index = -2
+use_parent_material = true
+
+[node name="House" type="Sprite2D" parent="Background" index="0"]
+use_parent_material = true
+position = Vector2(-327, 305)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("18_f281j")
 
 [connection signal="body_entered" from="Collectible/StarCutscene/StarCutscene" to="Collectible/StarCutscene" method="_on_star_cutscene_body_entered"]
 [connection signal="collectid" from="Collectible/StarCutscene/CollectibleCutscene" to="." method="_on_collectible_cutscene_collectid"]
