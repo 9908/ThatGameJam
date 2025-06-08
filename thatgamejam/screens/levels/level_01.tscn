@@ -386,25 +386,30 @@ position = Vector2(-438, 824)
 [node name="AudioTriggers" type="Node" parent="." index="10"]
 
 [node name="MusicTrigger1" parent="AudioTriggers" index="0" instance=ExtResource("8_vvwnw")]
-position = Vector2(1874, 262)
+position = Vector2(-154, 138)
 event_name = "area"
+value = 1.0
 
 [node name="WindTrigger" parent="AudioTriggers" index="1" instance=ExtResource("8_vvwnw")]
 position = Vector2(-165, 144)
+one_shot = true
 event_name = "ambiance"
 
 [node name="JingleTrigger1" parent="AudioTriggers" index="2" instance=ExtResource("8_vvwnw")]
-position = Vector2(-178, 166)
+position = Vector2(-155, 134)
+one_shot = true
 event_name = "jingle"
 value = 1.0
 
 [node name="JingleTrigger2" parent="AudioTriggers" index="3" instance=ExtResource("8_vvwnw")]
 position = Vector2(13154, -826)
+one_shot = true
 event_name = "jingle"
 value = 2.0
 
 [node name="JingleTrigger3" parent="AudioTriggers" index="4" instance=ExtResource("8_vvwnw")]
 position = Vector2(18967, -1252)
+one_shot = true
 event_name = "jingle"
 value = 3.0
 
