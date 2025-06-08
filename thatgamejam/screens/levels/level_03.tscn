@@ -400,8 +400,8 @@ event_name = "area"
 value = 3.0
 
 [node name="cavedroneTrigger" parent="AudioTriggers" index="1" instance=ExtResource("10_6ddup")]
-position = Vector2(1432, 3374)
-scale = Vector2(-0.515207, 0.321895)
+position = Vector2(1413, 2895)
+scale = Vector2(1, 0.322)
 event_name = "ambiance"
 value = 2.0
 
@@ -411,6 +411,6 @@ scale = Vector2(-0.515207, 0.321895)
 event_name = "ambiance"
 
 [node name="JingleTrigger6" parent="AudioTriggers" index="3" instance=ExtResource("10_6ddup")]
-position = Vector2(1424, 1154)
+position = Vector2(1417, 1387)
 event_name = "jingle"
 value = 6.0
