@@ -7,7 +7,7 @@ extends BaseLevel
 
 func _on_tutorial_trigger_body_entered(body: Node2D) -> void:
 	if body == Globals.player:
-		tutorial_trigger.queue_redraw()
+		tutorial_trigger.queue_free()
 		blob_5.explodeded.connect(_on_learned_to_explosion)
 		Globals.tutorial.show_text("Yellow blobs explode on contact")
 
