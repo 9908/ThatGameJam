@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://doe4f7p1dsuo2"]
+[gd_scene load_steps=16 format=4 uid="uid://doe4f7p1dsuo2"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_675gx"]
 [ext_resource type="Shader" uid="uid://dihirnecvcxfs" path="res://screens/levels/base_level.gdshader" id="2_3pysy"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dw2c2w3ww5xc5" path="res://parts/gradient_trigger.tscn" id="8_dkms1"]
 [ext_resource type="PackedScene" uid="uid://37kj1ohuv58j" path="res://parts/music_trigger.tscn" id="8_e270j"]
 [ext_resource type="PackedScene" uid="uid://boxhuyg61cdbk" path="res://parts/letter_box/letter_box.tscn" id="9_dkms1"]
+[ext_resource type="Texture2D" uid="uid://dom0jr4ykld8" path="res://assets/temp/particule.png" id="9_hgohk"]
 
 [sub_resource type="Gradient" id="Gradient_e270j"]
 offsets = PackedFloat32Array(0, 0.534125, 1)
@@ -30,6 +31,9 @@ size = Vector2(564.193, 1053.29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pysy"]
 size = Vector2(559.206, 714.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkms1"]
+size = Vector2(135, 20)
+
 [node name="Level_05" instance=ExtResource("1_675gx")]
 material = SubResource("ShaderMaterial_hgohk")
 script = ExtResource("3_hgohk")
@@ -41,7 +45,7 @@ tile_map_data = PackedByteArray("AAAVAAwAAAABAAYAAAAUAAwAAAABAAYAAAATAAwAAAABAAY
 position = Vector2(1083, -331)
 
 [node name="PlayerStartPos" parent="." index="6"]
-position = Vector2(-523, 549)
+position = Vector2(1054, -8126)
 
 [node name="Left" parent="LevelEdgeSetters" index="0"]
 position = Vector2(-663, 465)
@@ -118,6 +122,103 @@ value = 6.0
 
 [node name="GradientTrigger" parent="." index="11" instance=ExtResource("8_dkms1")]
 position = Vector2(261, 408)
+
+[node name="FinalSunset" type="Node2D" parent="." index="12"]
+position = Vector2(1061, -7978)
+
+[node name="Parallax2D" type="Parallax2D" parent="FinalSunset" index="0"]
+z_index = -1
+scroll_scale = Vector2(0.2, 0.2)
+
+[node name="Sun" type="Sprite2D" parent="FinalSunset/Parallax2D" index="0"]
+modulate = Color(0.947754, 1, 0.582031, 1)
+position = Vector2(-126, 6965)
+scale = Vector2(23.8732, 23.8732)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain" type="Sprite2D" parent="FinalSunset/Parallax2D" index="1"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-677, 7233)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain2" type="Sprite2D" parent="FinalSunset/Parallax2D" index="2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-951, 7150)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain3" type="Sprite2D" parent="FinalSunset/Parallax2D" index="3"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1189, 7496)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain4" type="Sprite2D" parent="FinalSunset/Parallax2D" index="4"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1511, 7234)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain5" type="Sprite2D" parent="FinalSunset/Parallax2D" index="5"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-224, 7675)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain6" type="Sprite2D" parent="FinalSunset/Parallax2D" index="6"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-81, 7437)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain7" type="Sprite2D" parent="FinalSunset/Parallax2D" index="7"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-212, 7234)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain8" type="Sprite2D" parent="FinalSunset/Parallax2D" index="8"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(146, 7139)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain9" type="Sprite2D" parent="FinalSunset/Parallax2D" index="9"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(432, 7425)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain10" type="Sprite2D" parent="FinalSunset/Parallax2D" index="10"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(813, 7330)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain11" type="Sprite2D" parent="FinalSunset/Parallax2D" index="11"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(861, 7127)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain12" type="Sprite2D" parent="FinalSunset/Parallax2D" index="12"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1242, 7318)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Moutain13" type="Sprite2D" parent="FinalSunset/Parallax2D" index="13"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1516, 7449)
+scale = Vector2(14.8904, 14.8904)
+texture = ExtResource("9_hgohk")
+
+[node name="Area2D" type="Area2D" parent="FinalSunset" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalSunset/Area2D" index="0"]
+position = Vector2(0, -53)
+shape = SubResource("RectangleShape2D_dkms1")
 
 [editable path="AudioTriggers/MusicStep2"]
 [editable path="AudioTriggers/MusicFinal"]
