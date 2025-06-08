@@ -46,7 +46,7 @@ position = Vector2(19015.6, 7788.12)
 init_length = 550.0
 
 [node name="Plant13" parent="Plants" index="3" instance=ExtResource("2_e1uog")]
-position = Vector2(10103.6, 6298.96)
+position = Vector2(11447, 6544)
 init_length = 400.0
 
 [node name="Plant9" parent="Plants" index="4" instance=ExtResource("2_e1uog")]
@@ -278,58 +278,64 @@ position = Vector2(11417.5, 4831.59)
 [node name="Collectible21" parent="Collectible" index="12" instance=ExtResource("7_e0dc1")]
 position = Vector2(11801.6, 5909.73)
 
-[node name="Collectible30" parent="Collectible" index="13" instance=ExtResource("7_e0dc1")]
+[node name="Collectible47" parent="Collectible" index="13" instance=ExtResource("7_e0dc1")]
+position = Vector2(10021, 6209)
+
+[node name="Collectible48" parent="Collectible" index="14" instance=ExtResource("7_e0dc1")]
+position = Vector2(10187, 6202)
+
+[node name="Collectible30" parent="Collectible" index="15" instance=ExtResource("7_e0dc1")]
 position = Vector2(11752.7, 5515.64)
 
-[node name="Collectible31" parent="Collectible" index="14" instance=ExtResource("7_e0dc1")]
+[node name="Collectible31" parent="Collectible" index="16" instance=ExtResource("7_e0dc1")]
 position = Vector2(11901.6, 5510.8)
 
-[node name="Collectible32" parent="Collectible" index="15" instance=ExtResource("7_e0dc1")]
+[node name="Collectible32" parent="Collectible" index="17" instance=ExtResource("7_e0dc1")]
 position = Vector2(16010.5, 6390.91)
 
-[node name="Collectible34" parent="Collectible" index="16" instance=ExtResource("7_e0dc1")]
+[node name="Collectible34" parent="Collectible" index="18" instance=ExtResource("7_e0dc1")]
 position = Vector2(15198.7, 6964.3)
 
-[node name="Collectible44" parent="Collectible" index="17" instance=ExtResource("7_e0dc1")]
+[node name="Collectible44" parent="Collectible" index="19" instance=ExtResource("7_e0dc1")]
 position = Vector2(15720.8, 6492.42)
 
-[node name="Collectible39" parent="Collectible" index="18" instance=ExtResource("7_e0dc1")]
+[node name="Collectible39" parent="Collectible" index="20" instance=ExtResource("7_e0dc1")]
 position = Vector2(18318.2, 7273.6)
 
-[node name="Collectible40" parent="Collectible" index="19" instance=ExtResource("7_e0dc1")]
+[node name="Collectible40" parent="Collectible" index="21" instance=ExtResource("7_e0dc1")]
 position = Vector2(18318.2, 7433.32)
 
-[node name="Collectible41" parent="Collectible" index="20" instance=ExtResource("7_e0dc1")]
+[node name="Collectible41" parent="Collectible" index="22" instance=ExtResource("7_e0dc1")]
 position = Vector2(18318.2, 7554.84)
 
-[node name="Collectible45" parent="Collectible" index="21" instance=ExtResource("7_e0dc1")]
+[node name="Collectible45" parent="Collectible" index="23" instance=ExtResource("7_e0dc1")]
 position = Vector2(18990.5, 5318.96)
 
-[node name="Collectible46" parent="Collectible" index="22" instance=ExtResource("7_e0dc1")]
+[node name="Collectible46" parent="Collectible" index="24" instance=ExtResource("7_e0dc1")]
 position = Vector2(18990.5, 5520.38)
 
-[node name="Collectible35" parent="Collectible" index="23" instance=ExtResource("7_e0dc1")]
+[node name="Collectible35" parent="Collectible" index="25" instance=ExtResource("7_e0dc1")]
 position = Vector2(15523, 6010.4)
 
-[node name="Collectible33" parent="Collectible" index="24" instance=ExtResource("7_e0dc1")]
+[node name="Collectible33" parent="Collectible" index="26" instance=ExtResource("7_e0dc1")]
 position = Vector2(16126, 6390.07)
 
-[node name="Collectible36" parent="Collectible" index="25" instance=ExtResource("7_e0dc1")]
+[node name="Collectible36" parent="Collectible" index="27" instance=ExtResource("7_e0dc1")]
 position = Vector2(16924.3, 6390.91)
 
-[node name="Collectible37" parent="Collectible" index="26" instance=ExtResource("7_e0dc1")]
+[node name="Collectible37" parent="Collectible" index="28" instance=ExtResource("7_e0dc1")]
 position = Vector2(17135.6, 6390.07)
 
-[node name="Collectible38" parent="Collectible" index="27" instance=ExtResource("7_e0dc1")]
+[node name="Collectible38" parent="Collectible" index="29" instance=ExtResource("7_e0dc1")]
 position = Vector2(17254.3, 6390.07)
 
-[node name="Collectible42" parent="Collectible" index="28" instance=ExtResource("7_e0dc1")]
+[node name="Collectible42" parent="Collectible" index="30" instance=ExtResource("7_e0dc1")]
 position = Vector2(16349.5, 5991.43)
 
-[node name="Collectible43" parent="Collectible" index="29" instance=ExtResource("7_e0dc1")]
+[node name="Collectible43" parent="Collectible" index="31" instance=ExtResource("7_e0dc1")]
 position = Vector2(16349.5, 5808.25)
 
-[node name="Collectible17" parent="Collectible" index="30" instance=ExtResource("7_e0dc1")]
+[node name="Collectible17" parent="Collectible" index="32" instance=ExtResource("7_e0dc1")]
 position = Vector2(3507.49, 3067.84)
 
 [node name="PlayerStartPos" parent="." index="6"]
