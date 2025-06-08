@@ -46,6 +46,8 @@ func set_active(new_val: bool):
 	yes_button.grab_focus()
 	if not first_activation and not choose_to_give:
 		return
+	# FLAG-SFX - mailbox
+	FmodServer.play_one_shot("event:/mailbox")
 		
 	first_activation = false
 	if choose_to_give:
@@ -78,6 +80,7 @@ func update_share_window():
 	line_edit_give.text = code
 	activated_codes.append(code)
 	# FLAG-SFX - give gift
+	FmodServer.play_one_shot("event:/give_gift")
 	# TODO
 	
 
@@ -163,6 +166,7 @@ func _on_activate_code_button_pressed() -> void:
 			close_receive.grab_focus()
 			
 			# FLAG-SFX - receive gift
+			FmodServer.play_one_shot("event:/receive_gift")
 			# TODO
 	else:
 		rich_text_label.text = "Enter a valid code"
