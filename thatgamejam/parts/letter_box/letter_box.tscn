@@ -145,8 +145,10 @@ size = Vector2(143, 163)
 script = ExtResource("1_hb46q")
 
 [node name="Visual" type="Node2D" parent="."]
+use_parent_material = true
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visual"]
+use_parent_material = true
 position = Vector2(1, -81.75)
 scale = Vector2(0.30463, 0.30463)
 sprite_frames = SubResource("SpriteFrames_v6xsa")
