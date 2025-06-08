@@ -77,6 +77,8 @@ func update_share_window():
 	Globals.player.grow_plant.remove_ressource(Globals.player.grow_plant.ressource)
 	line_edit_give.text = code
 	activated_codes.append(code)
+	# FLAG-SFX - give gift
+	# TODO
 	
 
 func encode_donation(light: int) -> String:
@@ -159,5 +161,8 @@ func _on_activate_code_button_pressed() -> void:
 			hide_all_containers()
 			success_container.show()
 			close_receive.grab_focus()
+			
+			# FLAG-SFX - receive gift
+			# TODO
 	else:
 		rich_text_label.text = "Enter a valid code"
