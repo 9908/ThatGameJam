@@ -23,6 +23,15 @@ func remove():
 	call_deferred("update_layout")
 
 
+func remove_all():
+	var backpack_size = backpack_ressources.get_children().size()
+	if backpack_size == 0:
+		return
+	for child in backpack_ressources.get_children():
+		child.queue_free()
+	call_deferred("update_layout")
+
+
 func update_layout():
 	var count = backpack_ressources.get_children().size()
 	if count == 0:

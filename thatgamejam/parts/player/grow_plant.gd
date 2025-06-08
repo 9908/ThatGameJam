@@ -7,6 +7,7 @@ signal learned_to_grow
 
 var ressource: int = 0
 
+var can_grow_plant: bool = true
 var plant_scn = preload("res://parts/plant/plant.tscn")
 var nearby_plant = null
 var nearby_plant_count: int = 0
@@ -16,7 +17,7 @@ var growing: bool = false
 
 
 func _physics_process(_delta):
-	if Input.is_action_pressed("grow"):
+	if Input.is_action_pressed("grow") and can_grow_plant:
 		start_growing()
 	elif Input.is_action_just_released("grow"):
 		stop_growing()
@@ -110,6 +111,8 @@ func get_ressource(amount: int = 6):
 
 func remove_ressource(amount: int = 1):
 	ressource -= amount
-	for i in range(0, amount):
+	if amount == 1:
 		owner.animation_director.backpack.remove()
+	else:
+		owner.animation_director.backpack.remove_all()
 	Globals.ressource = ressource
