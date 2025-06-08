@@ -111,8 +111,8 @@ func decode_donation(code: String) -> Dictionary:
 
 func _on_no_button_pressed() -> void:
 	set_active(false)
-	choose_to_give = false
 	Globals.player.set_active(true)
+	choose_to_give = true
 
 
 func _on_share_button_button_pressed() -> void:
