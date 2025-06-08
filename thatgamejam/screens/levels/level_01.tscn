@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://64oje6veby00"]
+[gd_scene load_steps=35 format=4 uid="uid://64oje6veby00"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_e3883"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="2_3my4n"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://b0k067ce4quja" path="res://assets/props/SmallRoundRocks.png" id="16_pj70o"]
 [ext_resource type="PackedScene" uid="uid://dw2c2w3ww5xc5" path="res://parts/gradient_trigger.tscn" id="17_m5ofh"]
 [ext_resource type="Texture2D" uid="uid://bfqvpxdoaw81l" path="res://assets/props/House.png" id="18_f281j"]
+[ext_resource type="Texture2D" uid="uid://doaru72eqq62v" path="res://assets/props/BigRoundRocks.png" id="19_2g7kc"]
+[ext_resource type="Texture2D" uid="uid://b2ttxm5ycudud" path="res://assets/props/CloudA.png" id="20_5vdnh"]
+[ext_resource type="Texture2D" uid="uid://d34a7sxv41nxh" path="res://assets/props/CloudB.png" id="21_pl7c5"]
+[ext_resource type="Texture2D" uid="uid://cbkweu0hfl5pt" path="res://assets/props/CloudC.png" id="22_rtgxg"]
 
 [sub_resource type="Gradient" id="Gradient_wy38e"]
 offsets = PackedFloat32Array(0, 0.175481, 0.377404, 0.536058, 0.788462, 1)
@@ -742,7 +746,7 @@ time_of_day = 1.0
 transition_time = 10.0
 
 [node name="Background" type="Node2D" parent="." index="13"]
-modulate = Color(1, 1, 1, 0.529412)
+modulate = Color(3, 3, 3, 1)
 z_index = -2
 use_parent_material = true
 
@@ -751,6 +755,321 @@ use_parent_material = true
 position = Vector2(-327, 305)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("18_f281j")
+
+[node name="BigRoundRocks" type="Sprite2D" parent="Background" index="1"]
+modulate = Color(1, 1, 1, 0.652)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(-761, 510)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks2" type="Sprite2D" parent="Background" index="2"]
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(-1372, 269)
+scale = Vector2(0.425121, 0.416071)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks3" type="Sprite2D" parent="Background" index="3"]
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(-832, 806)
+scale = Vector2(0.425121, 0.416071)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks4" type="Sprite2D" parent="Background" index="4"]
+modulate = Color(1, 1, 1, 0.481)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(33, 486)
+rotation = 0.27612
+scale = Vector2(0.246299, 0.215621)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks5" type="Sprite2D" parent="Background" index="5"]
+modulate = Color(1, 1, 1, 0.762)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(530, 597)
+rotation = 0.0199896
+scale = Vector2(0.246299, 0.215621)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks6" type="Sprite2D" parent="Background" index="6"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(4245, 460)
+rotation = 0.00978241
+scale = Vector2(0.246299, 0.215621)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks9" type="Sprite2D" parent="Background" index="7"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(5407, 377)
+rotation = 0.00978241
+scale = Vector2(0.246299, 0.215621)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks10" type="Sprite2D" parent="Background" index="8"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(5682, 553)
+rotation = 0.00978241
+scale = Vector2(0.16387, 0.173318)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks11" type="Sprite2D" parent="Background" index="9"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(7045, 405)
+rotation = 0.00978241
+scale = Vector2(0.16387, 0.173318)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks12" type="Sprite2D" parent="Background" index="10"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(7509, 265)
+rotation = 0.00978241
+scale = Vector2(0.268456, 0.217149)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks13" type="Sprite2D" parent="Background" index="11"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(10416, -297)
+rotation = 0.00978241
+scale = Vector2(0.922479, 0.803133)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks14" type="Sprite2D" parent="Background" index="12"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(10705, 26.0001)
+rotation = 0.00978241
+scale = Vector2(0.604382, 0.554381)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks15" type="Sprite2D" parent="Background" index="13"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(10448, 314)
+rotation = 0.00978241
+scale = Vector2(0.452401, 0.417736)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks16" type="Sprite2D" parent="Background" index="14"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(9872, 395)
+rotation = 0.00978241
+scale = Vector2(0.452401, 0.417736)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks17" type="Sprite2D" parent="Background" index="15"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(11808, -201)
+rotation = 0.00978241
+scale = Vector2(0.452401, 0.417736)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks18" type="Sprite2D" parent="Background" index="16"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(14163, -656)
+rotation = 0.00978241
+scale = Vector2(0.452401, 0.417736)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks19" type="Sprite2D" parent="Background" index="17"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(14249, -474)
+rotation = 0.00978241
+scale = Vector2(0.452401, 0.417736)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks20" type="Sprite2D" parent="Background" index="18"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(15108, -838)
+rotation = 0.00978241
+scale = Vector2(0.452401, 0.417736)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks21" type="Sprite2D" parent="Background" index="19"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(12697, -232)
+rotation = 0.00978241
+scale = Vector2(0.850374, 0.921219)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks22" type="Sprite2D" parent="Background" index="20"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(12626, -30)
+rotation = 0.00978241
+scale = Vector2(0.850374, 0.921219)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks23" type="Sprite2D" parent="Background" index="21"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(12711, -242)
+rotation = 0.00978241
+scale = Vector2(0.560516, 0.522596)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks24" type="Sprite2D" parent="Background" index="22"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(14323, -217)
+rotation = 0.00978241
+scale = Vector2(0.560516, 0.522596)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks25" type="Sprite2D" parent="Background" index="23"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(15231, -263)
+rotation = 0.00978241
+scale = Vector2(0.560516, 0.522596)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks26" type="Sprite2D" parent="Background" index="24"]
+modulate = Color(1, 1, 1, 0.216)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(18854, -1507)
+rotation = 0.00978241
+scale = Vector2(1.15307, 1.23871)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks27" type="Sprite2D" parent="Background" index="25"]
+modulate = Color(1, 1, 1, 0.216)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(16405, -309)
+rotation = 0.00978241
+scale = Vector2(0.895886, 0.929877)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks28" type="Sprite2D" parent="Background" index="26"]
+modulate = Color(1, 1, 1, 0.216)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(16460, -332)
+rotation = 0.00978241
+scale = Vector2(0.615652, 0.586388)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks29" type="Sprite2D" parent="Background" index="27"]
+modulate = Color(1, 1, 1, 0.216)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(18390, -585)
+rotation = 0.00978241
+scale = Vector2(0.615652, 0.586388)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks30" type="Sprite2D" parent="Background" index="28"]
+modulate = Color(1, 1, 1, 0.47)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(18340, -649)
+rotation = 0.00978241
+scale = Vector2(0.368021, 0.381748)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks31" type="Sprite2D" parent="Background" index="29"]
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(16228, -703)
+rotation = 0.00978241
+scale = Vector2(0.368021, 0.381748)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks7" type="Sprite2D" parent="Background" index="30"]
+modulate = Color(1, 1, 1, 0.359)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(3750, 821)
+rotation = 0.00978241
+scale = Vector2(0.481892, 0.413702)
+texture = ExtResource("19_2g7kc")
+
+[node name="BigRoundRocks8" type="Sprite2D" parent="Background" index="31"]
+modulate = Color(1, 1, 1, 0.215)
+show_behind_parent = true
+use_parent_material = true
+position = Vector2(3273, 536)
+rotation = 0.00978241
+scale = Vector2(0.207038, 0.209617)
+texture = ExtResource("19_2g7kc")
+
+[node name="CloudA" type="Sprite2D" parent="Background" index="32"]
+modulate = Color(1, 1, 1, 0.326)
+use_parent_material = true
+position = Vector2(8092, -485)
+scale = Vector2(0.588652, 0.521672)
+texture = ExtResource("20_5vdnh")
+
+[node name="CloudA2" type="Sprite2D" parent="Background" index="33"]
+modulate = Color(1, 1, 1, 0.652)
+use_parent_material = true
+position = Vector2(-2881, -1045)
+scale = Vector2(1.30224, 1.01394)
+texture = ExtResource("20_5vdnh")
+
+[node name="CloudA3" type="Sprite2D" parent="Background" index="34"]
+modulate = Color(1, 1, 1, 0.652)
+use_parent_material = true
+position = Vector2(11457, -1312)
+scale = Vector2(0.721679, 0.528242)
+texture = ExtResource("20_5vdnh")
+
+[node name="CloudB" type="Sprite2D" parent="Background" index="35"]
+modulate = Color(1, 1, 1, 0.53)
+use_parent_material = true
+position = Vector2(6343, -376)
+scale = Vector2(0.629564, 0.668997)
+texture = ExtResource("21_pl7c5")
+
+[node name="CloudC" type="Sprite2D" parent="Background" index="36"]
+modulate = Color(1, 1, 1, 0.547)
+use_parent_material = true
+position = Vector2(2644, 43)
+scale = Vector2(0.533273, 0.417837)
+texture = ExtResource("22_rtgxg")
+
+[node name="CloudC2" type="Sprite2D" parent="Background" index="37"]
+modulate = Color(1, 1, 1, 0.547)
+use_parent_material = true
+position = Vector2(14512, -1459)
+scale = Vector2(0.533273, 0.417837)
+texture = ExtResource("22_rtgxg")
 
 [connection signal="body_entered" from="Collectible/StarCutscene/StarCutscene" to="Collectible/StarCutscene" method="_on_star_cutscene_body_entered"]
 [connection signal="collectid" from="Collectible/StarCutscene/CollectibleCutscene" to="." method="_on_collectible_cutscene_collectid"]
