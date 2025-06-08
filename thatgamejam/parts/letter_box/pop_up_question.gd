@@ -120,7 +120,7 @@ func _on_no_button_pressed() -> void:
 
 
 func _on_share_button_button_pressed() -> void:
-	OS.shell_open("https://itch.io/jam/tgcxcoreblazer") 
+	OS.shell_open("https://ben-lega.itch.io/hierophants") 
 
 
 func _on_close_pressed() -> void:
