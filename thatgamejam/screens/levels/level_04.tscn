@@ -3000,7 +3000,13 @@ rotation = -0.139637
 scale = Vector2(0.323975, 0.976074)
 texture = ExtResource("25_tlrhe")
 
-[node name="LightRays3" type="Sprite2D" parent="Light" index="2"]
+[node name="LightRays4" type="Sprite2D" parent="Light" index="2"]
+position = Vector2(-691, -2267)
+rotation = -0.454725
+scale = Vector2(0.323975, 0.553965)
+texture = ExtResource("25_tlrhe")
+
+[node name="LightRays3" type="Sprite2D" parent="Light" index="3"]
 position = Vector2(-123, -826)
 scale = Vector2(0.163975, 3.61608)
 texture = ExtResource("25_tlrhe")
