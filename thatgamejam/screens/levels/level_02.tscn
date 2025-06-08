@@ -372,11 +372,13 @@ value = 1.0
 
 [node name="JingleTrigger4" parent="AudioTriggers" index="2" instance=ExtResource("7_82ier")]
 position = Vector2(-4127, 372)
+one_shot = true
 event_name = "jingle"
 value = 4.0
 
 [node name="JingleTrigger5" parent="AudioTriggers" index="3" instance=ExtResource("7_82ier")]
 position = Vector2(11577, -1746)
+one_shot = true
 event_name = "jingle"
 value = 5.0
 

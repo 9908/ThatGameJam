@@ -429,6 +429,7 @@ event_name = "ambiance"
 
 [node name="JingleTrigger6" parent="AudioTriggers" index="3" instance=ExtResource("10_6ddup")]
 position = Vector2(1417, 1387)
+one_shot = true
 event_name = "jingle"
 value = 6.0
 
