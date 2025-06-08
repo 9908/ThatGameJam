@@ -4,7 +4,8 @@ extends Node2D
 const LEVELS_PATH = "res://screens/levels/"
 
 func _ready():
-	populate_level_buttons()
+	#populate_level_buttons()
+	load_level("res://screens/levels/level_01.tscn")
 
 
 func populate_level_buttons():
@@ -34,5 +35,5 @@ func load_level(level_path: String):
 	var level_scene = load(level_path)
 	if level_scene:
 		var level_instance = level_scene.instantiate()
-		owner.add_child(level_instance)
+		owner.add_child.call_deferred(level_instance)
 	queue_free()

@@ -11,8 +11,8 @@ var secret_ending: bool = false
 
 func _enter_tree() -> void:
 	super()
-	await get_tree().create_timer(1.0).timeout
-	Globals.player.grow_plant.get_ressource(115)
+	#await get_tree().create_timer(1.0).timeout
+	#Globals.player.grow_plant.get_ressource(115)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
