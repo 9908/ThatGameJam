@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://64oje6veby00"]
+[gd_scene load_steps=36 format=4 uid="uid://64oje6veby00"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_e3883"]
 [ext_resource type="PackedScene" uid="uid://cawceo03jkkj8" path="res://parts/teleporter/teleporter.tscn" id="2_3my4n"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b2ttxm5ycudud" path="res://assets/props/CloudA.png" id="20_5vdnh"]
 [ext_resource type="Texture2D" uid="uid://d34a7sxv41nxh" path="res://assets/props/CloudB.png" id="21_pl7c5"]
 [ext_resource type="Texture2D" uid="uid://cbkweu0hfl5pt" path="res://assets/props/CloudC.png" id="22_rtgxg"]
+[ext_resource type="Texture2D" uid="uid://byd231x7vesfl" path="res://assets/props/Square.png" id="23_pl7c5"]
 
 [sub_resource type="Gradient" id="Gradient_wy38e"]
 offsets = PackedFloat32Array(0, 0.175481, 0.377404, 0.536058, 0.788462, 1)
@@ -1070,6 +1071,13 @@ use_parent_material = true
 position = Vector2(14512, -1459)
 scale = Vector2(0.533273, 0.417837)
 texture = ExtResource("22_rtgxg")
+
+[node name="Square" type="Sprite2D" parent="Background" index="38"]
+modulate = Color(1, 1, 1, 0.602)
+use_parent_material = true
+position = Vector2(20570.8, -1274)
+scale = Vector2(6.9541, 1.35547)
+texture = ExtResource("23_pl7c5")
 
 [connection signal="body_entered" from="Collectible/StarCutscene/StarCutscene" to="Collectible/StarCutscene" method="_on_star_cutscene_body_entered"]
 [connection signal="collectid" from="Collectible/StarCutscene/CollectibleCutscene" to="." method="_on_collectible_cutscene_collectid"]
