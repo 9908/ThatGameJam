@@ -1219,7 +1219,7 @@ offset_right = 279.0
 offset_bottom = 340.0
 theme_override_fonts/normal_font = ExtResource("74_j0euh")
 theme_override_font_sizes/normal_font_size = 40
-text = "Hierophant
+text = "Hierophants
 "
 horizontal_alignment = 1
 
