@@ -24,7 +24,7 @@ offsets = PackedFloat32Array(0, 0.357692, 0.688462, 1)
 colors = PackedColorArray(0.0235294, 0.188235, 0.337255, 1, 0.32549, 0.439216, 0.431373, 1, 0.627451, 0.623529, 0.368627, 1, 0.760784, 0.670588, 0.396078, 1)
 
 [sub_resource type="Gradient" id="Gradient_owlgm"]
-offsets = PackedFloat32Array(0, 0.353846, 0.653846, 1)
+offsets = PackedFloat32Array(0.09375, 0.317708, 0.520833, 0.695313)
 colors = PackedColorArray(0.0235294, 0.176471, 0.305882, 1, 0.368627, 0.45098, 0.231373, 1, 0.631373, 0.54902, 0.231373, 1, 0.768627, 0.588235, 0.25098, 1)
 
 [sub_resource type="Gradient" id="Gradient_xd12c"]
@@ -64,8 +64,8 @@ offsets = PackedFloat32Array(0, 0.365385, 0.696154, 1)
 colors = PackedColorArray(0.247059, 0.105882, 0.447059, 1, 0.203922, 0.313726, 0.701961, 1, 0.368627, 0.509804, 0.752941, 1, 0.678431, 0.670588, 0.823529, 1)
 
 [sub_resource type="Gradient" id="Gradient_n85nt"]
-offsets = PackedFloat32Array(0, 0.379692, 0.669153, 1)
-colors = PackedColorArray(0.0209412, 0.0124706, 0.128549, 1, 0.476941, 0.18949, 0.420078, 1, 0.243921, 0.164157, 0.417882, 1, 0.0454431, 0.164546, 0.217926, 1)
+offsets = PackedFloat32Array(0, 0.361032, 0.669153, 1)
+colors = PackedColorArray(0.0209412, 0.0124706, 0.128549, 1, 0.390886, 0.184773, 0.537049, 1, 0.243921, 0.164157, 0.417882, 1, 0.0610833, 0.172211, 0.256184, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_1dcbi"]
 gradient = SubResource("Gradient_n85nt")

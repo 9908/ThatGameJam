@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c1q5m6edwjj26"]
+[gd_scene load_steps=20 format=4 uid="uid://c1q5m6edwjj26"]
 
 [ext_resource type="PackedScene" uid="uid://bnmu1nqjrvbk3" path="res://screens/levels/base_level.tscn" id="1_tp3pm"]
 [ext_resource type="Script" uid="uid://c68i7r8euwyj1" path="res://screens/levels/level_02.gd" id="2_6txls"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d3yjigll61yq2" path="res://assets/props/RootB.png" id="12_i3gl7"]
 [ext_resource type="Texture2D" uid="uid://bjje2yvu4l0kh" path="res://assets/props/RootC.png" id="13_b2lyl"]
 [ext_resource type="Texture2D" uid="uid://b0k067ce4quja" path="res://assets/props/SmallRoundRocks.png" id="14_ej080"]
+[ext_resource type="PackedScene" uid="uid://dw2c2w3ww5xc5" path="res://parts/gradient_trigger.tscn" id="15_vf3el"]
 
 [sub_resource type="Gradient" id="Gradient_803ht"]
 offsets = PackedFloat32Array(0, 0.168269, 0.764423, 0.997596)
@@ -481,5 +482,12 @@ use_parent_material = true
 position = Vector2(-6868, 598)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_ej080")
+
+[node name="GradientsTrigger" type="Node2D" parent="." index="13"]
+
+[node name="GradientTrigger" parent="GradientsTrigger" index="0" instance=ExtResource("15_vf3el")]
+position = Vector2(1962, 406)
+time_of_day = 2.0
+transition_time = 20.0
 
 [connection signal="body_entered" from="TutorialTrigger" to="." method="_on_tutorial_trigger_body_entered"]
