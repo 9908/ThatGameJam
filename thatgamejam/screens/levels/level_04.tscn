@@ -2834,21 +2834,21 @@ texture = ExtResource("17_qt8xi")
 [node name="RootB52" type="Sprite2D" parent="Background" index="175"]
 modulate = Color(1, 1, 1, 0.431)
 use_parent_material = true
-position = Vector2(-265, -3384)
+position = Vector2(-369, -3394)
 scale = Vector2(0.777208, 1.24578)
 texture = ExtResource("17_qt8xi")
 
 [node name="RootB53" type="Sprite2D" parent="Background" index="176"]
 modulate = Color(1, 1, 1, 0.431)
 use_parent_material = true
-position = Vector2(-201, -3030)
+position = Vector2(-325, -3033)
 scale = Vector2(0.777208, 1.24578)
 texture = ExtResource("17_qt8xi")
 
 [node name="RootB54" type="Sprite2D" parent="Background" index="177"]
 modulate = Color(1, 1, 1, 0.431)
 use_parent_material = true
-position = Vector2(-1066, -1946)
+position = Vector2(-1153, -1951)
 scale = Vector2(0.777208, 1.24578)
 texture = ExtResource("17_qt8xi")
 
@@ -2959,14 +2959,14 @@ texture = ExtResource("16_mot8n")
 
 [node name="RootA30" type="Sprite2D" parent="Background" index="193"]
 use_parent_material = true
-position = Vector2(-646, -2128)
+position = Vector2(-527, -2133)
 rotation = -0.0133399
 scale = Vector2(-0.624806, 1.32331)
 texture = ExtResource("16_mot8n")
 
 [node name="RootA31" type="Sprite2D" parent="Background" index="194"]
 use_parent_material = true
-position = Vector2(-718, -1852)
+position = Vector2(-644, -1852)
 rotation = -0.0133399
 scale = Vector2(-0.624806, 1.32331)
 texture = ExtResource("16_mot8n")
@@ -2980,7 +2980,7 @@ texture = ExtResource("16_mot8n")
 
 [node name="RootA33" type="Sprite2D" parent="Background" index="196"]
 use_parent_material = true
-position = Vector2(30.9999, -3532)
+position = Vector2(207, -3549)
 rotation = -0.0133399
 scale = Vector2(-0.624806, 1.32331)
 texture = ExtResource("16_mot8n")
