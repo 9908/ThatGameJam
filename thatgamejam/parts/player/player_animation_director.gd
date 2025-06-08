@@ -18,7 +18,7 @@ func _physics_process(delta):
 	var is_on_ground = owner.is_on_floor()
 	var is_jumping = not is_on_ground and owner.velocity.y < 0
 	var is_falling = not is_on_ground and owner.velocity.y > 0
-	var started_falling = not is_on_ground and previous_velocity.y < 0 and owner.velocity.y >= 0
+	var started_falling = not is_on_ground and previous_velocity.y <= 0 and owner.velocity.y >= 0
 	var landed = is_on_ground and previous_velocity.y > 0 and owner.velocity.y == 0 #and current_state not in ["Reception", "JumpBeggin", "JumpEnd"]
 
 	if current_state == "Cutting" or current_state == "Growing" or current_state == "Reception":
@@ -50,7 +50,7 @@ func _physics_process(delta):
 		if body.animation != "JumpBeggin":
 			animation_player_body.play("JumpBeggin")
 		return
-
+	
 	if started_falling and current_state != "JumpEnd":
 		current_state = "JumpEnd"
 		if body.animation != "JumpEnd":

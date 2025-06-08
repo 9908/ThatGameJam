@@ -266,7 +266,7 @@ alignment = 1
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme = ExtResource("7_fu4o2")
-text = "Give"
+text = "Send (You will lose ALL your stars)"
 
 [node name="Receive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer"]
 custom_minimum_size = Vector2(200, 50)

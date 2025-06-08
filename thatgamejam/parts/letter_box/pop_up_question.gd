@@ -1,7 +1,7 @@
 extends Control
 
 var first_activation: bool = true
-var choose_to_give: bool = false
+var choose_to_give: bool = true
 
 @onready var rich_text_label: RichTextLabel = $PopUpQuestion/TextContainer/RichTextLabel
 @onready var line_edit_give: LineEdit = $PopUpQuestion/LineEditContainer/LineEdit
@@ -46,6 +46,8 @@ func set_active(new_val: bool):
 	yes_button.grab_focus()
 	if not first_activation and not choose_to_give:
 		return
+	# FLAG-SFX - mailbox
+	FmodServer.play_one_shot("event:/mailbox")
 		
 	first_activation = false
 	if choose_to_give:
@@ -59,7 +61,7 @@ func set_active(new_val: bool):
 			hide_all_containers()
 			give_or_receive_container.show()
 			give.grab_focus()
-			rich_text_label.text = ""
+			rich_text_label.text = "Do you want to send all your stars to another player ?"
 	
 
 func _on_yes_button_pressed() -> void:
@@ -68,7 +70,6 @@ func _on_yes_button_pressed() -> void:
 	share_button_button.grab_focus()
 	line_edit_give.text = ""
 	update_share_window()
-	choose_to_give = true
 	
 
 func update_share_window():
@@ -77,6 +78,9 @@ func update_share_window():
 	Globals.player.grow_plant.remove_ressource(Globals.player.grow_plant.ressource)
 	line_edit_give.text = code
 	activated_codes.append(code)
+	# FLAG-SFX - give gift
+	FmodServer.play_one_shot("event:/give_gift")
+	# TODO
 	
 
 func encode_donation(light: int) -> String:
@@ -159,5 +163,9 @@ func _on_activate_code_button_pressed() -> void:
 			hide_all_containers()
 			success_container.show()
 			close_receive.grab_focus()
+			
+			# FLAG-SFX - receive gift
+			FmodServer.play_one_shot("event:/receive_gift")
+			# TODO
 	else:
 		rich_text_label.text = "Enter a valid code"

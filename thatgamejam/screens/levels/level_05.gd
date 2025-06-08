@@ -36,11 +36,16 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				secret_ending = false
 				continue
 			missing_star.completed = true
+			missing_star.fade_away()
 			var new_star = completed_star.instantiate()
 			new_star.global_position = Globals.player.ressource_visualisation.global_position
 			new_star.move_to(missing_star.global_position)
 			Globals.props.add_child(new_star)
 			Globals.player.grow_plant.remove_ressource(1)
+			
+			# FLAG-SFX - REGi-SFX - stars
+			FmodServer.play_one_shot("event:/rhode")
+			
 			await get_tree().create_timer(spawn_wait).timeout
 			spawn_wait -= 0.1
 			if spawn_wait <= 0.1:
