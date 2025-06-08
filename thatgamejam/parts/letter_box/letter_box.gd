@@ -14,8 +14,10 @@ func _physics_process(_delta):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == Globals.player:
 		player_nearby = true
+		Globals.player.grow_plant.can_grow_plant = false
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == Globals.player:
 		player_nearby = false
+		Globals.player.grow_plant.can_grow_plant = true

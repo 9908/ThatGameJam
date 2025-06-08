@@ -24,7 +24,7 @@ var activated_codes: Array = []
 
 func _ready() -> void:
 	Globals.pop_up_question = self
-	rich_text_label.text = "Do you want to give all your remaining light to another player ?"
+	rich_text_label.text = "Do you want to send all your stars to another player ?"
 	hide()
 	hide_all_containers()
 	question_container.show()
@@ -72,10 +72,11 @@ func _on_yes_button_pressed() -> void:
 	
 
 func update_share_window():
-	rich_text_label.text = "Give this code to a fellow player to offer your " + str(Globals.player.grow_plant.ressource) + str(" stars")
+	rich_text_label.text = "Share this code to a fellow player to offer your " + str(Globals.player.grow_plant.ressource) + str(" stars")
 	var code = encode_donation(Globals.player.grow_plant.ressource)
 	Globals.player.grow_plant.remove_ressource(Globals.player.grow_plant.ressource)
 	line_edit_give.text = code
+	activated_codes.append(code)
 	
 
 func encode_donation(light: int) -> String:
@@ -154,7 +155,7 @@ func _on_activate_code_button_pressed() -> void:
 		if not decoded_value.light == 0:
 			activated_codes.append(line_edit_receive.text)
 			Globals.player.grow_plant.get_ressource(decoded_value.light)
-			rich_text_label.text = "Successfully received " + str(decoded_value.light) + " --- Amazing !"
+			rich_text_label.text = "Successfully received " + str(decoded_value.light) + " stars --- Amazing !"
 			hide_all_containers()
 			success_container.show()
 			close_receive.grab_focus()
