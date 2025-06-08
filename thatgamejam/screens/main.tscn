@@ -363,7 +363,10 @@ horizontal_alignment = 1
 script = ExtResource("12_o25a7")
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(425, 411)
+physics_interpolation_mode = 1
+position = Vector2(380.785, 367.068)
+zoom = Vector2(1.05328, 1.05328)
+process_callback = 0
 script = ExtResource("2_cbuj4")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera"]
@@ -382,6 +385,7 @@ follow_mode = 2
 tween_resource = SubResource("Resource_lquwl")
 follow_damping = true
 follow_damping_value = Vector2(0.5, 0.5)
+draw_limits = true
 noise = SubResource("Resource_1s7cm")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
