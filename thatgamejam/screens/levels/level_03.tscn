@@ -410,7 +410,7 @@ position = Vector2(-1357, 481)
 scale = Vector2(-0.515207, 0.321895)
 event_name = "ambiance"
 
-[node name="JingleTrigger4" parent="AudioTriggers" index="3" instance=ExtResource("10_6ddup")]
+[node name="JingleTrigger6" parent="AudioTriggers" index="3" instance=ExtResource("10_6ddup")]
 position = Vector2(1424, 1154)
 event_name = "jingle"
-value = 4.0
+value = 6.0
