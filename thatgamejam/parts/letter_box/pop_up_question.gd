@@ -72,7 +72,7 @@ func _on_yes_button_pressed() -> void:
 	
 
 func update_share_window():
-	rich_text_label.text = "Give this code to a fellow player to offer your " + str(Globals.player.grow_plant.ressource) + str(" RESSOURCE")
+	rich_text_label.text = "Give this code to a fellow player to offer your " + str(Globals.player.grow_plant.ressource) + str(" stars")
 	var code = encode_donation(Globals.player.grow_plant.ressource)
 	Globals.player.grow_plant.remove_ressource(Globals.player.grow_plant.ressource)
 	line_edit_give.text = code

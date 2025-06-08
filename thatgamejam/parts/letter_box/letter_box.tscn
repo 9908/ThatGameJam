@@ -1,6 +1,142 @@
-[gd_scene load_steps=3 format=3 uid="uid://boxhuyg61cdbk"]
+[gd_scene load_steps=36 format=3 uid="uid://boxhuyg61cdbk"]
 
 [ext_resource type="Script" uid="uid://bm7228xvudlov" path="res://parts/letter_box/letter_box.gd" id="1_hb46q"]
+[ext_resource type="Texture2D" uid="uid://bthnt5c136tt7" path="res://assets/anim/MailBox_Activation/MailBox_0001.png" id="2_fsv5m"]
+[ext_resource type="Texture2D" uid="uid://bhhf41xmrxln6" path="res://assets/anim/MailBox_Activation/MailBox_0002.png" id="3_oo8fy"]
+[ext_resource type="Texture2D" uid="uid://d1jxdqw600lo3" path="res://assets/anim/MailBox_Activation/MailBox_0003.png" id="4_5onc2"]
+[ext_resource type="Texture2D" uid="uid://d07xw8dj66j30" path="res://assets/anim/MailBox_Activation/MailBox_0004.png" id="5_0gnph"]
+[ext_resource type="Texture2D" uid="uid://e6lp73qdchij" path="res://assets/anim/MailBox_Activation/MailBox_0005.png" id="6_evs42"]
+[ext_resource type="Texture2D" uid="uid://cr5kgpq4ribvb" path="res://assets/anim/MailBox_Activation/MailBox_0006.png" id="7_flh4j"]
+[ext_resource type="Texture2D" uid="uid://xuxi38f4h1ch" path="res://assets/anim/MailBox_Activation/MailBox_0007.png" id="8_o2w3p"]
+[ext_resource type="Texture2D" uid="uid://vn3n3sucouco" path="res://assets/anim/MailBox_Activation/MailBox_0008.png" id="9_8oy3w"]
+[ext_resource type="Texture2D" uid="uid://jqqryt4mncae" path="res://assets/anim/MailBox_Activation/MailBox_0009.png" id="10_kltsw"]
+[ext_resource type="Texture2D" uid="uid://cj2tq0wrkjlum" path="res://assets/anim/MailBox_Activation/MailBox_0010.png" id="11_6cl4s"]
+[ext_resource type="Texture2D" uid="uid://cw6na121tppmm" path="res://assets/anim/MailBox_Activation/MailBox_0011.png" id="12_avedn"]
+[ext_resource type="Texture2D" uid="uid://dmpns58tbywai" path="res://assets/anim/MailBox_Activation/MailBox_0012.png" id="13_h5m43"]
+[ext_resource type="Texture2D" uid="uid://dxxybyxsjvx24" path="res://assets/anim/MailBox_Activation/MailBox_0013.png" id="14_s6bnr"]
+[ext_resource type="Texture2D" uid="uid://dhqi6vcj8qdrg" path="res://assets/anim/MailBox_Activation/MailBox_0014.png" id="15_ijcv4"]
+[ext_resource type="Texture2D" uid="uid://sqmkepqjiu2i" path="res://assets/anim/MailBox_Activation/MailBox_0015.png" id="16_gdicm"]
+[ext_resource type="Texture2D" uid="uid://bju6fetb0e81q" path="res://assets/anim/MailBox_Activation/MailBox_0016.png" id="17_t1q24"]
+[ext_resource type="Texture2D" uid="uid://b1cd2rgwaweh4" path="res://assets/anim/MailBox_Activation/MailBox_0017.png" id="18_q61cl"]
+[ext_resource type="Texture2D" uid="uid://bmhqam0sv1u30" path="res://assets/anim/MailBox_Activation/MailBox_0018.png" id="19_mopes"]
+[ext_resource type="Texture2D" uid="uid://c5cmvqi001m08" path="res://assets/anim/MailBox_Activation/MailBox_0019.png" id="20_bv7ju"]
+[ext_resource type="Texture2D" uid="uid://cxkddr3l1p2fu" path="res://assets/anim/MailBox_Activation/MailBox_0020.png" id="21_w0vtr"]
+[ext_resource type="Texture2D" uid="uid://8p0tf6p34dyk" path="res://assets/anim/MailBox_Activation/MailBox_0021.png" id="22_84wc5"]
+[ext_resource type="Texture2D" uid="uid://bc1ipsichm4kl" path="res://assets/anim/MailBox_Activation/MailBox_0022.png" id="23_lbmnh"]
+[ext_resource type="Texture2D" uid="uid://g3yj1k7f2e7o" path="res://assets/anim/MailBox_Activation/MailBox_0023.png" id="24_jfls5"]
+[ext_resource type="Texture2D" uid="uid://bwmdpielqcboh" path="res://assets/anim/MailBox_Activation/MailBox_0024.png" id="25_x05xr"]
+[ext_resource type="Texture2D" uid="uid://cho3o7t73agg2" path="res://assets/anim/MailBox_Activation/MailBox_0025.png" id="26_q7uoc"]
+[ext_resource type="Texture2D" uid="uid://cf0pfxo7sl2c" path="res://assets/anim/MailBox_Activation/MailBox_0026.png" id="27_deb2u"]
+[ext_resource type="Texture2D" uid="uid://brfwluar00cae" path="res://assets/anim/MailBox_Activation/MailBox_0027.png" id="28_h83im"]
+[ext_resource type="Texture2D" uid="uid://dqu5vlmmr2cs4" path="res://assets/anim/MailBox_Activation/MailBox_0028.png" id="29_ekf25"]
+[ext_resource type="Texture2D" uid="uid://ckmtykdmk26tt" path="res://assets/anim/MailBox_Activation/MailBox_0029.png" id="30_qu3v5"]
+[ext_resource type="Texture2D" uid="uid://cwwdxa8oejxyg" path="res://assets/anim/MailBox_Activation/MailBox_0030.png" id="31_lvgmf"]
+[ext_resource type="Texture2D" uid="uid://dai27e63q8wrq" path="res://assets/anim/MailBox_Activation/MailBox_0031.png" id="32_dce74"]
+[ext_resource type="Texture2D" uid="uid://diirfn1lcnols" path="res://assets/anim/MailBox_Activation/MailBox_0032.png" id="33_6op3d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6xsa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fsv5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oo8fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5onc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0gnph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_evs42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_flh4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o2w3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8oy3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kltsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6cl4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_avedn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h5m43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s6bnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ijcv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gdicm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t1q24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q61cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mopes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bv7ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_w0vtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_84wc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lbmnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jfls5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x05xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_q7uoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_deb2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_h83im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ekf25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qu3v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lvgmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dce74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6op3d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 32.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkvy"]
 size = Vector2(143, 163)
@@ -10,18 +146,28 @@ script = ExtResource("1_hb46q")
 
 [node name="Visual" type="Node2D" parent="."]
 
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Visual"]
+position = Vector2(1, -81.75)
+scale = Vector2(0.30463, 0.30463)
+sprite_frames = SubResource("SpriteFrames_v6xsa")
+frame = 31
+frame_progress = 1.0
+
 [node name="ColorRect" type="ColorRect" parent="Visual"]
+visible = false
 offset_left = -6.0
 offset_top = -73.0
 offset_right = 6.0
 
 [node name="ColorRect2" type="ColorRect" parent="Visual"]
+visible = false
 offset_left = -44.0
 offset_top = -113.0
 offset_right = 43.0
 offset_bottom = -59.0
 
 [node name="ColorRect5" type="ColorRect" parent="Visual"]
+visible = false
 offset_left = -44.0
 offset_top = -113.0
 offset_right = 18.0
@@ -29,6 +175,7 @@ offset_bottom = -52.0
 rotation = -0.776575
 
 [node name="ColorRect3" type="ColorRect" parent="Visual"]
+visible = false
 offset_left = -31.0
 offset_top = -106.0
 offset_right = 29.0
@@ -36,6 +183,7 @@ offset_bottom = -92.0
 color = Color(0.628906, 0.628906, 0.628906, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Visual"]
+visible = false
 offset_left = -27.0
 offset_top = -101.0
 offset_right = 24.0

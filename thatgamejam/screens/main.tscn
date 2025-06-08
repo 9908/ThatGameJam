@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://sdtk7anffxo2"]
+[gd_scene load_steps=35 format=3 uid="uid://sdtk7anffxo2"]
 
 [ext_resource type="Script" uid="uid://bytpoovm401j6" path="res://screens/main.gd" id="1_cbuj4"]
 [ext_resource type="PackedScene" uid="uid://drvjmtk31d3uf" path="res://screens/level_select.tscn" id="1_ee7ou"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c40r4iw83noy" path="res://parts/letter_box/pop_up_question.gd" id="4_ycjph"]
 [ext_resource type="Script" uid="uid://c17v2e17lebqk" path="res://screens/pause_menu.gd" id="5_ramac"]
 [ext_resource type="Script" uid="uid://dnebbhspdocje" path="res://screens/fade.gd" id="5_ycjph"]
+[ext_resource type="Theme" uid="uid://dsw5jre5qho82" path="res://assets/theme.tres" id="7_fu4o2"]
 [ext_resource type="Script" uid="uid://cqwoelg4761qh" path="res://screens/vignette.gd" id="8_owlgm"]
 [ext_resource type="Shader" uid="uid://wfnv46b7l4xu" path="res://screens/vignette.gdshader" id="8_xd12c"]
 [ext_resource type="Texture2D" uid="uid://cnobbackhysu" path="res://assets/art/filter_circle_1080.png" id="9_era8c"]
@@ -132,7 +133,6 @@ text = "60"
 metadata/_edit_use_anchors_ = true
 
 [node name="PopUpQuestion" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -140,9 +140,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = 281.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 321.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_ycjph")
@@ -177,7 +177,8 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="UI/PopUpQuestion/PopUpQuestion/TextContainer"]
 custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
-text = "Do you want to give all your remaining light to another player ?"
+theme_override_fonts/normal_font = ExtResource("11_lwayx")
+text = "Do you want to give all your remaining stars to another player ?"
 horizontal_alignment = 1
 
 [node name="QuestionContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
@@ -188,11 +189,13 @@ alignment = 1
 [node name="YesButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/QuestionContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "YES"
 
 [node name="NoButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/QuestionContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "No"
 
 [node name="LineEditContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
@@ -203,16 +206,19 @@ alignment = 1
 [node name="LineEdit" type="LineEdit" parent="UI/PopUpQuestion/PopUpQuestion/LineEditContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 alignment = 1
 
 [node name="ShareButtonButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/LineEditContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Share code in Itch Comment"
 
 [node name="Close" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/LineEditContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Close
 "
 
@@ -223,32 +229,36 @@ alignment = 1
 [node name="LineEdit" type="LineEdit" parent="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 alignment = 1
 
 [node name="ActivateCodeButton" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Activate Code"
 
 [node name="CloseReceive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/ReceiveContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Close
 "
 
 [node name="GiveOrReceiveContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
-visible = false
 layout_mode = 2
 alignment = 1
 
 [node name="Give" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Give"
 
 [node name="Receive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/GiveOrReceiveContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Receive"
 
 [node name="SuccessContainer" type="HBoxContainer" parent="UI/PopUpQuestion/PopUpQuestion"]
@@ -259,6 +269,7 @@ alignment = 1
 [node name="CloseReceive" type="Button" parent="UI/PopUpQuestion/PopUpQuestion/SuccessContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Close
 "
 
@@ -298,12 +309,14 @@ alignment = 1
 process_mode = 3
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Resume"
 
 [node name="QuitButton" type="Button" parent="UI/PauseMenu/QuestionContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme = ExtResource("7_fu4o2")
 text = "Quit"
 
 [node name="Fade" type="ColorRect" parent="UI"]
